@@ -1,0 +1,1544 @@
+{
+    "total": {
+      "value": 3992
+    },
+    "positions": 5015,
+    "query_time_in_millis": 7,
+    "result_time_in_millis": 137,
+    "stats": [
+      
+    ],
+    "freetext_concepts": {
+      "skill": [
+        
+      ],
+      "occupation": [
+        
+      ],
+      "location": [
+        
+      ],
+      "skill_must": [
+        
+      ],
+      "occupation_must": [
+        
+      ],
+      "location_must": [
+        
+      ],
+      "skill_must_not": [
+        
+      ],
+      "occupation_must_not": [
+        
+      ],
+      "location_must_not": [
+        
+      ]
+    },
+    "hits": [
+      {
+        "relevance": 1.0,
+        "id": "28648723",
+        "external_id": "46-556803-2287-3646259-2",
+        "original_id": null,
+        "label": "[]",
+        "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/28648723",
+        "logo_url": null,
+        "headline": "2nd line supporttekniker till Forsmark",
+        "application_deadline": "2024-08-10T23:59:59",
+        "number_of_vacancies": 1,
+        "description": {
+          "text": "Vår kund är ett ledande energi-företag med en stark närvaro inom tekniksupport och IT-tjänster. Nu söker vi en engagerad och kompetent 2nd line supporttekniker som vill vara en del av vår kunds team i Forsmark. Vi söker dig som har minst 2 års erfarenhet och vill utvecklas på uppdraget.\n\nArbetsuppgifter:\n\n\n\nVår kund erbjuder en arbetsplats där stämningen är väldigt god, där de förvaltar en bred teknisk portfölj och plattform där du kommer att få utrymme att växa ytterligare i rollen med bland annat projektarbete.\nI uppdraget finns det stora möjligheter till utveckling, både tekniskt och som person.\nDet är en inspirerande arbetsplats där energi, service och trivsel är i fokus.\n\nI rollen som supporttekniker får du vara med i alla steg gällande införande, utveckling och förvaltning av kundens system och tjänster. Vi söker dig som är serviceinriktad och alltid har kunden i fokus. Som person har du lätt att lära och ta till dig av kundens arbetssätt och miljöer och system. Du är ansvarsfull, lösningsfokuserad och målinriktad. Du kommer att arbeta med att stötta företagets front när det gäller support samt att ta vid ärenden som du själv har som mål att lösa.Du kommer även att kategorisera, prioritera ärenden från kunder och interna användare. Ärenden hanteras via telefon och via deras ärendehanteringssystem.\n\nSom 2nd Line Supporttekniker kommer du att vara ansvarig för att lösa tekniska problem och ge support till användare på en högre teknisk nivå än den första linjens support levererar.\n\nDina huvudsakliga ansvarsområden inkluderar:\n\n- Identifiera och lösa komplexa tekniska problem.\n\n- Ge expertnivåsupport.\n\n- Utföra felsökning av nätverksproblem och systemfel.\n\n- Samarbeta med 1st Line, 3rd Line och drift för att säkerställa en smidig problemhantering.\n\n- Dokumentera incidenter och lösningar noggrant.\n\n\n\n\n\nDu har förmodligen:\n\n- En utbildning inom nätverk, alternativt har relevant arbetserfarenhet inom IT/Telekom, vilket du motiverar väl i din ansökan\n- Driv att arbeta med ständiga förbättringar\n- Ett brinnande intresse för teknik\n- Kommunicerar obehindrat på svenska i såväl tal som skrift\n\n\n\n\nDu är förmodligen:\n\n- Lösningsorienterad - där du tar egna initiativ och kommer med lösningsförslag för att komma framåt i ditt arbete\n- Samarbetsvillig och kommunikativ - där du är vass på att skapa och underhålla kundrelationer samtidigt som du samarbetar väl med kollegor i teamet\n- Strukturerad - där du kan planera och lägga upp ditt arbete på ett noggrant och strukturerat sätt\n\n\n\n Human IT\n\nHuman IT handlar om att göra saker lite annorlunda, att på riktigt sätta våra anställda i fokus. Vi växer tillsammans och värdesätter engagemang och ambition. För oss är det viktigt att du får chansen att vara med och påverka vägen framåt.\n\nI utbyte erbjuder vi kompetens- och karriärutveckling genom varierande och utmanande uppdrag. Vi är inte branschinriktade och kan därför erbjuda en fantastisk variation bland uppdragen för dig som konsult. Självklart ser vi till att du får rätt utbildning och vi är väl medvetna om att det är det livslånga lärandet som bygger vår framgång.\n\nTillsammans skapar vi framtiden 🚀\n\n- Tillsvidareanställning med fast månadslön\n- Kollektivavtal\n- Vi tillämpar sex månaders provanställning, inklusive friskvårdsbidrag\n- Utvecklingsplan\n- Hälsoförsäkring + pension\n- Rabatt på SATS\n- Konsultstyrelse\n- Förskottssemester\n\n\nStart: Omgående med hänsyn till uppsägningstid och när säkerhetskontroll är genomförd. Uppdraget är på heltid och är tillsvidare.\n\nPlats: Forsmark\n\nAnsökan: Vi rekryterar löpande. Så skicka in din ansökan redan idag!\n\nHuman IT arbetar tillsammans med Great Place To Work för att vi skall bli Sveriges bästa arbetsplats.\n\nCertifierade med toppbetyg!\n\nOch förresten:\n\nSom en aktiv del i ett samhälle med kulturell och social mångfald är Human IT’s ambition att präglas av inkludering och bred representation, samt vara en arbetsplats med lika möjligheter för alla. Human IT anställer, bibehåller, befordrar och i övrigt behandlar alla medarbetare och kandidater efter erfarenhet, kvalifikationer och kompetens, oavsett kön, religion, ursprung, ålder, sexuell läggning, könsidentitet eller funktionsvariationer.",
+          "text_formatted": "Vår kund är ett ledande energi-företag med en stark närvaro inom tekniksupport och IT-tjänster. Nu söker vi en engagerad och kompetent 2nd line supporttekniker som vill vara en del av vår kunds team i Forsmark. Vi söker dig som har minst 2 års erfarenhet och vill utvecklas på uppdraget.\n\nArbetsuppgifter:\n\n\n\nVår kund erbjuder en arbetsplats där stämningen är väldigt god, där de förvaltar en bred teknisk portfölj och plattform där du kommer att få utrymme att växa ytterligare i rollen med bland annat projektarbete.\nI uppdraget finns det stora möjligheter till utveckling, både tekniskt och som person.\nDet är en inspirerande arbetsplats där energi, service och trivsel är i fokus.\n\nI rollen som supporttekniker får du vara med i alla steg gällande införande, utveckling och förvaltning av kundens system och tjänster. Vi söker dig som är serviceinriktad och alltid har kunden i fokus. Som person har du lätt att lära och ta till dig av kundens arbetssätt och miljöer och system. Du är ansvarsfull, lösningsfokuserad och målinriktad. Du kommer att arbeta med att stötta företagets front när det gäller support samt att ta vid ärenden som du själv har som mål att lösa.Du kommer även att kategorisera, prioritera ärenden från kunder och interna användare. Ärenden hanteras via telefon och via deras ärendehanteringssystem.\n\nSom 2nd Line Supporttekniker kommer du att vara ansvarig för att lösa tekniska problem och ge support till användare på en högre teknisk nivå än den första linjens support levererar.\n\nDina huvudsakliga ansvarsområden inkluderar:\n\n- Identifiera och lösa komplexa tekniska problem.\n\n- Ge expertnivåsupport.\n\n- Utföra felsökning av nätverksproblem och systemfel.\n\n- Samarbeta med 1st Line, 3rd Line och drift för att säkerställa en smidig problemhantering.\n\n- Dokumentera incidenter och lösningar noggrant.\n\n\n\n\n\nDu har förmodligen:\n\n- En utbildning inom nätverk, alternativt har relevant arbetserfarenhet inom IT/Telekom, vilket du motiverar väl i din ansökan\n- Driv att arbeta med ständiga förbättringar\n- Ett brinnande intresse för teknik\n- Kommunicerar obehindrat på svenska i såväl tal som skrift\n\n\n\n\nDu är förmodligen:\n\n- Lösningsorienterad - där du tar egna initiativ och kommer med lösningsförslag för att komma framåt i ditt arbete\n- Samarbetsvillig och kommunikativ - där du är vass på att skapa och underhålla kundrelationer samtidigt som du samarbetar väl med kollegor i teamet\n- Strukturerad - där du kan planera och lägga upp ditt arbete på ett noggrant och strukturerat sätt\n\n\n\n Human IT\n\nHuman IT handlar om att göra saker lite annorlunda, att på riktigt sätta våra anställda i fokus. Vi växer tillsammans och värdesätter engagemang och ambition. För oss är det viktigt att du får chansen att vara med och påverka vägen framåt.\n\nI utbyte erbjuder vi kompetens- och karriärutveckling genom varierande och utmanande uppdrag. Vi är inte branschinriktade och kan därför erbjuda en fantastisk variation bland uppdragen för dig som konsult. Självklart ser vi till att du får rätt utbildning och vi är väl medvetna om att det är det livslånga lärandet som bygger vår framgång.\n\nTillsammans skapar vi framtiden 🚀\n\n- Tillsvidareanställning med fast månadslön\n- Kollektivavtal\n- Vi tillämpar sex månaders provanställning, inklusive friskvårdsbidrag\n- Utvecklingsplan\n- Hälsoförsäkring + pension\n- Rabatt på SATS\n- Konsultstyrelse\n- Förskottssemester\n\n\nStart: Omgående med hänsyn till uppsägningstid och när säkerhetskontroll är genomförd. Uppdraget är på heltid och är tillsvidare.\n\nPlats: Forsmark\n\nAnsökan: Vi rekryterar löpande. Så skicka in din ansökan redan idag!\n\nHuman IT arbetar tillsammans med Great Place To Work för att vi skall bli Sveriges bästa arbetsplats.\n\nCertifierade med toppbetyg!\n\nOch förresten:\n\nSom en aktiv del i ett samhälle med kulturell och social mångfald är Human IT’s ambition att präglas av inkludering och bred representation, samt vara en arbetsplats med lika möjligheter för alla. Human IT anställer, bibehåller, befordrar och i övrigt behandlar alla medarbetare och kandidater efter erfarenhet, kvalifikationer och kompetens, oavsett kön, religion, ursprung, ålder, sexuell läggning, könsidentitet eller funktionsvariationer.",
+          "company_information": null,
+          "needs": null,
+          "requirements": null,
+          "conditions": "Heltid\r\nAnställningstid enligt överenskommelse"
+        },
+        "employment_type": {
+          "concept_id": "PFZr_Syz_cUq",
+          "label": "Vanlig anställning",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_type": {
+          "concept_id": "oG8G_9cW_nRf",
+          "label": "Fast månads- vecko- eller timlön",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_description": "Lön enligt överenskommelse",
+        "duration": {
+          "concept_id": "a7uU_j21_mkL",
+          "label": "Tills vidare",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "working_hours_type": {
+          "concept_id": "6YE1_gAC_R2G",
+          "label": "Heltid",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "scope_of_work": {
+          "min": 100,
+          "max": 100
+        },
+        "access": null,
+        "employer": {
+          "phone_number": null,
+          "email": null,
+          "url": "https://www.humanit.se/",
+          "organization_number": "5568032287",
+          "name": "Human IT-support AB",
+          "workplace": "Human IT"
+        },
+        "application_details": {
+          "information": null,
+          "reference": null,
+          "email": null,
+          "via_af": false,
+          "url": "https://career.humanit.se/jobs/3646259-2nd-line-supporttekniker-till-forsmark?promotion=921790-arbetsformedlingen",
+          "other": null
+        },
+        "experience_required": true,
+        "access_to_own_car": false,
+        "driving_license_required": false,
+        "driving_license": null,
+        "occupation": {
+          "concept_id": "KQty_E1u_cia",
+          "label": "Helpdesktekniker/Supporttekniker",
+          "legacy_ams_taxonomy_id": "7020"
+        },
+        "occupation_group": {
+          "concept_id": "hmaC_cfi_UKg",
+          "label": "Supporttekniker, IT",
+          "legacy_ams_taxonomy_id": "3512"
+        },
+        "occupation_field": {
+          "concept_id": "apaJ_2ja_LuF",
+          "label": "Data/IT",
+          "legacy_ams_taxonomy_id": "3"
+        },
+        "workplace_address": {
+          "municipality": "Östhammar",
+          "municipality_code": "0382",
+          "municipality_concept_id": "VE3L_3Ei_XbG",
+          "region": "Uppsala län",
+          "region_code": "03",
+          "region_concept_id": "zBon_eET_fFU",
+          "country": "Sverige",
+          "country_code": "199",
+          "country_concept_id": "i46j_HmG_v64",
+          "street_address": null,
+          "postcode": null,
+          "city": null,
+          "coordinates": [
+            18.366615,
+            60.259712
+          ]
+        },
+        "must_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            {
+              "weight": 10,
+              "concept_id": "KQty_E1u_cia",
+              "label": "Helpdesktekniker/Supporttekniker",
+              "legacy_ams_taxonomy_id": "7020"
+            }
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "nice_to_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "application_contacts": [
+          {
+            "name": null,
+            "description": "Izabella Cardestål",
+            "email": "izabella.cardestal@humanit.se",
+            "telephone": null,
+            "contact_type": null
+          }
+        ],
+        "publication_date": "2024-03-24T19:36:13",
+        "last_publication_date": "2024-08-10T23:59:59",
+        "removed": false,
+        "removed_date": null,
+        "source_type": "VIA_PLATSBANKEN_DXA",
+        "timestamp": 1711305373310
+      },
+      {
+        "relevance": 1.0,
+        "id": "28648594",
+        "external_id": null,
+        "original_id": null,
+        "label": "[]",
+        "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/28648594",
+        "logo_url": "https://www.arbetsformedlingen.se/rest/arbetsgivare/rest/af/v3/arbetsplatser/87920267/logotyper/logo.png",
+        "headline": "EE System Design Engineer",
+        "application_deadline": "2024-04-23T23:59:59",
+        "number_of_vacancies": 1,
+        "description": {
+          "text": "EE System Design Engineer\n We are looking for an experienced EE System Design Engineer for our client in the automotive industry. \n Job description:\nYou will together with the team work on the system Design with both new and old architecture and on the configuration technology in the vehicle and surrounding systems. Develop, improve, and support configuration parameters based on new functionality for all platforms. You will design and implement the configuration software module and provide guideline for ECU application to use configuration service interfaces. You will also conduct testing and create automated test methods. Provide support and create new processes. You will drive the exploration of alternative EE concepts during the very early phases of our new projects or to mature current products. This includes system level design of embedded systems, e.g. designing effective systems by logical design of SW & HW components based on Autosar. Deciding the most advantageous choice of ECUs or communication-buses etc. Provide technical expertise and system knowledge to support the development teams through the development of the solution.\n Experience Required:\n •        You have a minimum of 5 years of work experience as a EE System Designer preferably for commercial vehicles.\n•        You have a University Degree in Electrical Engineering, Mechatronics, Computer Science or\nsimilar \n•        Experience withing architectural work, you have created modules and interfaces in a design\ntool.\n•        You have experience from SW-, Functional- or System Development within the automotive\nindustry\n•        Experience of handling requirements\n Skills required\n•      You are skilled in embedded systems, with extensive experience in system- & function design with a good understanding on how functions and services are realized through application SW, SW platforms (Autosar Platform, Embedded Linux, etc.), electronics (ECUs) and electrical components and HW. Big plus if you have worked with the TEA2+ architecture or similar, but experience from other architectures used in other vehicle companies in the automotive industry is also a merit.\n•      You are familiar with automotive standards and technologies, especially onboard communication technologies and protocols (CAN, LIN and Ethernet).\n•        System weaver, Jira and Autosar knowledge. Kola is a plus\n•        knowledge of distributed electrical systems and electrical architecture\n•  You have excellent communicational skills and can\neasily create networks and collaborate with others. \n• You are driven, pro-active and can take initiatives and\nlead other more junior engineers.\n•        Fluent in English both spoken and written, Swedish is a merit\n•        You are curious, helpful and want to contribute to the team.\n•        You enjoy working agile and teamwork\n•        Have a positive mindset and a “Can-do” attitude.",
+          "text_formatted": "<p><strong>EE System Design Engineer</strong></p><p> We are looking for an experienced EE System Design Engineer for our client in the automotive industry. </p><p> <strong><u>Job description:</u></strong></p><p>You will together with the team work on the system Design with both new and old architecture and on the configuration technology in the vehicle and surrounding systems. Develop, improve, and support configuration parameters based on new functionality for all platforms. You will design and implement the configuration software module and provide guideline for ECU application to use configuration service interfaces. You will also conduct testing and create automated test methods. Provide support and create new processes. You will drive the exploration of alternative EE concepts during the very early phases of our new projects or to mature current products. This includes system level design of embedded systems, e.g. designing effective systems by logical design of SW &amp; HW components based on Autosar. Deciding the most advantageous choice of ECUs or communication-buses etc. Provide technical expertise and system knowledge to support the development teams through the development of the solution.</p><p> <strong>Experience Required:</strong></p><p> •        You have a minimum of 5 years of work experience as a EE System Designer preferably for commercial vehicles.</p><p>•        You have a University Degree in Electrical Engineering, Mechatronics, Computer Science or</p><p>similar </p><p>•        Experience withing architectural work, you have created modules and interfaces in a design</p><p>tool.</p><p>•        You have experience from SW-, Functional- or System Development within the automotive</p><p>industry</p><p>•        Experience of handling requirements</p><p> <strong>Skills required</strong></p><p>•      You are skilled in embedded systems, with extensive experience in system- &amp; function design with a good understanding on how functions and services are realized through application SW, SW platforms (Autosar Platform, Embedded Linux, etc.), electronics (ECUs) and electrical components and HW. Big plus if you have worked with the TEA2+ architecture or similar, but experience from other architectures used in other vehicle companies in the automotive industry is also a merit.</p><p>•      You are familiar with automotive standards and technologies, especially onboard communication technologies and protocols (CAN, LIN and Ethernet).</p><p>•        System weaver, Jira and Autosar knowledge. Kola is a plus</p><p>•        knowledge of distributed electrical systems and electrical architecture</p><p>•  You have excellent communicational skills and can</p><p>easily create networks and collaborate with others. </p><p>• You are driven, pro-active and can take initiatives and</p><p>lead other more junior engineers.</p><p>•        Fluent in English both spoken and written, Swedish is a merit</p><p>•        You are curious, helpful and want to contribute to the team.</p><p>•        You enjoy working agile and teamwork</p><p>•        Have a positive mindset and a “Can-do” attitude.</p><p><br></p><p> </p>",
+          "company_information": null,
+          "needs": null,
+          "requirements": null,
+          "conditions": null
+        },
+        "employment_type": {
+          "concept_id": "PFZr_Syz_cUq",
+          "label": "Vanlig anställning",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_type": {
+          "concept_id": "oG8G_9cW_nRf",
+          "label": "Fast månads- vecko- eller timlön",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_description": null,
+        "duration": {
+          "concept_id": "a7uU_j21_mkL",
+          "label": "Tills vidare",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "working_hours_type": {
+          "concept_id": "6YE1_gAC_R2G",
+          "label": "Heltid",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "scope_of_work": {
+          "min": 100,
+          "max": 100
+        },
+        "access": null,
+        "employer": {
+          "phone_number": null,
+          "email": null,
+          "url": null,
+          "organization_number": "5593074866",
+          "name": "Integro Consulting AB",
+          "workplace": "Göteborg"
+        },
+        "application_details": {
+          "information": null,
+          "reference": "EE System Design Engineer",
+          "email": "work@integroconsulting.se",
+          "via_af": false,
+          "url": null,
+          "other": null
+        },
+        "experience_required": true,
+        "access_to_own_car": false,
+        "driving_license_required": false,
+        "driving_license": null,
+        "occupation": {
+          "concept_id": "9jYT_DS5_6JE",
+          "label": "Systemdesigner",
+          "legacy_ams_taxonomy_id": "2413"
+        },
+        "occupation_group": {
+          "concept_id": "DJh5_yyF_hEM",
+          "label": "Mjukvaru- och systemutvecklare m.fl.",
+          "legacy_ams_taxonomy_id": "2512"
+        },
+        "occupation_field": {
+          "concept_id": "apaJ_2ja_LuF",
+          "label": "Data/IT",
+          "legacy_ams_taxonomy_id": "3"
+        },
+        "workplace_address": {
+          "municipality": "Göteborg",
+          "municipality_code": "1480",
+          "municipality_concept_id": "PVZL_BQT_XtL",
+          "region": "Västra Götalands län",
+          "region_code": "14",
+          "region_concept_id": "zdoY_6u5_Krt",
+          "country": "Sverige",
+          "country_code": "199",
+          "country_concept_id": "i46j_HmG_v64",
+          "street_address": "Herkulesgatan 1V, vån 2",
+          "postcode": "41701",
+          "city": "Göteborg",
+          "coordinates": [
+            11.945321657398154,
+            57.714738164250186
+          ]
+        },
+        "must_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            {
+              "weight": 10,
+              "concept_id": "NVxJ_hLg_TYS",
+              "label": "Engelska",
+              "legacy_ams_taxonomy_id": "283"
+            }
+          ],
+          "work_experiences": [
+            {
+              "weight": 10,
+              "concept_id": "9jYT_DS5_6JE",
+              "label": "Systemdesigner",
+              "legacy_ams_taxonomy_id": "2413"
+            }
+          ],
+          "education": [
+            {
+              "weight": 10,
+              "concept_id": "WFCz_teU_KFf",
+              "label": "Teknik och teknisk industri",
+              "legacy_ams_taxonomy_id": "15"
+            }
+          ],
+          "education_level": [
+            {
+              "weight": 10,
+              "concept_id": "asZm_TEQ_Srk",
+              "label": "Eftergymnasial utbildning två år eller längre",
+              "legacy_ams_taxonomy_id": "6"
+            }
+          ]
+        },
+        "nice_to_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            {
+              "weight": 5,
+              "concept_id": "zSLA_vw2_FXN",
+              "label": "Svenska",
+              "legacy_ams_taxonomy_id": "502"
+            }
+          ],
+          "work_experiences": [
+            
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "application_contacts": [
+          
+        ],
+        "publication_date": "2024-03-24T16:44:15",
+        "last_publication_date": "2024-04-23T23:59:59",
+        "removed": false,
+        "removed_date": null,
+        "source_type": "VIA_ANNONSERA",
+        "timestamp": 1711295055914
+      },
+      {
+        "relevance": 1.0,
+        "id": "28648402",
+        "external_id": null,
+        "original_id": null,
+        "label": "[]",
+        "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/28648402",
+        "logo_url": "https://www.arbetsformedlingen.se/rest/arbetsgivare/rest/af/v3/arbetsplatser/88327904/logotyper/logo.png",
+        "headline": "Fullstackutvecklare",
+        "application_deadline": "2024-05-31T23:59:59",
+        "number_of_vacancies": 2,
+        "description": {
+          "text": "Vill du växa som mjukvaruutvecklare, senior som junior? Vill du dessutom arbeta med mjukvara som förenklar vardagen för en av samhällets viktigaste verksamheter? Ta chansen att bli en viktig del av tillväxtföretaget Sematic AB som utvecklar webbaserade lösningar för hälso- och sjukvård.\nFöretaget\nSematic grundades 2013 och har sitt säte i Linköping. Bolaget utvecklar avancerad mjukvara med fokus på att underlätta schemaläggning av personal på stora sjukhus. Det innefattar användarvänliga gränssnitt och hög grad av automation i form av avancerade algoritmer som innehåller automatiserade optimeringsfunktioner och självlärande metoder.\nIdén föddes och utvecklades i direkt samarbete med slutanvändare vilket har bidragit till lösningar som kommer åt kärnan i vårdens schemaläggningsproblem. Både att lösa den stora matematiska komplexiteten samt möta upp kraven på hög grad av användarvänlighet. Idag är verktyget marknadsledande och konkurrerar ut lösningar från bl.a. etablerade mjukvarujättar. Bland kunderna står numera många regioner och sjukhus som alla har tecknat mångåriga kontrakt.\nSematic har vuxit stadigt för att nå kunders efterfrågan. Förra året utökades arbetsplatsen genom flytt till nya kontorslokaler i Linköping och nu är det dags för ytterligare talanger att bli del av det kompetenta och drivna teamet.\nArbetsuppgifter\nSom fullstackutvecklare på Sematic har du en bred och varierad roll där du utvecklar mjukvara med lösningar som går från ax till limpa. Som nyanställd tar du del i arbetet genom samarbete med andra teammedlemmar med syfte att nå de bästa lösningarna samt utvecklas inom företaget. Arbetet bygger på frihet under ansvar där du samtidigt får möjlighet att utvecklas genom mycket feedback och nya utmaningar.\nNågra av Sematics teknikval: JavaScript, Node.js, MongoDB, C++ med flera.\nDina kollegor på Sematic har nära kontakt med slutanvändarna vilket gör att resultaten av ditt arbete blir direkt uppmärksammade och återkopplade. Därtill bidrar du och övriga medarbetare med teknisk support till slutanvändarna.\nUtbildning, erfarenhet och personliga egenskaper\nDu har en civilingenjörsutbildning motsvarande Y, D eller IT\nDu löser problem bättre än de flesta\nDu vet skillnaderna mellan datastrukturer: arrays och hashmaps\nDu förstår algoritmer och iterativa/rekursiva beteenden\nDu kan skillnaderna mellan sophämtning och Garbage Collection\n\nMeriterande: Du har erfarenhet inom JavaScript, Node.js, MongoDB eller SQL, server och klienthantering.\nFör att trivas hos oss tror vi att du har ett stort tekniskt intresse och ett driv att ta fram lösningar som faktiskt används. Som person vill du ha roligt på jobbet och räds inte för att testa nya tillvägagångssätt. Du tar självklart ansvar för dina åtaganden och ser alltid till att slutföra det du har påbörjat. Därtill trivs du i samarbetet med andra och ser glädje och nytta i att hjälpas åt inom teamet.\nÖvrig information\nStart: efter överenskommelse\nPlats: Linköping\nLön: efter överenskommelse\nSökord: algoritmer, datastrukturer, optimering, självlärande, fullstack, webbutveckling, mobilapp, ecmascript, databas, REST, ingenjör, systemutvecklare\nVi rekommenderar att du skickar in din ansökan omgående då vi gör ett löpande urval. Välkommen med din ansökan!",
+          "text_formatted": "<p><em>Vill du växa som mjukvaruutvecklare, senior som junior? Vill du dessutom arbeta med mjukvara som förenklar vardagen för en av samhällets viktigaste verksamheter? Ta chansen att bli en viktig del av tillväxtföretaget Sematic AB som utvecklar webbaserade lösningar för hälso- och sjukvård.</em></p><p><strong>Företaget</strong></p><p>Sematic grundades 2013 och har sitt säte i Linköping. Bolaget utvecklar avancerad mjukvara med fokus på att underlätta schemaläggning av personal på stora sjukhus. Det innefattar användarvänliga gränssnitt och hög grad av automation i form av avancerade algoritmer som innehåller automatiserade optimeringsfunktioner och självlärande metoder.</p><p>Idén föddes och utvecklades i direkt samarbete med slutanvändare vilket har bidragit till lösningar som kommer åt kärnan i vårdens schemaläggningsproblem. Både att lösa den stora matematiska komplexiteten samt möta upp kraven på hög grad av användarvänlighet. Idag är verktyget marknadsledande och konkurrerar ut lösningar från bl.a. etablerade mjukvarujättar. Bland kunderna står numera många regioner och sjukhus som alla har tecknat mångåriga kontrakt.</p><p>Sematic har vuxit stadigt för att nå kunders efterfrågan. Förra året utökades arbetsplatsen genom flytt till nya kontorslokaler i Linköping och nu är det dags för ytterligare talanger att bli del av det kompetenta och drivna teamet.</p><p><strong>Arbetsuppgifter</strong></p><p>Som fullstackutvecklare på Sematic har du en bred och varierad roll där du utvecklar mjukvara med lösningar som går från ax till limpa. Som nyanställd tar du del i arbetet genom samarbete med andra teammedlemmar med syfte att nå de bästa lösningarna samt utvecklas inom företaget. Arbetet bygger på frihet under ansvar där du samtidigt får möjlighet att utvecklas genom mycket feedback och nya utmaningar.</p><p>Några av Sematics teknikval: JavaScript, Node.js, MongoDB, C++ med flera.</p><p>Dina kollegor på Sematic har nära kontakt med slutanvändarna vilket gör att resultaten av ditt arbete blir direkt uppmärksammade och återkopplade. Därtill bidrar du och övriga medarbetare med teknisk support till slutanvändarna.</p><p><strong>Utbildning, erfarenhet och personliga egenskaper</strong></p><ul><li>Du har en civilingenjörsutbildning motsvarande Y, D eller IT</li><li>Du löser problem bättre än de flesta</li><li>Du vet skillnaderna mellan datastrukturer: arrays och hashmaps</li><li>Du förstår algoritmer och iterativa/rekursiva beteenden</li><li>Du kan skillnaderna mellan sophämtning och Garbage Collection</li></ul><p><em>Meriterande: Du har erfarenhet inom JavaScript, Node.js, MongoDB eller SQL, server och klienthantering.</em></p><p>För att trivas hos oss tror vi att du har ett stort tekniskt intresse och ett driv att ta fram lösningar som faktiskt används. Som person vill du ha roligt på jobbet och räds inte för att testa nya tillvägagångssätt. Du tar självklart ansvar för dina åtaganden och ser alltid till att slutföra det du har påbörjat. Därtill trivs du i samarbetet med andra och ser glädje och nytta i att hjälpas åt inom teamet.</p><p><strong>Övrig information</strong></p><p>Start: efter överenskommelse</p><p>Plats: Linköping</p><p>Lön: efter överenskommelse</p><p>Sökord: algoritmer, datastrukturer, optimering, självlärande, fullstack, webbutveckling, mobilapp, ecmascript, databas, REST, ingenjör, systemutvecklare</p><p><strong>Vi rekommenderar att du skickar in din ansökan omgående då vi gör ett löpande urval. Välkommen med din ansökan!</strong></p>",
+          "company_information": null,
+          "needs": null,
+          "requirements": null,
+          "conditions": null
+        },
+        "employment_type": {
+          "concept_id": "PFZr_Syz_cUq",
+          "label": "Vanlig anställning",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_type": {
+          "concept_id": "oG8G_9cW_nRf",
+          "label": "Fast månads- vecko- eller timlön",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_description": null,
+        "duration": {
+          "concept_id": "a7uU_j21_mkL",
+          "label": "Tills vidare",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "working_hours_type": {
+          "concept_id": "6YE1_gAC_R2G",
+          "label": "Heltid",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "scope_of_work": {
+          "min": 100,
+          "max": 100
+        },
+        "access": null,
+        "employer": {
+          "phone_number": null,
+          "email": null,
+          "url": "https://sematic.se",
+          "organization_number": "5569400764",
+          "name": "Sematic AB",
+          "workplace": "Sematic AB"
+        },
+        "application_details": {
+          "information": null,
+          "reference": null,
+          "email": "rekrytering@sematic.se",
+          "via_af": false,
+          "url": null,
+          "other": null
+        },
+        "experience_required": true,
+        "access_to_own_car": false,
+        "driving_license_required": false,
+        "driving_license": null,
+        "occupation": {
+          "concept_id": "fg7B_yov_smw",
+          "label": "Systemutvecklare/Programmerare",
+          "legacy_ams_taxonomy_id": "2419"
+        },
+        "occupation_group": {
+          "concept_id": "DJh5_yyF_hEM",
+          "label": "Mjukvaru- och systemutvecklare m.fl.",
+          "legacy_ams_taxonomy_id": "2512"
+        },
+        "occupation_field": {
+          "concept_id": "apaJ_2ja_LuF",
+          "label": "Data/IT",
+          "legacy_ams_taxonomy_id": "3"
+        },
+        "workplace_address": {
+          "municipality": "Linköping",
+          "municipality_code": "0580",
+          "municipality_concept_id": "bm2x_1mr_Qhx",
+          "region": "Östergötlands län",
+          "region_code": "05",
+          "region_concept_id": "oLT3_Q9p_3nn",
+          "country": "Sverige",
+          "country_code": "199",
+          "country_concept_id": "i46j_HmG_v64",
+          "street_address": "Brigadgatan 16",
+          "postcode": "58758",
+          "city": "Linköping",
+          "coordinates": [
+            15.612414991014546,
+            58.39658971958683
+          ]
+        },
+        "must_have": {
+          "skills": [
+            {
+              "weight": 10,
+              "concept_id": "Rf1n_6Sj_exu",
+              "label": "Högskoleingenjörsexamen",
+              "legacy_ams_taxonomy_id": "608319"
+            }
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            
+          ],
+          "education": [
+            {
+              "weight": 10,
+              "concept_id": "FHxz_HhN_3Mk",
+              "label": "Data",
+              "legacy_ams_taxonomy_id": "14"
+            }
+          ],
+          "education_level": [
+            {
+              "weight": 10,
+              "concept_id": "asZm_TEQ_Srk",
+              "label": "Eftergymnasial utbildning två år eller längre",
+              "legacy_ams_taxonomy_id": "6"
+            }
+          ]
+        },
+        "nice_to_have": {
+          "skills": [
+            {
+              "weight": 5,
+              "concept_id": "ND2K_ivB_6RA",
+              "label": "Civilingenjörsexamen",
+              "legacy_ams_taxonomy_id": "608325"
+            }
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "application_contacts": [
+          
+        ],
+        "publication_date": "2024-03-24T10:28:15",
+        "last_publication_date": "2024-05-31T23:59:59",
+        "removed": false,
+        "removed_date": null,
+        "source_type": "VIA_ANNONSERA",
+        "timestamp": 1711272725972
+      },
+      {
+        "relevance": 1.0,
+        "id": "28648212",
+        "external_id": "46-559191-1747-53890-2",
+        "original_id": null,
+        "label": "[]",
+        "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/28648212",
+        "logo_url": "https://www.arbetsformedlingen.se/rest/arbetsgivare/rest/af/v3/organisation/5591911747/logotyper/logo.png",
+        "headline": "Juniora supporttekniker sökes till Fujitsu i Östersund",
+        "application_deadline": "2024-04-17T23:59:59",
+        "number_of_vacancies": 1,
+        "description": {
+          "text": "Meet a Student är en jobbplattform för juniora talanger.\nFör kunds räkning har vi publicerat denna annons, vill du komma i kontakt med den slutgiltiga arbetsgivaren kan du klicka dig vidare till annonsen:\nSupporttekniker för Fujitsu i Östersund – Perfekt för teknikentusiaster och idealiskt för juniora profiler som vill startar sin karriär inom IT och Service\nOm oss: Fujitsu söker en entusiastisk och engagerad junior IT-supporttekniker till deras Service Desk i Östersund. Dom är ett dynamiskt team som arbetar med att leverera högkvalitativ teknisk support till deras kunder.\n\nRollbeskrivning: Som junior IT-supporttekniker kommer du att vara en viktig del av deras supportverksamhet. Du kommer att hantera tekniska frågor och problem via telefon, mail och andra medier, och guida våra kunder genom olika IT-relaterade ärenden. Ditt mål kommer att vara att säkerställa att Fujitsus kunder får en enastående supportupplevelse varje gång de kontaktar dom.\n\nDu kommer att vara anställd som konsult hos oss på Barona och uthyrd till Fujitsu.\n\nVi letar efter dig som:\n\nHar utmärkta kommunikationsfärdigheter på både svenska och engelska, både i tal och skrift.\n\nBesitter en hög pedagogisk förmåga och kan förklara tekniska problem på ett lättförståeligt sätt.\n\nHar en god teknisk kunskapsbas och är bekant med system som Windows Operativsystem, Office365, Citrix, Active Directory, Network, iOS/Mac, Exchange och skrivare. (Inget måste med alla dessa system, endast meriterande)\n\nHar en mycket hög servicekänsla och trivs i en kundorienterad miljö.\n\n\nArbetstider: Arbetstiderna är förlagda mellan 07.00-22.00 måndag-söndag. Så varierade arbetstider förekommer.\n\nÖvrigt: Det kan förekomma resor i samband med utbildningar och andra evenemang.\n\nAnsökan: Om du är en driven och ansvarstagande individ som vill kickstarta din karriär inom IT-support, är detta en utmärkt möjlighet för dig! Skicka in din ansökan så snart som möjligt då urval sker löpande. Vi ser fram emot att välkomna dig till vårt team!\n\nObservera att både svensktalande och engelsktalande kunder förekommer, vilket innebär att du förväntas kunna kommunicera obehindrat på båda språken.\nRekryteringsprocessen\nIntervjuer hålls löpande och tjänsten kan komma att tillsättas innan sista ansökningsdag, så skicka in din ansökan redan idag. På grund av GDPR kan vi inte ta emot ansökningar via mejl, så ansök till tjänsten via vår hemsida. Vid frågor relaterade till processen, varmt välkommen att höra av dig till Linnéa Lundström.\n\nVarmt välkommen med din ansökan!\n\nOm Barona\nBarona är en internationell koncern med kontor i 10 länder. I Sverige har vi kontor i Stockholm, Göteborg, Malmö, Falun och Strömsund och levererar lösningar inom kompetensförsörjning över hela landet. Vi erbjuder våra kunder ett visionärt och framtidsanpassat partnerskap och våra medarbetare spännande möjligheter i alla skeden av karriären. Ända sedan starten i Finland 1999, bygger vår framgång på att hela vår organisation är kundorienterad och utmanar traditionellt tänkande när det gäller tjänsteutbud och affärsutveckling. Genom vårt fokus på innovation och digitalisering kan vi ständigt ligga i framkant när det gäller modern rekrytering.",
+          "text_formatted": "<b>Meet a Student är en jobbplattform för juniora talanger.</b>\n\n<b>För kunds räkning har vi publicerat denna annons, vill du komma i kontakt med den slutgiltiga arbetsgivaren kan du klicka dig vidare till annonsen:</b>\n\n<strong>Supporttekniker för Fujitsu i Östersund – Perfekt för teknikentusiaster och idealiskt för juniora profiler som vill startar sin karriär inom IT och Service</strong>\n\n<strong>Om oss:</strong> Fujitsu söker en entusiastisk och engagerad junior IT-supporttekniker till deras Service Desk i Östersund. Dom är ett dynamiskt team som arbetar med att leverera högkvalitativ teknisk support till deras kunder.\n\n<strong>Rollbeskrivning:</strong> Som junior IT-supporttekniker kommer du att vara en viktig del av deras supportverksamhet. Du kommer att hantera tekniska frågor och problem via telefon, mail och andra medier, och guida våra kunder genom olika IT-relaterade ärenden. Ditt mål kommer att vara att säkerställa att Fujitsus kunder får en enastående supportupplevelse varje gång de kontaktar dom.\n\nDu kommer att vara anställd som konsult hos oss på Barona och uthyrd till Fujitsu.\n\n<strong>Vi letar efter dig som:</strong>\n<ul>\n \t<li>Har utmärkta kommunikationsfärdigheter på både svenska och engelska, både i tal och skrift.</li>\n \t<li>Besitter en hög pedagogisk förmåga och kan förklara tekniska problem på ett lättförståeligt sätt.</li>\n \t<li>Har en god teknisk kunskapsbas och är bekant med system som Windows Operativsystem, Office365, Citrix, Active Directory, Network, iOS/Mac, Exchange och skrivare. <strong>(Inget måste med alla dessa system, endast meriterande)</strong></li>\n \t<li>Har en mycket hög servicekänsla och trivs i en kundorienterad miljö.</li>\n</ul>\n<strong>Arbetstider:</strong> Arbetstiderna är förlagda mellan 07.00-22.00 måndag-söndag. Så varierade arbetstider förekommer.\n\n<strong>Övrigt:</strong> Det kan förekomma resor i samband med utbildningar och andra evenemang.\n\n<strong>Ansökan:</strong> Om du är en driven och ansvarstagande individ som vill kickstarta din karriär inom IT-support, är detta en utmärkt möjlighet för dig! Skicka in din ansökan så snart som möjligt då urval sker löpande. Vi ser fram emot att välkomna dig till vårt team!\n\n<em>Observera att både svensktalande och engelsktalande kunder förekommer, vilket innebär att du förväntas kunna kommunicera obehindrat på båda språken.</em>\n\n<strong>Rekryteringsprocessen</strong>\nIntervjuer hålls löpande och tjänsten kan komma att tillsättas innan sista ansökningsdag, så skicka in din ansökan redan idag. På grund av GDPR kan vi inte ta emot ansökningar via mejl, så ansök till tjänsten via vår hemsida. Vid frågor relaterade till processen, varmt välkommen att höra av dig till Linnéa Lundström.\n\nVarmt välkommen med din ansökan!\n\n<strong>Om Barona</strong>\nBarona är en internationell koncern med kontor i 10 länder. I Sverige har vi kontor i Stockholm, Göteborg, Malmö, Falun och Strömsund och levererar lösningar inom kompetensförsörjning över hela landet. Vi erbjuder våra kunder ett visionärt och framtidsanpassat partnerskap och våra medarbetare spännande möjligheter i alla skeden av karriären. Ända sedan starten i Finland 1999, bygger vår framgång på att hela vår organisation är kundorienterad och utmanar traditionellt tänkande när det gäller tjänsteutbud och affärsutveckling. Genom vårt fokus på innovation och digitalisering kan vi ständigt ligga i framkant när det gäller modern rekrytering.",
+          "company_information": null,
+          "needs": null,
+          "requirements": null,
+          "conditions": null
+        },
+        "employment_type": {
+          "concept_id": "PFZr_Syz_cUq",
+          "label": "Vanlig anställning",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_type": {
+          "concept_id": "oG8G_9cW_nRf",
+          "label": "Fast månads- vecko- eller timlön",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_description": null,
+        "duration": {
+          "concept_id": "a7uU_j21_mkL",
+          "label": "Tills vidare",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "working_hours_type": {
+          "concept_id": "6YE1_gAC_R2G",
+          "label": "Heltid",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "scope_of_work": {
+          "min": 100,
+          "max": 100
+        },
+        "access": null,
+        "employer": {
+          "phone_number": null,
+          "email": null,
+          "url": "https://meetastudent.com/sv/",
+          "organization_number": "5591911747",
+          "name": "Meet a Group international AB",
+          "workplace": "Meet a Groups kund"
+        },
+        "application_details": {
+          "information": null,
+          "reference": null,
+          "email": null,
+          "via_af": false,
+          "url": "https://meetastudent.com/sv/ledigajobb/wprwmdjomanzmyggp/",
+          "other": null
+        },
+        "experience_required": false,
+        "access_to_own_car": false,
+        "driving_license_required": false,
+        "driving_license": null,
+        "occupation": {
+          "concept_id": "KQty_E1u_cia",
+          "label": "Helpdesktekniker/Supporttekniker",
+          "legacy_ams_taxonomy_id": "7020"
+        },
+        "occupation_group": {
+          "concept_id": "hmaC_cfi_UKg",
+          "label": "Supporttekniker, IT",
+          "legacy_ams_taxonomy_id": "3512"
+        },
+        "occupation_field": {
+          "concept_id": "apaJ_2ja_LuF",
+          "label": "Data/IT",
+          "legacy_ams_taxonomy_id": "3"
+        },
+        "workplace_address": {
+          "municipality": "Östersund",
+          "municipality_code": "2380",
+          "municipality_concept_id": "Vt7P_856_WZS",
+          "region": "Jämtlands län",
+          "region_code": "23",
+          "region_concept_id": "65Ms_7r1_RTG",
+          "country": "Sverige",
+          "country_code": "199",
+          "country_concept_id": "i46j_HmG_v64",
+          "street_address": null,
+          "postcode": null,
+          "city": null,
+          "coordinates": [
+            14.636068,
+            63.17668
+          ]
+        },
+        "must_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "nice_to_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "application_contacts": [
+          
+        ],
+        "publication_date": "2024-03-23T17:45:12",
+        "last_publication_date": "2024-04-17T23:59:59",
+        "removed": false,
+        "removed_date": null,
+        "source_type": "VIA_PLATSBANKEN_DXA",
+        "timestamp": 1711212312428
+      },
+      {
+        "relevance": 1.0,
+        "id": "28648207",
+        "external_id": "46-559191-1747-53887-2",
+        "original_id": null,
+        "label": "[]",
+        "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/28648207",
+        "logo_url": "https://www.arbetsformedlingen.se/rest/arbetsgivare/rest/af/v3/organisation/5591911747/logotyper/logo.png",
+        "headline": "Tendium Summer Internship",
+        "application_deadline": "2024-04-17T23:59:59",
+        "number_of_vacancies": 1,
+        "description": {
+          "text": "Meet a Student är en jobbplattform för juniora talanger.\nFör kunds räkning har vi publicerat denna annons, vill du komma i kontakt med den slutgiltiga arbetsgivaren kan du klicka dig vidare till annonsen:\nDo you want to join the technological revolution? Tendium is looking for a Interns to join the team. \n\n \n\nWhy Tendium\n\nTendium is a tech company working in the space between technology and customers. Through advanced machine-learning technologies, we are revolutionising industries with modern, efficient methods, creating new possibilities to democratise both the public and the private sector markets. The team at Tendium is expanding, with everyone from data scientists to salespeople working side by side, and now we want you to join us.\n\nWe are an ever-growing company comprised of some of the sharpest minds in Sweden. With such talent, we at Tendium naturally believe in a flat hierarchy, where everyone has responsibility, autonomy and the opportunity to provide input. Since we are increasing in size significantly, new opportunities are emerging constantly. We require ambitious, conscientious and value-driven new colleagues to help grow the business. If you are successful in becoming a part of our team, we promise to provide a dynamic, intellectually stimulating workplace. We believe that personal and professional development is crucial and as such you will have the opportunity to take on real responsibility from day one.\nApplication\n\nWe look forward to your application. We recruit on an ongoing basis, so apply as soon as possible. Successful candidates will be invited to a video interview where you will have the opportunity to meet the team.\n\nPlease find additional information on our recruitment process here.",
+          "text_formatted": "<strong>Meet a Student är en jobbplattform för juniora talanger.</strong>\n\n<strong>För kunds räkning har vi publicerat denna annons, vill du komma i kontakt med den slutgiltiga arbetsgivaren kan du klicka dig vidare till annonsen:</strong>\n\n<strong>Do you want to join the technological revolution? Tendium is looking for a Interns to join the team. </strong>\n\n&nbsp;\n<h4>Why Tendium</h4>\nTendium is a tech company working in the space between technology and customers. Through advanced machine-learning technologies, we are revolutionising industries with modern, efficient methods, creating new possibilities to democratise both the public and the private sector markets. The team at Tendium is expanding, with everyone from data scientists to salespeople working side by side, and now we want you to join us.\n\nWe are an ever-growing company comprised of some of the sharpest minds in Sweden. With such talent, we at Tendium naturally believe in a flat hierarchy, where everyone has responsibility, autonomy and the opportunity to provide input. Since we are increasing in size significantly, new opportunities are emerging constantly. We require ambitious, conscientious and value-driven new colleagues to help grow the business. If you are successful in becoming a part of our team, we promise to provide a dynamic, intellectually stimulating workplace. We believe that personal and professional development is crucial and as such you will have the opportunity to take on real responsibility from day one.\n<h4>Application</h4>\nWe look forward to your application. We recruit on an ongoing basis, so apply as soon as possible. Successful candidates will be invited to a video interview where you will have the opportunity to meet the team.\n\nPlease find additional information on our recruitment process <a href=\"https://careers.tendium.ai/pages/our-recruitment-process?utm_campaign=page_131577_cta_4464698&amp;utm_content=https%3A%2F%2Fcareers.tendium.ai&amp;utm_medium=cta-block&amp;utm_source=teamtailor-page\" target=\"_blank\" rel=\"noopener\">here</a>.",
+          "company_information": null,
+          "needs": null,
+          "requirements": null,
+          "conditions": null
+        },
+        "employment_type": {
+          "concept_id": "PFZr_Syz_cUq",
+          "label": "Vanlig anställning",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_type": {
+          "concept_id": "oG8G_9cW_nRf",
+          "label": "Fast månads- vecko- eller timlön",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_description": null,
+        "duration": {
+          "concept_id": "a7uU_j21_mkL",
+          "label": "Tills vidare",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "working_hours_type": {
+          "concept_id": "6YE1_gAC_R2G",
+          "label": "Heltid",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "scope_of_work": {
+          "min": 100,
+          "max": 100
+        },
+        "access": null,
+        "employer": {
+          "phone_number": null,
+          "email": null,
+          "url": "https://meetastudent.com/sv/",
+          "organization_number": "5591911747",
+          "name": "Meet a Group international AB",
+          "workplace": "Meet a Groups kund"
+        },
+        "application_details": {
+          "information": null,
+          "reference": null,
+          "email": null,
+          "via_af": false,
+          "url": "https://meetastudent.com/sv/ledigajobb/ysasa7cxr4cqlfdfo/",
+          "other": null
+        },
+        "experience_required": false,
+        "access_to_own_car": false,
+        "driving_license_required": false,
+        "driving_license": null,
+        "occupation": {
+          "concept_id": "fg7B_yov_smw",
+          "label": "Systemutvecklare/Programmerare",
+          "legacy_ams_taxonomy_id": "2419"
+        },
+        "occupation_group": {
+          "concept_id": "DJh5_yyF_hEM",
+          "label": "Mjukvaru- och systemutvecklare m.fl.",
+          "legacy_ams_taxonomy_id": "2512"
+        },
+        "occupation_field": {
+          "concept_id": "apaJ_2ja_LuF",
+          "label": "Data/IT",
+          "legacy_ams_taxonomy_id": "3"
+        },
+        "workplace_address": {
+          "municipality": "Stockholm",
+          "municipality_code": "0180",
+          "municipality_concept_id": "AvNB_uwa_6n6",
+          "region": "Stockholms län",
+          "region_code": "01",
+          "region_concept_id": "CifL_Rzy_Mku",
+          "country": "Sverige",
+          "country_code": "199",
+          "country_concept_id": "i46j_HmG_v64",
+          "street_address": null,
+          "postcode": null,
+          "city": null,
+          "coordinates": [
+            18.06858,
+            59.329323
+          ]
+        },
+        "must_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "nice_to_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "application_contacts": [
+          
+        ],
+        "publication_date": "2024-03-23T17:00:12",
+        "last_publication_date": "2024-04-17T23:59:59",
+        "removed": false,
+        "removed_date": null,
+        "source_type": "VIA_PLATSBANKEN_DXA",
+        "timestamp": 1711209612791
+      },
+      {
+        "relevance": 1.0,
+        "id": "28648200",
+        "external_id": null,
+        "original_id": null,
+        "label": "[]",
+        "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/28648200",
+        "logo_url": null,
+        "headline": "SAP Successfactor consultant",
+        "application_deadline": "2024-04-04T23:59:59",
+        "number_of_vacancies": 2,
+        "description": {
+          "text": "Assignment description and main responsibilities\n\n\nExpectations & Tasks\nImplementing delta configuration to best practices: You will be expected to have a good understanding of SuccessFactors configuration and best practices. You may be asked to implement delta configuration changes to existing packages to improve their performance and functionality.\n\n\nDefining industry-specific and localization packages: SAP SuccessFactors solutions are used across a wide range of industries and in different regions of the world. In this role, you may be asked to define industry-specific and localization packages that meet the needs of specific industries or regions.",
+          "text_formatted": "<p>Assignment description and main responsibilities</p><p><br></p><p>Expectations &amp; Tasks</p><p>Implementing delta configuration to best practices: You will be expected to have a good understanding of SuccessFactors configuration and best practices. You may be asked to implement delta configuration changes to existing packages to improve their performance and functionality.</p><p><br></p><p>Defining industry-specific and localization packages: SAP SuccessFactors solutions are used across a wide range of industries and in different regions of the world. In this role, you may be asked to define industry-specific and localization packages that meet the needs of specific industries or regions.</p>",
+          "company_information": null,
+          "needs": null,
+          "requirements": null,
+          "conditions": null
+        },
+        "employment_type": {
+          "concept_id": "PFZr_Syz_cUq",
+          "label": "Vanlig anställning",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_type": {
+          "concept_id": "oG8G_9cW_nRf",
+          "label": "Fast månads- vecko- eller timlön",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_description": null,
+        "duration": {
+          "concept_id": "qQUd_4qe_NDT",
+          "label": "6 månader eller längre",
+          "legacy_ams_taxonomy_id": "2"
+        },
+        "working_hours_type": {
+          "concept_id": "6YE1_gAC_R2G",
+          "label": "Heltid",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "scope_of_work": {
+          "min": 100,
+          "max": 100
+        },
+        "access": null,
+        "employer": {
+          "phone_number": null,
+          "email": null,
+          "url": "www.scandinaviantech.se",
+          "organization_number": "5591106900",
+          "name": "Scandinavian IT Tech AB",
+          "workplace": "Scandinavian IT Tech AB"
+        },
+        "application_details": {
+          "information": null,
+          "reference": "Hari Krishna Boppudi",
+          "email": "hr@scandinaviantech.se",
+          "via_af": false,
+          "url": null,
+          "other": null
+        },
+        "experience_required": true,
+        "access_to_own_car": false,
+        "driving_license_required": false,
+        "driving_license": null,
+        "occupation": {
+          "concept_id": "TT8h_qKk_1iu",
+          "label": "Affärskonsult, IT",
+          "legacy_ams_taxonomy_id": "7579"
+        },
+        "occupation_group": {
+          "concept_id": "UXKZ_3zZ_ipB",
+          "label": "Systemanalytiker och IT-arkitekter m.fl.",
+          "legacy_ams_taxonomy_id": "2511"
+        },
+        "occupation_field": {
+          "concept_id": "apaJ_2ja_LuF",
+          "label": "Data/IT",
+          "legacy_ams_taxonomy_id": "3"
+        },
+        "workplace_address": {
+          "municipality": "Helsingborg",
+          "municipality_code": "1283",
+          "municipality_concept_id": "qj3q_oXH_MGR",
+          "region": "Skåne län",
+          "region_code": "12",
+          "region_concept_id": "CaRE_1nn_cSU",
+          "country": "Sverige",
+          "country_code": "199",
+          "country_concept_id": "i46j_HmG_v64",
+          "street_address": "Skånegatan 24A",
+          "postcode": "25252",
+          "city": "Helsingborg",
+          "coordinates": [
+            12.71393785108691,
+            56.04596634919744
+          ]
+        },
+        "must_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            {
+              "weight": 10,
+              "concept_id": "TT8h_qKk_1iu",
+              "label": "Affärskonsult, IT",
+              "legacy_ams_taxonomy_id": "7579"
+            }
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "nice_to_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "application_contacts": [
+          
+        ],
+        "publication_date": "2024-03-23T16:54:50",
+        "last_publication_date": "2024-04-04T23:59:59",
+        "removed": false,
+        "removed_date": null,
+        "source_type": "VIA_ANNONSERA",
+        "timestamp": 1711209290899
+      },
+      {
+        "relevance": 1.0,
+        "id": "28648151",
+        "external_id": "46-559191-1747-53586-3",
+        "original_id": null,
+        "label": "[]",
+        "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/28648151",
+        "logo_url": "https://www.arbetsformedlingen.se/rest/arbetsgivare/rest/af/v3/organisation/5591911747/logotyper/logo.png",
+        "headline": "ICT-Technicians to Linköping!",
+        "application_deadline": "2024-04-12T23:59:59",
+        "number_of_vacancies": 1,
+        "description": {
+          "text": "Meet a Student är en jobbplattform för juniora talanger.\nFör kunds räkning har vi publicerat denna annons, vill du komma i kontakt med den slutgiltiga arbetsgivaren kan du klicka dig vidare till annonsen:\n\nDo you have experience with server installations and an interest in technology? Then this is the role for you!\n\n \nAbout the Team and Role\nWe are currently seeking several ICT technicians on behalf of our client in Linköping. You will be part of a competent team responsible for hardware installation, ensuring servers, networks, and other types of hardware are installed and functioning properly. The team works during regular office hours and onsite.\n\nOur client is one of Sweden's largest telecom companies, and you will have varied tasks. These include planning installation of hardware including physical connections and power, maintaining and monitoring installed hardware, handling of Surplus, install SW for basic Node- configuration and use tools for request tracking.\n\nThe assignment starts on June 1st. During this assignment, you will be employed as a consultant through us at Ed:Za.\n\n \nAbout you\n\nYou have previous experience with server installations and cable leying\n\nYou have good English language skills, both spoken and written\n\nPrevious experience working in data centers and performing installations of servers, routers, and switches is highly advantageous.\n\n\nAs a person, you are communicative, detail-oriented, and enjoy problem-solving. You are also a team player who enjoys collaborating with oters, is humble, and welcomes feedback.\n\n \nWelcome with your application!\nThe recruitment process will be conducted by Ed:Za Group. If you have any questions or concerns related to the position and the process, you are welcome to contact charlotte.hoffstrom@edzagroup.se",
+          "text_formatted": "<strong>Meet a Student är en jobbplattform för juniora talanger.</strong>\n\n<strong>För kunds räkning har vi publicerat denna annons, vill du komma i kontakt med den slutgiltiga arbetsgivaren kan du klicka dig vidare till annonsen:</strong>\n\nDo you have experience with server installations and an interest in technology? Then this is the role for you!\n\n<strong> </strong>\n\n<strong>About the Team and Role</strong>\nWe are currently seeking several ICT technicians on behalf of our client in Linköping. You will be part of a competent team responsible for hardware installation, ensuring servers, networks, and other types of hardware are installed and functioning properly. The team works during regular office hours and onsite.\n\nOur client is one of Sweden's largest telecom companies, and you will have varied tasks. These include planning installation of hardware including physical connections and power, maintaining and monitoring installed hardware, handling of Surplus, install SW for basic Node- configuration and use tools for request tracking.\n\nThe assignment starts on June 1st. During this assignment, you will be employed as a consultant through us at Ed:Za.\n\n<strong> </strong>\n\n<strong>About you</strong>\n<ul>\n \t<li>You have previous experience with server installations and cable leying</li>\n \t<li>You have good English language skills, both spoken and written</li>\n \t<li>Previous experience working in data centers and performing installations of servers, routers, and switches is highly advantageous.</li>\n</ul>\nAs a person, you are communicative, detail-oriented, and enjoy problem-solving. You are also a team player who enjoys collaborating with oters, is humble, and welcomes feedback.\n\n<strong> </strong>\n\n<strong>Welcome with your application!</strong>\nThe recruitment process will be conducted by Ed:Za Group. If you have any questions or concerns related to the position and the process, you are welcome to contact charlotte.hoffstrom@edzagroup.se",
+          "company_information": null,
+          "needs": null,
+          "requirements": null,
+          "conditions": null
+        },
+        "employment_type": {
+          "concept_id": "PFZr_Syz_cUq",
+          "label": "Vanlig anställning",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_type": {
+          "concept_id": "oG8G_9cW_nRf",
+          "label": "Fast månads- vecko- eller timlön",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_description": null,
+        "duration": {
+          "concept_id": "a7uU_j21_mkL",
+          "label": "Tills vidare",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "working_hours_type": {
+          "concept_id": "6YE1_gAC_R2G",
+          "label": "Heltid",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "scope_of_work": {
+          "min": 100,
+          "max": 100
+        },
+        "access": null,
+        "employer": {
+          "phone_number": null,
+          "email": null,
+          "url": "https://meetastudent.com/sv/",
+          "organization_number": "5591911747",
+          "name": "Meet a Group international AB",
+          "workplace": "Meet a Groups kund"
+        },
+        "application_details": {
+          "information": null,
+          "reference": null,
+          "email": null,
+          "via_af": false,
+          "url": "https://meetastudent.com/sv/ledigajobb/og6isnvzmaw8abvcx/",
+          "other": null
+        },
+        "experience_required": true,
+        "access_to_own_car": false,
+        "driving_license_required": false,
+        "driving_license": null,
+        "occupation": {
+          "concept_id": "Nkbd_wa9_TZF",
+          "label": "Nätverkstekniker",
+          "legacy_ams_taxonomy_id": "5912"
+        },
+        "occupation_group": {
+          "concept_id": "VCpu_5EN_bBt",
+          "label": "Nätverks- och systemtekniker m.fl.",
+          "legacy_ams_taxonomy_id": "3514"
+        },
+        "occupation_field": {
+          "concept_id": "apaJ_2ja_LuF",
+          "label": "Data/IT",
+          "legacy_ams_taxonomy_id": "3"
+        },
+        "workplace_address": {
+          "municipality": "Linköping",
+          "municipality_code": "0580",
+          "municipality_concept_id": "bm2x_1mr_Qhx",
+          "region": "Östergötlands län",
+          "region_code": "05",
+          "region_concept_id": "oLT3_Q9p_3nn",
+          "country": "Sverige",
+          "country_code": "199",
+          "country_concept_id": "i46j_HmG_v64",
+          "street_address": null,
+          "postcode": null,
+          "city": null,
+          "coordinates": [
+            15.621373,
+            58.41081
+          ]
+        },
+        "must_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            {
+              "weight": 10,
+              "concept_id": "Nkbd_wa9_TZF",
+              "label": "Nätverkstekniker",
+              "legacy_ams_taxonomy_id": "5912"
+            }
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "nice_to_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "application_contacts": [
+          
+        ],
+        "publication_date": "2024-03-23T14:00:12",
+        "last_publication_date": "2024-04-12T23:59:59",
+        "removed": false,
+        "removed_date": null,
+        "source_type": "VIA_PLATSBANKEN_DXA",
+        "timestamp": 1711198812379
+      },
+      {
+        "relevance": 1.0,
+        "id": "28648135",
+        "external_id": "46-559191-1747-53542-3",
+        "original_id": null,
+        "label": "[]",
+        "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/28648135",
+        "logo_url": "https://www.arbetsformedlingen.se/rest/arbetsgivare/rest/af/v3/organisation/5591911747/logotyper/logo.png",
+        "headline": "Junior Analyst/Bid Writer",
+        "application_deadline": "2024-04-11T23:59:59",
+        "number_of_vacancies": 1,
+        "description": {
+          "text": "Meet a Student är en jobbplattform för juniora talanger.\nFör kunds räkning har vi publicerat denna annons, vill du komma i kontakt med den slutgiltiga arbetsgivaren kan du klicka dig vidare till annonsen:\nDo you want to join the technological revolution? Tendium is looking for a detail-oriented Junior Analyst/Bid Writer to join our dynamic team! \n\nWhy Tendium\nTendium is a rapidly growing tech company working in the space between technology and customers. Through advanced machine-learning technologies, we are revolutionising industries with modern, efficient methods, creating new possibilities to democratise both the public and the private sector markets.\n\nWe believe in a flat hierarchy where every team member has autonomy, responsibility, and the opportunity to shape our future. We're looking for ambitious, conscientious, and value-driven individuals to help drive our growth. Join us at Tendium for a dynamic, intellectually stimulating workplace where personal and professional development are paramount.\n\nThe Job\n\nIn this multifaceted position, you'll engage with two distinct teams, each representing different areas of our business. This role offers a unique blend of creativity and analytical rigor, providing the perfect opportunity for individuals who thrive in multifaceted environments. You'll split your time evenly between two key responsibilities.\n\nFirstly, as a Bid Writer in our Managed Services team, you'll craft compelling proposals and manage high-value strategic bids for our largest international clients. You will be responsible for entire projects from analysing requirements, meeting with stakeholders to define a bid plan and providing essential content all whilst ensuring timely completion of projects to the highest possible standard. It is worth noting that bid writing can be quite different from other types of writing; you will need to be able to take in technical detail, emphasise the benefits and value the product can bring to a potential client, and make sure the content is tailored to the client. Given the global nature of our partnerships, occasional flexibility in working hours will be necessary to collaborate effectively with stakeholders across different time zones. We offer flexible working hours and we encourage everyone to take time off work outside of office hours.\n\nThe other half of your time will be spent working as a Junior Analyst in our Data Team, focusing on the core operations of our company. You will work with deliveries, including analysing and compiling reports for our customers. You'll also be integral to data collection, primarily liaising with public sector stakeholders to gather essential data for our services. Your responsibilities will include locating, requesting, receiving, processing, and delivering data. You shall work with developing processes and methodology for data collection and processing and, together with your colleagues, be responsible for the ongoing delivery of data. Furthermore, you shall continuously ensure the company’s good reputation in relation to its data collection, as you will be representing the company in the process. Your meticulous attention to detail will be crucial in ensuring the accuracy and quality of the collected data, as well as in synthesising comprehensive reports for our customers. Ownership of your work will be paramount as we uphold stringent quality standards\n\nWho we are looking for\nWe're seeking an individual who thrives in a collaborative environment and can seamlessly navigate various social settings. You'll be interacting with stakeholders regularly, so strong communication skills are essential. Attention to detail and a proactive approach to taking ownership of tasks are key qualities we're seeking.\n\nIdeal candidates for this role may include recent graduates with backgrounds in economics, law, or engineering, or individuals with 1-2 years of relevant work experience. We welcome candidates from diverse backgrounds and are particularly focused on assessing your past experiences and personal fit.\n\nRequirements\n\n\n\n\nMinimum of Bachelor Degree.\n\n\n\n\n\nProficiency in Microsoft Office and GSuite tools.\n\n\n\n\n\nHigh proficiency in business English; written and spoken\n\n\n\n\n\nFluent in Swedish.\n\n\n\n\n\nTechnical and analytical mindset with strong attention to detail.\n\n\n\n\n\nAbility to take ownership of work.\n\n\n\n\n\nBased in Stockholm or surrounding areas.\n\n\n\n\n\nStrong communication and stakeholder management skills.\n\n\n\n\n\nMeritorious\n\n\n\n\nExperience in bid writing or professional content writing.\n\n\n\n\n\nKnowledge of project management methodologies.\n\n\n\n\n\nExperience with SaaS platforms (CRMs, work management tools etc).\n\n\n\n\n\nKnowledge of public procurement.\n\n\n\n\n\nKnowledge of another European language\n\n\n\n\n\nWe offer permanent employment with a hybrid work arrangement, starting with a 6-month probationary period.\n\nApplication\nWe look forward to your application. We recruit on an ongoing basis, so apply as soon as possible. Successful candidates will be invited to a video interview where they will have the opportunity to meet the team.\n\nPlease find additional information on our recruitment process here.\n\nEquality and inclusion statement\nAt Tendium, we celebrate diversity and are committed to fostering an inclusive workplace. We welcome applications from individuals of all backgrounds, recognising that a diverse team enhances creativity and innovation. Join us in creating an environment where everyone can thrive and contribute their unique perspectives.",
+          "text_formatted": "<strong>Meet a Student är en jobbplattform för juniora talanger.</strong>\n\n<strong>För kunds räkning har vi publicerat denna annons, vill du komma i kontakt med den slutgiltiga arbetsgivaren kan du klicka dig vidare till annonsen:</strong>\n\n<em>Do you want to join the technological revolution? Tendium is looking for a detail-oriented Junior Analyst/Bid Writer to join our dynamic team! </em>\n<p dir=\"ltr\"><strong>Why Tendium</strong>\nTendium is a rapidly growing tech company working in the space between technology and customers. Through advanced machine-learning technologies, we are revolutionising industries with modern, efficient methods, creating new possibilities to democratise both the public and the private sector markets.</p>\n<p dir=\"ltr\">We believe in a flat hierarchy where every team member has autonomy, responsibility, and the opportunity to shape our future. We're looking for ambitious, conscientious, and value-driven individuals to help drive our growth. Join us at Tendium for a dynamic, intellectually stimulating workplace where personal and professional development are paramount.</p>\n\n<h4>The Job</h4>\n<p dir=\"ltr\">In this multifaceted position, you'll engage with two distinct teams, each representing different areas of our business. This role offers a unique blend of creativity and analytical rigor, providing the perfect opportunity for individuals who thrive in multifaceted environments. You'll split your time evenly between two key responsibilities.</p>\n<p dir=\"ltr\">Firstly, as a Bid Writer in our Managed Services team, you'll craft compelling proposals and manage high-value strategic bids for our largest international clients. You will be responsible for entire projects from analysing requirements, meeting with stakeholders to define a bid plan and providing essential content all whilst ensuring timely completion of projects to the highest possible standard. It is worth noting that bid writing can be quite different from other types of writing; you will need to be able to take in technical detail, emphasise the benefits and value the product can bring to a potential client, and make sure the content is tailored to the client. Given the global nature of our partnerships, occasional flexibility in working hours will be necessary to collaborate effectively with stakeholders across different time zones. We offer flexible working hours and we encourage everyone to take time off work outside of office hours.</p>\n<p dir=\"ltr\">The other half of your time will be spent working as a Junior Analyst in our Data Team, focusing on the core operations of our company. You will work with deliveries, including analysing and compiling reports for our customers. You'll also be integral to data collection, primarily liaising with public sector stakeholders to gather essential data for our services. Your responsibilities will include locating, requesting, receiving, processing, and delivering data. You shall work with developing processes and methodology for data collection and processing and, together with your colleagues, be responsible for the ongoing delivery of data. Furthermore, you shall continuously ensure the company’s good reputation in relation to its data collection, as you will be representing the company in the process. Your meticulous attention to detail will be crucial in ensuring the accuracy and quality of the collected data, as well as in synthesising comprehensive reports for our customers. Ownership of your work will be paramount as we uphold stringent quality standards</p>\n<p dir=\"ltr\"><strong>Who we are looking for</strong>\nWe're seeking an individual who thrives in a collaborative environment and can seamlessly navigate various social settings. You'll be interacting with stakeholders regularly, so strong communication skills are essential. Attention to detail and a proactive approach to taking ownership of tasks are key qualities we're seeking.</p>\n<p dir=\"ltr\">Ideal candidates for this role may include recent graduates with backgrounds in economics, law, or engineering, or individuals with 1-2 years of relevant work experience. We welcome candidates from diverse backgrounds and are particularly focused on assessing your past experiences and personal fit.</p>\n<p dir=\"ltr\"><strong>Requirements</strong></p>\n\n<ul>\n \t<li>\n<p dir=\"ltr\">Minimum of Bachelor Degree.</p>\n</li>\n \t<li>\n<p dir=\"ltr\">Proficiency in Microsoft Office and GSuite tools.</p>\n</li>\n \t<li>\n<p dir=\"ltr\">High proficiency in business English; written and spoken</p>\n</li>\n \t<li>\n<p dir=\"ltr\">Fluent in Swedish.</p>\n</li>\n \t<li>\n<p dir=\"ltr\">Technical and analytical mindset with strong attention to detail.</p>\n</li>\n \t<li>\n<p dir=\"ltr\">Ability to take ownership of work.</p>\n</li>\n \t<li>\n<p dir=\"ltr\">Based in Stockholm or surrounding areas.</p>\n</li>\n \t<li>\n<p dir=\"ltr\">Strong communication and stakeholder management skills.</p>\n</li>\n</ul>\n<p dir=\"ltr\"><strong>Meritorious</strong></p>\n\n<ul>\n \t<li>\n<p dir=\"ltr\">Experience in bid writing or professional content writing.</p>\n</li>\n \t<li>\n<p dir=\"ltr\">Knowledge of project management methodologies.</p>\n</li>\n \t<li>\n<p dir=\"ltr\">Experience with SaaS platforms (CRMs, work management tools etc).</p>\n</li>\n \t<li>\n<p dir=\"ltr\">Knowledge of public procurement.</p>\n</li>\n \t<li>\n<p dir=\"ltr\">Knowledge of another European language</p>\n</li>\n</ul>\n<p dir=\"ltr\"><em>We offer permanent employment with a hybrid work arrangement, starting with a 6-month probationary period.</em></p>\n<strong>Application</strong>\nWe look forward to your application. We recruit on an ongoing basis, so apply as soon as possible. Successful candidates will be invited to a video interview where they will have the opportunity to meet the team.\n\nPlease find additional information on our recruitment process <a href=\"https://careers.tendium.ai/pages/our-recruitment-process?utm_campaign=page_131577_cta_4464698&amp;utm_content=https%3A%2F%2Fcareers.tendium.ai&amp;utm_medium=cta-block&amp;utm_source=teamtailor-page\" target=\"_blank\" rel=\"noopener\">here</a>.\n\n<strong>Equality and inclusion statement</strong>\nAt Tendium, we celebrate diversity and are committed to fostering an inclusive workplace. We welcome applications from individuals of all backgrounds, recognising that a diverse team enhances creativity and innovation. Join us in creating an environment where everyone can thrive and contribute their unique perspectives.",
+          "company_information": null,
+          "needs": null,
+          "requirements": null,
+          "conditions": null
+        },
+        "employment_type": {
+          "concept_id": "PFZr_Syz_cUq",
+          "label": "Vanlig anställning",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_type": {
+          "concept_id": "oG8G_9cW_nRf",
+          "label": "Fast månads- vecko- eller timlön",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_description": null,
+        "duration": {
+          "concept_id": "a7uU_j21_mkL",
+          "label": "Tills vidare",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "working_hours_type": {
+          "concept_id": "6YE1_gAC_R2G",
+          "label": "Heltid",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "scope_of_work": {
+          "min": 100,
+          "max": 100
+        },
+        "access": null,
+        "employer": {
+          "phone_number": null,
+          "email": null,
+          "url": "https://meetastudent.com/sv/",
+          "organization_number": "5591911747",
+          "name": "Meet a Group international AB",
+          "workplace": "Meet a Groups kund"
+        },
+        "application_details": {
+          "information": null,
+          "reference": null,
+          "email": null,
+          "via_af": false,
+          "url": "https://meetastudent.com/sv/ledigajobb/xuvehfhgu06lkli8g/",
+          "other": null
+        },
+        "experience_required": true,
+        "access_to_own_car": false,
+        "driving_license_required": false,
+        "driving_license": null,
+        "occupation": {
+          "concept_id": "7TWG_1jQ_ULf",
+          "label": "Datorlingvist/Datalingvist",
+          "legacy_ams_taxonomy_id": "6677"
+        },
+        "occupation_group": {
+          "concept_id": "UxT1_tPF_Kbg",
+          "label": "Övriga IT-specialister",
+          "legacy_ams_taxonomy_id": "2519"
+        },
+        "occupation_field": {
+          "concept_id": "apaJ_2ja_LuF",
+          "label": "Data/IT",
+          "legacy_ams_taxonomy_id": "3"
+        },
+        "workplace_address": {
+          "municipality": "Stockholm",
+          "municipality_code": "0180",
+          "municipality_concept_id": "AvNB_uwa_6n6",
+          "region": "Stockholms län",
+          "region_code": "01",
+          "region_concept_id": "CifL_Rzy_Mku",
+          "country": "Sverige",
+          "country_code": "199",
+          "country_concept_id": "i46j_HmG_v64",
+          "street_address": null,
+          "postcode": null,
+          "city": null,
+          "coordinates": [
+            18.06858,
+            59.329323
+          ]
+        },
+        "must_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            {
+              "weight": 10,
+              "concept_id": "7TWG_1jQ_ULf",
+              "label": "Datorlingvist/Datalingvist",
+              "legacy_ams_taxonomy_id": "6677"
+            }
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "nice_to_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "application_contacts": [
+          
+        ],
+        "publication_date": "2024-03-23T13:50:12",
+        "last_publication_date": "2024-04-11T23:59:59",
+        "removed": false,
+        "removed_date": null,
+        "source_type": "VIA_PLATSBANKEN_DXA",
+        "timestamp": 1711198212655
+      },
+      {
+        "relevance": 1.0,
+        "id": "28648001",
+        "external_id": null,
+        "original_id": null,
+        "label": "[]",
+        "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/28648001",
+        "logo_url": "https://www.arbetsformedlingen.se/rest/arbetsgivare/rest/af/v3/arbetsplatser/88004393/logotyper/logo.png",
+        "headline": "System Integration Engineer",
+        "application_deadline": "2024-04-22T23:59:59",
+        "number_of_vacancies": 1,
+        "description": {
+          "text": "About the job.\nWe are hiring a Senior System Integration Engineer to join our System Integration and Verification team.\nYour scope of responsibilities covers:\nActivities to design, develop, and integrate BESS solutions, based on existing and new system building blocks.\nGenerate technical documentation.\nConduct system-level testing and collaborate with our software developers to optimize the BESS performance.\nAnalyze system data, propose improvements, and troubleshoot integration issues.\nProvide technical guidance to field technicians, mentor junior engineers, and support sales teams in the pre-sales activities.\n\n\nThe position is based in Stockholm, Sweden.\nQualification and experience:\nBachelor’s degree in Electrical Engineering, or a related field. Master's degree is a plus.\nIn-depth knowledge of battery technologies, energy storage systems, power electronics, and control systems.\nProven experience in system integration and commissioning of Battery Energy Storage Systems, preferably up to 10 megawatts.\nStrong communication and interpersonal skills, with the ability to collaborate effectively with cross-functional teams and stakeholders.\nProficiency in system integration principles, including hardware interfaces, communication protocols (e.g., Modbus, DNP3), and SCADA systems.\nExperience in programming and configuring control systems for energy storage applications (e.g., DCS, PLC or EMS)\nDriver licence class B\n\nWe see that you are:\nStrong passion for renewable energy, energy storage, and sustainable technologies.\nAbility to lead and inspire a team, fostering a collaborative and innovative work environment.\nExcellent organizational skills and attention to detail.\nAbility to thrive in a fast-paced and dynamic work environment.\nExcellent teamwork and interpersonal skills.\nContinuous learning mindset and eagerness to stay updated with industry advancements.\nEnglish-speaking skills, both spoken and in writing",
+          "text_formatted": "<p>About the job.</p><p>We are hiring a Senior System Integration Engineer to join our System Integration and Verification team.</p><p>Your scope of responsibilities covers:</p><p>Activities to design, develop, and integrate BESS solutions, based on existing and new system building blocks.</p><p>Generate technical documentation.</p><p>Conduct system-level testing and collaborate with our software developers to optimize the BESS performance.</p><p>Analyze system data, propose improvements, and troubleshoot integration issues.</p><p>Provide technical guidance to field technicians, mentor junior engineers, and support sales teams in the pre-sales activities.</p><p><br></p><p>The position is based in Stockholm, Sweden.</p><p>Qualification and experience:</p><ul><li>Bachelor’s degree in Electrical Engineering, or a related field. Master's degree is a plus.</li><li>In-depth knowledge of battery technologies, energy storage systems, power electronics, and control systems.</li><li>Proven experience in system integration and commissioning of Battery Energy Storage Systems, preferably up to 10 megawatts.</li><li>Strong communication and interpersonal skills, with the ability to collaborate effectively with cross-functional teams and stakeholders.</li><li>Proficiency in system integration principles, including hardware interfaces, communication protocols (e.g., Modbus, DNP3), and SCADA systems.</li><li>Experience in programming and configuring control systems for energy storage applications (e.g., DCS, PLC or EMS)</li><li>Driver licence class B</li></ul><p>We see that you are:</p><ul><li>Strong passion for renewable energy, energy storage, and sustainable technologies.</li><li>Ability to lead and inspire a team, fostering a collaborative and innovative work environment.</li><li>Excellent organizational skills and attention to detail.</li><li>Ability to thrive in a fast-paced and dynamic work environment.</li><li>Excellent teamwork and interpersonal skills.</li><li>Continuous learning mindset and eagerness to stay updated with industry advancements.</li><li>English-speaking skills, both spoken and in writing</li></ul><p><br></p>",
+          "company_information": null,
+          "needs": null,
+          "requirements": null,
+          "conditions": null
+        },
+        "employment_type": {
+          "concept_id": "PFZr_Syz_cUq",
+          "label": "Vanlig anställning",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_type": {
+          "concept_id": "oG8G_9cW_nRf",
+          "label": "Fast månads- vecko- eller timlön",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_description": null,
+        "duration": {
+          "concept_id": "a7uU_j21_mkL",
+          "label": "Tills vidare",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "working_hours_type": {
+          "concept_id": "6YE1_gAC_R2G",
+          "label": "Heltid",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "scope_of_work": {
+          "min": 100,
+          "max": 100
+        },
+        "access": null,
+        "employer": {
+          "phone_number": null,
+          "email": null,
+          "url": "https://genvalues.com/company-profile/115?company=Polarium",
+          "organization_number": "5591545024",
+          "name": "Genvalues AB",
+          "workplace": "GV"
+        },
+        "application_details": {
+          "information": null,
+          "reference": null,
+          "email": null,
+          "via_af": false,
+          "url": "https://genvalues.com/company-profile/115?company=Polarium",
+          "other": null
+        },
+        "experience_required": true,
+        "access_to_own_car": false,
+        "driving_license_required": false,
+        "driving_license": null,
+        "occupation": {
+          "concept_id": "fg7B_yov_smw",
+          "label": "Systemutvecklare/Programmerare",
+          "legacy_ams_taxonomy_id": "2419"
+        },
+        "occupation_group": {
+          "concept_id": "DJh5_yyF_hEM",
+          "label": "Mjukvaru- och systemutvecklare m.fl.",
+          "legacy_ams_taxonomy_id": "2512"
+        },
+        "occupation_field": {
+          "concept_id": "apaJ_2ja_LuF",
+          "label": "Data/IT",
+          "legacy_ams_taxonomy_id": "3"
+        },
+        "workplace_address": {
+          "municipality": "Stockholm",
+          "municipality_code": "0180",
+          "municipality_concept_id": "AvNB_uwa_6n6",
+          "region": "Stockholms län",
+          "region_code": "01",
+          "region_concept_id": "CifL_Rzy_Mku",
+          "country": "Sverige",
+          "country_code": "199",
+          "country_concept_id": "i46j_HmG_v64",
+          "street_address": null,
+          "postcode": null,
+          "city": null,
+          "coordinates": [
+            null,
+            null
+          ]
+        },
+        "must_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "nice_to_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "application_contacts": [
+          
+        ],
+        "publication_date": "2024-03-23T08:03:20",
+        "last_publication_date": "2024-04-22T23:59:59",
+        "removed": false,
+        "removed_date": null,
+        "source_type": "VIA_ANNONSERA",
+        "timestamp": 1711177400928
+      },
+      {
+        "relevance": 1.0,
+        "id": "28647887",
+        "external_id": "46-556559-5450-15103206",
+        "original_id": null,
+        "label": "[]",
+        "webpage_url": "https://arbetsformedlingen.se/platsbanken/annonser/28647887",
+        "logo_url": "https://www.arbetsformedlingen.se/rest/arbetsgivare/rest/af/v3/organisation/5565595450/logotyper/logo.png",
+        "headline": "Teknisk Projektledare till Infometric",
+        "application_deadline": "2024-04-23T23:59:59",
+        "number_of_vacancies": 1,
+        "description": {
+          "text": "Infometric arbetar för en smartare energianvändning i fastigheter genom att ge sina kunder möjligheten att följa upp sitt energianvändande. Som teknisk projektledare får du möjligheten att använda dina kunskaper för att både skapa ett sammansvetsat team och fortsätta utveckla deras system. Var med på en utvecklingsresa i särklass hos Infometric!\n\nOM TJÄNSTEN \nInfometric är ett snabbväxande företag med 52 anställda och är sedan starten 1995 en ledande leverantör av system och utrustning för energiuppföljning. Systemen, som består av hård- och egenutvecklad mjukvara, möjliggör för kunder att insamla, lagra, integrera mätdata i fastighetsnära IT-system. De gör det möjligt för kunderna att förstå och minska sin energianvändning.\n\nSom Teknisk projekt-/utvecklingsledare kommer du att bli en del av ett drivet och engagerat utvecklingsteam om 6 personer. Ditt uppdrag är att planera, organisera och övervaka utvecklingsprojekt från koncept till leverans. Du kommer självständigt att driva ditt arbete framåt, vilket kommer att kräva fullt fokus och engagemang. Projekten som du kommer leda är tekniskt komplexa, och du kommer tillsammans med teamet bidra med de mest effektiva lösningarna och fortsätta utveckla Infometrics system. Systemen är utvecklade enligt kundernas gemensamma behov och ditt arbete kommer främst bestå av att fortsatt se över utvecklingsbehov, styra projekten framåt och göra bedömningar kring fokusområden.\n\nNär man kliver in i denna roll kommer man på ganska nära sikt att kliva in och vara chef över utvecklingsteamet och även få ingå i företagets ledning samt att man kommer rapportera till VD:n.\n\nARBETSUPPGIFTER \n\nArbetsuppgifter\n\n\n* Planera, organisera och övervaka utvecklingsprojekt från koncept till leverans  \n* Säkerställa att projektleveranser sker inom angivna tidsramar och budgetar  \n* Hantera resursallokering och prioritering av uppgifter för att maximera effektiviteten  \n* Hantera kontakt med kunder och beställare i samband med utvecklingsprojekt och att sätta projektramar samt tekniska förutsättningar\n\n\nVI SÖKER DIG SOM \n- Har ca 5 års erfarenhet som projektledare inom relevant område\n- Har en relevant eftergymnasial utbildning som ex IT-systemtekniker, utveckling, systemvetare\n- Har djup teknisk förståelse, inom IT-arkitektur, som utvecklare eller liknande\n- Har god förståelse för integrationsarkitektur\n- Kan arbeta obehindrat på både svenska och engelska då båda språken krävs i rollen\n- Har erfarenhet inom programmering\n\nSom person ser vi att du är drivande, har god kommunikationsförmåga och en förmåga att skapa goda samarbeten. Du har ett fokus på en positiv arbetsmiljö som främjar kontinuerlig förbättring. Vi ser även att du är lösningsorienterad och har ett affärsinriktat tänk.\n\nVår rekryteringsprocess\n\nDenna rekryteringsprocess hanteras av Academic Work och vår kunds önskemål är att alla frågor rörande tjänsten skickas till Academic Work.\n\nVi tillämpar löpande urval och annonsen kan därmed komma att tas ned innan sista ansökningsdag om det är så att vi har gått vidare till urvals- och intervjufas. Rekryteringsprocessen innehåller två urvalstest: ett personlighetstest och ett test i kognitiv förmåga. Testerna är ett verktyg för att kunna hitta den kandidat med högst potential för tjänsten samt främja jämlikhet, mångfald och en rättvis rekryteringsprocess.",
+          "text_formatted": "Infometric arbetar för en smartare energianvändning i fastigheter genom att ge sina kunder möjligheten att följa upp sitt energianvändande. Som teknisk projektledare får du möjligheten att använda dina kunskaper för att både skapa ett sammansvetsat team och fortsätta utveckla deras system. Var med på en utvecklingsresa i särklass hos Infometric!\n\nOM TJÄNSTEN \nInfometric är ett snabbväxande företag med 52 anställda och är sedan starten 1995 en ledande leverantör av system och utrustning för energiuppföljning. Systemen, som består av hård- och egenutvecklad mjukvara, möjliggör för kunder att insamla, lagra, integrera mätdata i fastighetsnära IT-system. De gör det möjligt för kunderna att förstå och minska sin energianvändning.\n\nSom Teknisk projekt-/utvecklingsledare kommer du att bli en del av ett drivet och engagerat utvecklingsteam om 6 personer. Ditt uppdrag är att planera, organisera och övervaka utvecklingsprojekt från koncept till leverans. Du kommer självständigt att driva ditt arbete framåt, vilket kommer att kräva fullt fokus och engagemang. Projekten som du kommer leda är tekniskt komplexa, och du kommer tillsammans med teamet bidra med de mest effektiva lösningarna och fortsätta utveckla Infometrics system. Systemen är utvecklade enligt kundernas gemensamma behov och ditt arbete kommer främst bestå av att fortsatt se över utvecklingsbehov, styra projekten framåt och göra bedömningar kring fokusområden.\n\nNär man kliver in i denna roll kommer man på ganska nära sikt att kliva in och vara chef över utvecklingsteamet och även få ingå i företagets ledning samt att man kommer rapportera till VD:n.\n\nARBETSUPPGIFTER \n\nArbetsuppgifter\n\n\n* Planera, organisera och övervaka utvecklingsprojekt från koncept till leverans  \n* Säkerställa att projektleveranser sker inom angivna tidsramar och budgetar  \n* Hantera resursallokering och prioritering av uppgifter för att maximera effektiviteten  \n* Hantera kontakt med kunder och beställare i samband med utvecklingsprojekt och att sätta projektramar samt tekniska förutsättningar\n\n\nVI SÖKER DIG SOM \n- Har ca 5 års erfarenhet som projektledare inom relevant område\n- Har en relevant eftergymnasial utbildning som ex IT-systemtekniker, utveckling, systemvetare\n- Har djup teknisk förståelse, inom IT-arkitektur, som utvecklare eller liknande\n- Har god förståelse för integrationsarkitektur\n- Kan arbeta obehindrat på både svenska och engelska då båda språken krävs i rollen\n- Har erfarenhet inom programmering\n\nSom person ser vi att du är drivande, har god kommunikationsförmåga och en förmåga att skapa goda samarbeten. Du har ett fokus på en positiv arbetsmiljö som främjar kontinuerlig förbättring. Vi ser även att du är lösningsorienterad och har ett affärsinriktat tänk.\n\nVår rekryteringsprocess\n\nDenna rekryteringsprocess hanteras av Academic Work och vår kunds önskemål är att alla frågor rörande tjänsten skickas till Academic Work.\n\nVi tillämpar löpande urval och annonsen kan därmed komma att tas ned innan sista ansökningsdag om det är så att vi har gått vidare till urvals- och intervjufas. Rekryteringsprocessen innehåller två urvalstest: ett personlighetstest och ett test i kognitiv förmåga. Testerna är ett verktyg för att kunna hitta den kandidat med högst potential för tjänsten samt främja jämlikhet, mångfald och en rättvis rekryteringsprocess.",
+          "company_information": null,
+          "needs": null,
+          "requirements": null,
+          "conditions": "Heltid"
+        },
+        "employment_type": {
+          "concept_id": "PFZr_Syz_cUq",
+          "label": "Vanlig anställning",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_type": {
+          "concept_id": "oG8G_9cW_nRf",
+          "label": "Fast månads- vecko- eller timlön",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "salary_description": "Enligt avtal",
+        "duration": {
+          "concept_id": "qQUd_4qe_NDT",
+          "label": "6 månader eller längre",
+          "legacy_ams_taxonomy_id": "2"
+        },
+        "working_hours_type": {
+          "concept_id": "6YE1_gAC_R2G",
+          "label": "Heltid",
+          "legacy_ams_taxonomy_id": "1"
+        },
+        "scope_of_work": {
+          "min": 100,
+          "max": 100
+        },
+        "access": null,
+        "employer": {
+          "phone_number": null,
+          "email": null,
+          "url": "http://www.academicwork.se",
+          "organization_number": "5565595450",
+          "name": "Academic Work Sweden AB",
+          "workplace": "Academic Work"
+        },
+        "application_details": {
+          "information": null,
+          "reference": "15103206",
+          "email": null,
+          "via_af": false,
+          "url": "http://www.academicwork.se/jobad/teknisk-projektledare-till-infometric/15103206?apply=1",
+          "other": null
+        },
+        "experience_required": true,
+        "access_to_own_car": false,
+        "driving_license_required": false,
+        "driving_license": null,
+        "occupation": {
+          "concept_id": "uyJg_i94_xmr",
+          "label": "IT-arkitekt/Lösningsarkitekt",
+          "legacy_ams_taxonomy_id": "6626"
+        },
+        "occupation_group": {
+          "concept_id": "UXKZ_3zZ_ipB",
+          "label": "Systemanalytiker och IT-arkitekter m.fl.",
+          "legacy_ams_taxonomy_id": "2511"
+        },
+        "occupation_field": {
+          "concept_id": "apaJ_2ja_LuF",
+          "label": "Data/IT",
+          "legacy_ams_taxonomy_id": "3"
+        },
+        "workplace_address": {
+          "municipality": "Stockholm",
+          "municipality_code": "0180",
+          "municipality_concept_id": "AvNB_uwa_6n6",
+          "region": "Stockholms län",
+          "region_code": "01",
+          "region_concept_id": "CifL_Rzy_Mku",
+          "country": "Sverige",
+          "country_code": "199",
+          "country_concept_id": "i46j_HmG_v64",
+          "street_address": null,
+          "postcode": null,
+          "city": null,
+          "coordinates": [
+            18.06858,
+            59.329323
+          ]
+        },
+        "must_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            {
+              "weight": 10,
+              "concept_id": "uyJg_i94_xmr",
+              "label": "IT-arkitekt/Lösningsarkitekt",
+              "legacy_ams_taxonomy_id": "6626"
+            }
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "nice_to_have": {
+          "skills": [
+            
+          ],
+          "languages": [
+            
+          ],
+          "work_experiences": [
+            
+          ],
+          "education": [
+            
+          ],
+          "education_level": [
+            
+          ]
+        },
+        "application_contacts": [
+          {
+            "name": null,
+            "description": "Jennifer Assaly",
+            "email": null,
+            "telephone": null,
+            "contact_type": null
+          }
+        ],
+        "publication_date": "2024-03-23T00:03:35",
+        "last_publication_date": "2024-04-23T23:59:59",
+        "removed": false,
+        "removed_date": null,
+        "source_type": "VIA_PLATSBANKEN_DXA",
+        "timestamp": 1711148615923
+      }
+    ]
+  }

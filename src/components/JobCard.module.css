@@ -1,0 +1,89 @@
+
+.jobCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 1rem 0;
+    background-color: rgba(48, 50, 113, 0.1);
+    padding: 2vh;
+    border-radius: 2vh;
+    color: rgba(48, 50, 113, 0.8 );
+}
+
+.jobCard:first-of-type{
+    margin-top: 18vh;
+}
+
+
+.jobCard div:f{
+    margin-top: 17vh;
+}
+
+.jobCardExclJobDescription{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    /* margin: 1rem 0; */
+    /* background-color: rgba(48, 50, 113, 0.1); */
+    /* padding: 2vh; */
+    border-radius: 2vh;
+    color: rgba(48, 50, 113, 0.8 );
+}
+
+
+.jobAdvertisementHeading{
+    line-height: normal;
+    margin: 0 0;
+    font-size: 2.5vh;
+    text-align: left;
+}
+
+.jobAdvertisement{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  
+    align-items: flex-start;  
+   /*  margin: 0 3vh */ 
+}
+
+.jobAdvertisementItems{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+}
+
+.jobCardInfo{
+    display: flex;
+    align-items: flex-start;
+    line-height: normal;    
+    margin: 0 2vh 0 0;
+}
+
+
+.imgRound{
+    height: 20vh;
+    width: 20vh;
+}
+
+.tags{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jobDescription{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    text-align: left;
+    line-height: normal;    
+    margin: 0 2vh 0 0;
+    
+}
+
