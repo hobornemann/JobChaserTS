@@ -1,10 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate, Link, Outlet } from 'react-router-dom'
-import { useState, useEffect, useContext } from 'react';
-
-import Header from './components/Header';
- 
-
-
+import React, { useState, useEffect, useContext } from 'react';
+import {User} from "firebase/auth"
 import { AuthContext } from './contexts/AuthContext';
 
 import HomePage from "./pages/HomePage"; 
@@ -16,7 +12,16 @@ import { signOut } from "firebase/auth";
 import { auth } from "../firebase.config";
 import './App.css'
 
+import Header from './components/Header';
+
+
 export default App
+
+
+
+type AuthProviderProps = { 
+  children: React.ReactNode; 
+};
 
 
 
@@ -31,8 +36,7 @@ function ProtectedRoute() {
 
 
 
-function App() {
-
+function App(): JSX.Element {
 
   const authContext = useContext(AuthContext);
   console.log("authContext: ", authContext);
@@ -53,16 +57,17 @@ function App() {
 
 
   /* const [allJobs, setAllJobs] = useState([]) */
-  const [jobs, setJobs] = useState([])
-  const [feedback, setFeedback] = useState('Loading data...')
-  const [searchTerm, setSearchTerm] = useState('')
+  /* const [jobs, setJobs] = useState([]) */
+  const [feedback, setFeedback] = useState<string>('Loading data...')
+  const [searchTerm, setSearchTerm] = useState<string>('')
 
 
   useEffect(() => {
     // Denna kod kommer köras efter mount (initiala renderingen)
-    const fetchJobs = async (searchTerm) => {
+    const fetchJobs = async (searchTerm: string) => {
       try {
           //const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+          // TODO: limit=100
           const response = await fetch(`${'https://jobsearch.api.jobtechdev.se/search?q='}${searchTerm}`);  // 'https://jobsearch.api.jobtechdev.se/search?q=react'
           console.log('response: ',response)
           if (!response.ok) {
@@ -73,29 +78,27 @@ function App() {
           const jobsFromFetch = jobsObjectFromFetch.hits;
           console.log('jobsFromFetch:',jobsFromFetch);
           (jobsFromFetch.length === 0) ? setFeedback('No jobs available') : setFeedback('')
-          setAllJobs(jobsFromFetch);
-          setJobs(jobsFromFetch);
+          /* setAllJobs(jobsFromFetch);
+          setJobs(jobsFromFetch); */
           return jobsFromFetch
-      } catch (error) {
-        console.log(error.message)
+      } catch (error: unknown) {
+        console.log(error);
         console.error('Error fetching jobs');
       }
     
     };
-
     fetchJobs(searchTerm);
-      
   }, [searchTerm]);   // dependency-array inkluderas så att funtionen bara körs vid mount 
 
 
 
-  function handleChange(e) {
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     e.preventDefault();
     setSearchTerm(e.target.value)
   }
 
 
-  function handleSearch(e){
+  function handleSearch(e: React.ChangeEvent<HTMLInputElement>){
     e.preventDefault();
     setFeedback('')
     setSearchTerm(e.target.value)
@@ -115,10 +118,10 @@ function App() {
   }
  */
 
-  function handleClear(e){
+  function handleClear(e: React.ChangeEvent<HTMLInputElement>){
     e.preventDefault();
     setFeedback('')
-    setJobs('')
+    /* setJobs('') */
     setSearchTerm('')
   }
 
@@ -129,9 +132,9 @@ function App() {
     setSearchTerm('')
   } */
 
-  function searchNestedObject(obj, searchString) {
+  /* function searchNestedObject(obj: [], searchString: string) {
     return searchRecursive(obj);
-    function searchRecursive(obj) {
+    function searchRecursive(obj: []) {
       for (let key in obj) {
         const value = obj[key];
 
@@ -151,7 +154,7 @@ function App() {
       }
       return false; // Return false if no match found anywhere in object
     }
-  }
+  } */
 
 
 
@@ -167,7 +170,7 @@ function App() {
         feedback={feedback} */
       /> 
       <Routes>
-          <Route path="/" element={<HomePage jobs={jobs} feedback={feedback}/>}/> 
+          {/* <Route path="/" element={<HomePage jobs={jobs} feedback={feedback}/>}/>  */}
           <Route path="/*" element={<Navigate to="/" replace />} />
           <Route path="/signup" element={<SignUpPage/>}/>
           <Route path="/signin" element={<SignInPage/>}/>

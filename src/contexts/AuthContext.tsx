@@ -1,16 +1,28 @@
 // Observer
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../../firebase.config";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, User } from "firebase/auth";
 
 
-export const AuthContext = createContext();
+type AuthContextValue = User | null;
 
-export const AuthProvider = ({ children }) => {
+export const AuthContext = createContext<AuthContextValue>(null);
 
-    const [user, setUser] = useState(null);
+type AuthProviderProps = {children: React.ReactNode;};
+
+export const AuthProvider:  React.FC<AuthProviderProps> = ({ children }) => {
+
+    const [user, setUser] = useState<AuthContextValue>(null);
 
     useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            setUser(user);
+            console.log("user: ", user);
+        });
+        return () => unsubscribe();
+    }, []);
+
+/*     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
@@ -19,14 +31,14 @@ export const AuthProvider = ({ children }) => {
             }
             console.log("user: ", user);
         });
-    }, []);
+    }, []); */
 
 
-return (
-    <AuthContext.Provider value={user}>
-        {children}
-    </AuthContext.Provider>
-)
+    return (
+        <AuthContext.Provider value={user}>
+            {children}
+        </AuthContext.Provider>
+    )
 }
 
 

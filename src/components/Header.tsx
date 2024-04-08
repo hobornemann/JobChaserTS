@@ -3,6 +3,15 @@ import Search from './Search'
 import styles from './Header.module.css'
 
 
+
+type HeaderProps = {
+  searchTerm: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onSearch: (e: React.FormEvent<HTMLInputElement>) => void;
+  onClear: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onSignOut: () => void;
+};
+
 function ProtectedRoute() {
 
   const isAuthenticated = false;
@@ -11,8 +20,7 @@ function ProtectedRoute() {
 
 export default Header
 
-function Header({searchTerm, onSearch, onClear, onChange, onSignOut}) {
-
+function Header({searchTerm, onSearch, onClear, onChange, onSignOut}:HeaderProps): JSX.Element {
 
   return (
     <header className={styles.header}>

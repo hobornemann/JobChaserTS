@@ -1,16 +1,32 @@
 // Observer
-import React, { createContext, useContext, useEffect, useState } from "react";
-/* import { auth } from "../../firebase.config"; */
-import { onAuthStateChanged } from "firebase/auth";
+import React, { createContext, useEffect, useState } from "react";
+import { auth } from "../../firebase.config"; 
+import { onAuthStateChanged, User } from "firebase/auth";
 
 
-export const AuthContext = createContext();
 
-export const AuthProvider = ({ children }) => {
+// TODO: FIXA THEME - GÖR OM NEDANSTÅENDE !!!!
 
-    const [user, setUser] = useState(null);
+
+export const AuthContext = createContext<User | null>(null);
+
+type AuthProviderProps = {
+    children: React.ReactNode;
+};
+
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+
+    const [user, setUser] = useState<User | null>(null);
 
     useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            setUser(user);
+            console.log("user: ", user);
+        });
+        return () => unsubscribe();
+    }, []);
+
+/*     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 setUser(user);
@@ -19,7 +35,7 @@ export const AuthProvider = ({ children }) => {
             }
             console.log("user: ", user);
         });
-    }, []);
+    }, []); */
 
 
 return (

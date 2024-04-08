@@ -1,11 +1,12 @@
 
 
 // Observer
-import React, { createContext, useContext, useEffect, useState } from "react";
+// import React, { createContext, useContext, useEffect, useState } from "react";
 /* import { auth } from "../../firebase.config"; */
 /* import { onAuthStateChanged } from "firebase/auth";
  */
 
+/* 
 export const AllJobsContext = createContext();
 
 export const AllJobsProvider = ({ children }) => {
@@ -32,7 +33,7 @@ export const AllJobsProvider = ({ children }) => {
     )
 }
 
-
+ */
 
 
 
