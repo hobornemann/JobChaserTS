@@ -14,7 +14,6 @@ import Dashboard from './pages/Dashboard'
 
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase.config";
-import jobsJson from './jobs.json';
 import './App.css'
 
 export default App
@@ -53,7 +52,7 @@ function App() {
   };
 
 
-  const [allJobs, setAllJobs] = useState([])
+  /* const [allJobs, setAllJobs] = useState([]) */
   const [jobs, setJobs] = useState([])
   const [feedback, setFeedback] = useState('Loading data...')
   const [searchTerm, setSearchTerm] = useState('')
