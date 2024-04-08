@@ -1,5 +1,5 @@
-import JobsList from '../components/JobsList'
-import Feedback from '../components/Feedback'
+import JobsList from './JobsList'
+import Feedback from './Feedback'
 
 export default Main 
 
