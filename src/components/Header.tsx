@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, Link, Outlet } from 'react-router-dom'
+import { Navigate, Link, Outlet } from 'react-router-dom'
 import Search from './Search'
 import styles from './Header.module.css'
 
@@ -13,7 +13,6 @@ type HeaderProps = {
 };
 
 function ProtectedRoute() {
-
   const isAuthenticated = false;
   return isAuthenticated ? <Outlet /> : <Navigate to="/signin" replace />;
 }
