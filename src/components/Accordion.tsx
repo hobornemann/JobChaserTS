@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import styles from './Accordion.module.css';
 
-export default Accordion;
 
 
-function Accordion({ children }) {
+type AccordionProps = {
+    children: React.ReactNode; 
+}
+
+function Accordion({ children }: AccordionProps) {
 
     const [expanded, setExpanded] = useState(false);
 
@@ -22,5 +25,6 @@ function Accordion({ children }) {
     );
 };
 
+export default Accordion;
 
 

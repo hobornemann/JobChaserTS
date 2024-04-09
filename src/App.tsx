@@ -1,9 +1,9 @@
-import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom'
 import React, { useState, useEffect, useContext } from 'react';
-import {User} from "firebase/auth"
+import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom'
+import {User} from 'firebase/auth'
 import { AuthContext } from './contexts/AuthContext';
 
-import HomePage from "./pages/HomePage"; 
+import HomePage from './pages/HomePage'; 
 import SignInPage from './pages/SignInPage';
 import SignUpPage from './pages/SignUpPage';
 import Dashboard from './pages/Dashboard'
@@ -15,14 +15,6 @@ import './App.css'
 import Header from './components/Header';
 
 
-export default App
-
-
-
-type AuthProviderProps = { 
-  children: React.ReactNode; 
-};
-
 
 
 function ProtectedRoute() {
@@ -31,8 +23,6 @@ function ProtectedRoute() {
   console.log("isAuthenticated", isAuthenticated)
   return isAuthenticated ? <Outlet /> : <Navigate to="/signin" replace />;
 }
-
-
 
 
 
@@ -159,7 +149,6 @@ function App(): JSX.Element {
   } */
 
 
-
   return (
     <BrowserRouter>
       <Header
@@ -172,7 +161,7 @@ function App(): JSX.Element {
         feedback={feedback} */
       /> 
       <Routes>
-          {/* <Route path="/" element={<HomePage jobs={jobs} feedback={feedback}/>}/>  */}
+          <Route path="/" element={<HomePage jobs={jobs} feedback={feedback}/>}/>  
           <Route path="/*" element={<Navigate to="/" replace />} />
           <Route path="/signup" element={<SignUpPage/>}/>
           <Route path="/signin" element={<SignInPage/>}/>
@@ -185,7 +174,7 @@ function App(): JSX.Element {
 }
 
 
-
+export default App
 
 
 /* 

@@ -1,5 +1,5 @@
 import styles from './Feedback.module.css'
-export default Feedback
+
 
 type FeedbackProps = {
     feedback: string;
@@ -13,3 +13,5 @@ function Feedback({feedback}: FeedbackProps) {
             </div>
     );
 }
+
+export default Feedback

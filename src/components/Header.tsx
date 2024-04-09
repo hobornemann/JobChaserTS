@@ -13,7 +13,7 @@ type HeaderProps = {
 };
 
 
-export default Header
+
 
 function Header({searchTerm, onSearch, onClear, onChange, onSignOut}:HeaderProps): JSX.Element {
 
@@ -50,3 +50,4 @@ function Header({searchTerm, onSearch, onClear, onChange, onSignOut}:HeaderProps
   );
 }
 
+export default Header

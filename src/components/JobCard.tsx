@@ -3,11 +3,24 @@ import Tag from './Tag'
 import styles from './JobCard.module.css';
 import Accordion from './Accordion';
 
-export default JobCard
+type JobCardProps = {
+    logoUrl: string;
+    headline: string;
+    occupation: string;
+    employer: string;
+    employmentType: string;
+    duration: string;
+    workingHoursType: string;
+    workplaceAddressCity: string;
+    workplaceAddressStreet: string;
+    applicationDeadline: string;
+    applicationEmailAddress: string;
+    description: string;
+}
 
 function JobCard({logoUrl, headline, occupation, employer, employmentType, duration, 
     workingHoursType, workplaceAddressCity, workplaceAddressStreet, 
-    applicationDeadline, applicationEmailAddress, description}){
+    applicationDeadline, applicationEmailAddress, description}: JobCardProps){
         
     /* let languagesConcat = languages.join(", ")
     let toolsConcat = tools.join(", ")
@@ -46,6 +59,7 @@ function JobCard({logoUrl, headline, occupation, employer, employmentType, durat
     );
 }
 
+export default JobCard
 
 
 /* function JobCard({company, logoUrl, position, role, 

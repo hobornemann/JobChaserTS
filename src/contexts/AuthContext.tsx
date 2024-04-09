@@ -4,20 +4,27 @@ import { auth } from "../../firebase.config";
 import { onAuthStateChanged, User } from "firebase/auth";
 
 
-type AuthContextValue = User | null;
+type AuthContextValue = {
+    user: User | null;
+}
 
-export const AuthContext = createContext<AuthContextValue>(null);
+export const AuthContext = createContext<AuthContextValue>({user: null});
 
-type AuthProviderProps = {children: React.ReactNode;};
+console.log("AuthContext:",AuthContext)
+
+type AuthProviderProps = {
+    children: React.ReactNode;
+};
+
 
 export const AuthProvider:  React.FC<AuthProviderProps> = ({ children }) => {
 
-    const [user, setUser] = useState<AuthContextValue>(null);
+    const [user, setUser] = useState<AuthContextValue>({user: null});
 
     useEffect(() => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
-            setUser(user);
-            console.log("user: ", user);
+        const unsubscribe = onAuthStateChanged(auth, (authUser) => {
+            setUser({user: authUser});
+            console.log("authUser: ", authUser);
         });
         return () => unsubscribe();
     }, []);

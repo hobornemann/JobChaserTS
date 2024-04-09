@@ -1,10 +1,14 @@
 import Main from '../components/Main'
 import Footer from '../components/Footer'
+import Job from '../components/JobsList'
 
-export default HomePage;
+type HomePageProps = {
+  jobs: typeof Job[];
+  feedback: string;
+}
 
 
-function HomePage({jobs, feedback}) {
+function HomePage({jobs, feedback}: HomePageProps) {
 
   return (
     <>
@@ -17,3 +21,4 @@ function HomePage({jobs, feedback}) {
   );
 }
 
+export default HomePage;
