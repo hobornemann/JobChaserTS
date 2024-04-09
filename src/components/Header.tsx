@@ -1,4 +1,4 @@
-import { Navigate, Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Search from './Search'
 import styles from './Header.module.css'
 
@@ -7,15 +7,11 @@ import styles from './Header.module.css'
 type HeaderProps = {
   searchTerm: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onSearch: (e: React.FormEvent<HTMLInputElement>) => void;
-  onClear: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onSearch: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void; 
+  onClear: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void; 
   onSignOut: () => void;
 };
 
-function ProtectedRoute() {
-  const isAuthenticated = false;
-  return isAuthenticated ? <Outlet /> : <Navigate to="/signin" replace />;
-}
 
 export default Header
 

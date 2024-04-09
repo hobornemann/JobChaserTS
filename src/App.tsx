@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, Link, Outlet } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom'
 import React, { useState, useEffect, useContext } from 'react';
 import {User} from "firebase/auth"
 import { AuthContext } from './contexts/AuthContext';
@@ -26,12 +26,12 @@ type AuthProviderProps = {
 
 
 function ProtectedRoute() {
-  // xxx
   const authContext = useContext(AuthContext);
   const isAuthenticated = authContext && authContext.user !== null;
   console.log("isAuthenticated", isAuthenticated)
   return isAuthenticated ? <Outlet /> : <Navigate to="/signin" replace />;
 }
+
 
 
 
@@ -94,14 +94,16 @@ function App(): JSX.Element {
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
     e.preventDefault();
-    setSearchTerm(e.target.value)
+    setSearchTerm(e.target.value)  //TODO: Om inte en ny fetch ska triggas vid varje bokstav som skrivs, så måste man skapa en tempSearchTerm-variabel som uppdateras av handleChange, medan handleSearch uppdaterar setSearchTerm med tempSearchTerm-värdet. 
   }
 
 
-  function handleSearch(e: React.ChangeEvent<HTMLInputElement>){
+  function handleSearch(e: React.MouseEvent<HTMLButtonElement, MouseEvent>){
     e.preventDefault();
     setFeedback('')
-    setSearchTerm(e.target.value)
+    // TODO:  Q: NÄR SKA SEARCH TRIGGAS? DIREKT NÄR MAN SKRIVER I SEARCH-INPUT eller först när man trycker på SEARCH-Button?
+    // TODO: TRIGGA search med hjälp av searchTerm - fetchJobs(searchTerm)?
+    // setSearchTerm(searchTerm)  //TODO: checka denna
 /*     const searchedJobs = fetchJobs(searchTerm)
     setJobs(searchedJobs);
  */ /*    !searchedJobs.length && setFeedback('Sorry, no jobs matched your search text.') */ 
@@ -118,7 +120,7 @@ function App(): JSX.Element {
   }
  */
 
-  function handleClear(e: React.ChangeEvent<HTMLInputElement>){
+  function handleClear(e: React.MouseEvent<HTMLButtonElement, MouseEvent>){
     e.preventDefault();
     setFeedback('')
     /* setJobs('') */

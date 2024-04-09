@@ -3,13 +3,22 @@ import styles from './Search.module.css'
 export default Search;
 
 
-function Search({ searchTerm, onSearch, onClear, onChange }) {
-    const searchButton = useRef(null);
+type SearchProps = {
+    searchTerm: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onSearch: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void; 
+    onClear: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void; 
+  };
 
-    function handleKeyDown(event) {
+function Search({ searchTerm, onSearch, onClear, onChange }: SearchProps) {
+    const searchButton = useRef<HTMLButtonElement>(null);
+
+    function handleKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
         if (event.key === 'Enter') {
             event.preventDefault(); // Prevent form submission
-            searchButton.current.click(); // Trigger button click
+            if(searchButton.current){
+                searchButton.current.click(); // Trigger button click
+            }
         }
     }
 

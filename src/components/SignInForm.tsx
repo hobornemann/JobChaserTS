@@ -1,23 +1,24 @@
-import { useForm } from "react-hook-form";
-import {  Link, useNavigate } from "react-router-dom";
+import { useForm, SubmitHandler } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../firebase.config"
 
-export default SignInForm;
+
+type SignInFormData = {
+  email: string;
+  password: string;
+};
 
 
-
-function SignInForm() {
-
+function SignInForm(): JSX.Element {
   const navigate = useNavigate();
-
   const {
     register,
     handleSubmit,
     formState: { errors }
-  } = useForm();
+  } = useForm<SignInFormData>();
 
-  const formSubmit = (data) => {
+  const formSubmit: SubmitHandler<SignInFormData> = (data) => {
 
     console.log("Form Submitted: ", data);
     const {email, password} = data
@@ -32,7 +33,7 @@ function SignInForm() {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.log("Error when signing in: ", error)
+      console.log("Error when signing in: ", errorMessage, errorCode)
     });
   };
 
@@ -127,4 +128,7 @@ function SignInForm() {
     </>
   ); */
 }
+
+
+export default SignInForm;
 
