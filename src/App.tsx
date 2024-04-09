@@ -113,10 +113,10 @@ function App(): JSX.Element {
 
  
 
-  function searchNestedObject(obj: any, searchString: string) {
+  function searchNestedObject(obj: any, searchString: string):boolean {
     return searchRecursive(obj);
-    function searchRecursive(obj: any) {
-      for (let key in obj) {
+    function searchRecursive(obj: any): boolean {
+      for (const key in obj) {
         const value = obj[key];
 
         if (typeof value === 'string' && value.toLowerCase().includes(searchString.toLowerCase())) {
