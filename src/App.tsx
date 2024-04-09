@@ -58,7 +58,10 @@ function App(): JSX.Element {
       try {
           //const response = await fetch('https://jsonplaceholder.typicode.com/posts');
           // TODO: limit=100
-          const response = await fetch(`${'https://jobsearch.api.jobtechdev.se/search?q='}${searchTerm}?limit=100`);  // 'https://jobsearch.api.jobtechdev.se/search?q=react'
+          /* const httpUrl = `${'https://jobsearch.api.jobtechdev.se/search?q='}${searchTerm}&limit=100`;
+          console.log("httpUrl: ",httpUrl); */
+          
+          const response = await fetch(`${'https://jobsearch.api.jobtechdev.se/search?q='}${searchTerm}&limit=100`);  // 'https://jobsearch.api.jobtechdev.se/search?q=react'
           console.log('response: ',response)
           if (!response.ok) {
             setFeedback("The jobs list cannot be loaded. Please try again later.")
