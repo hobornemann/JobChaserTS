@@ -1,44 +1,14 @@
 import styles from './JobsList.module.css'
 import JobCard from './JobCard'
-
+import {Job} from '../types/Job'
 
 type JobsListProps =  {
     jobs: Job[];
 }
 
-type Job = {
-    id: string;
-    logo_url: string;
-    headline: string;
-    occupation: {
-        label: string;
-    };
-    employer: {
-        name: string;
-    };
-    employment_type: {
-        label: string;
-    };
-    working_hours_type: {
-        label: string;
-    };
-    workplace_address: {
-        city: string;
-        street_address: string;
-    };
-    duration: {
-        label: string;
-    };
-    application_deadline: string;
-    application_details: {
-        email: string;
-    };
-    description: {
-        text: string;
-    };
-}
 
-function JobsList({jobs}:JobsListProps) {
+
+function JobsList({jobs}: JobsListProps): JSX.Element {
     return (
         <section className='jobsListContainer'> 
             <ul className={styles.jobsList}>

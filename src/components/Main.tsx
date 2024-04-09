@@ -1,12 +1,12 @@
 import JobsList from './JobsList'
 import Feedback from './Feedback'
-import Job from '../components/JobsList'
+import {Job} from '../types/Job'
 
 export default Main 
 
 
 type MainProps = {
-    jobs: typeof Job[];
+    jobs: Job[];
     feedback: string;
   }
 

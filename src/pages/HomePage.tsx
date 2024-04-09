@@ -1,9 +1,9 @@
 import Main from '../components/Main'
 import Footer from '../components/Footer'
-import Job from '../components/JobsList'
+import {Job} from '../types/Job'
 
 type HomePageProps = {
-  jobs: typeof Job[];
+  jobs: Job[];
   feedback: string;
 }
 

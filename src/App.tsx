@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom'
-import {User} from 'firebase/auth'
+//import {User} from 'firebase/auth'
 import { AuthContext } from './contexts/AuthContext';
 
 import HomePage from './pages/HomePage'; 
@@ -13,7 +13,7 @@ import { auth } from "../firebase.config";
 import './App.css'
 
 import Header from './components/Header';
-
+import {Job} from './types/Job'
 
 
 
@@ -38,7 +38,7 @@ function App(): JSX.Element {
     signOut(auth)
       .then(() => {
         console.log("User signed out successfully");
-        // Additional actions after sign out, such as redirecting to another page
+        // Additional actions after sign out, such as redirecting to another page  TODO:
       })
       .catch((error) => {
         console.error("Error signing out:", error);
@@ -47,7 +47,7 @@ function App(): JSX.Element {
 
 
   /* const [allJobs, setAllJobs] = useState([]) */
-  /* const [jobs, setJobs] = useState([]) */
+  const [jobs, setJobs] = useState<Job[]>([]) 
   const [feedback, setFeedback] = useState<string>('Loading data...')
   const [searchTerm, setSearchTerm] = useState<string>('')
 
@@ -58,7 +58,7 @@ function App(): JSX.Element {
       try {
           //const response = await fetch('https://jsonplaceholder.typicode.com/posts');
           // TODO: limit=100
-          const response = await fetch(`${'https://jobsearch.api.jobtechdev.se/search?q='}${searchTerm}`);  // 'https://jobsearch.api.jobtechdev.se/search?q=react'
+          const response = await fetch(`${'https://jobsearch.api.jobtechdev.se/search?q='}${searchTerm}limit='100'`);  // 'https://jobsearch.api.jobtechdev.se/search?q=react'
           console.log('response: ',response)
           if (!response.ok) {
             setFeedback("The jobs list cannot be loaded. Please try again later.")
@@ -68,8 +68,8 @@ function App(): JSX.Element {
           const jobsFromFetch = jobsObjectFromFetch.hits;
           console.log('jobsFromFetch:',jobsFromFetch);
           (jobsFromFetch.length === 0) ? setFeedback('No jobs available') : setFeedback('')
-          /* setAllJobs(jobsFromFetch);
-          setJobs(jobsFromFetch); */
+          /* setAllJobs(jobsFromFetch);*/
+          setJobs(jobsFromFetch); 
           return jobsFromFetch
       } catch (error: unknown) {
         console.log(error);
