@@ -46,7 +46,7 @@ function App(): JSX.Element {
   };
 
 
-  /* const [allJobs, setAllJobs] = useState([]) */
+  const [allJobs, setAllJobs] = useState<Job[]>([])
   const [jobs, setJobs] = useState<Job[]>([]) 
   const [feedback, setFeedback] = useState<string>('Loading data...')
   const [searchTerm, setSearchTerm] = useState<string>('')
@@ -58,7 +58,7 @@ function App(): JSX.Element {
       try {
           //const response = await fetch('https://jsonplaceholder.typicode.com/posts');
           // TODO: limit=100
-          const response = await fetch(`${'https://jobsearch.api.jobtechdev.se/search?q='}${searchTerm}limit='100'`);  // 'https://jobsearch.api.jobtechdev.se/search?q=react'
+          const response = await fetch(`${'https://jobsearch.api.jobtechdev.se/search?q='}${searchTerm}?limit=100`);  // 'https://jobsearch.api.jobtechdev.se/search?q=react'
           console.log('response: ',response)
           if (!response.ok) {
             setFeedback("The jobs list cannot be loaded. Please try again later.")
@@ -68,7 +68,7 @@ function App(): JSX.Element {
           const jobsFromFetch = jobsObjectFromFetch.hits;
           console.log('jobsFromFetch:',jobsFromFetch);
           (jobsFromFetch.length === 0) ? setFeedback('No jobs available') : setFeedback('')
-          /* setAllJobs(jobsFromFetch);*/
+          setAllJobs(jobsFromFetch);
           setJobs(jobsFromFetch); 
           return jobsFromFetch
       } catch (error: unknown) {
@@ -91,42 +91,31 @@ function App(): JSX.Element {
   function handleSearch(e: React.MouseEvent<HTMLButtonElement, MouseEvent>){
     e.preventDefault();
     setFeedback('')
+    // setSearchTerm(e.target.value) 
     // TODO:  Q: NÄR SKA SEARCH TRIGGAS? DIREKT NÄR MAN SKRIVER I SEARCH-INPUT eller först när man trycker på SEARCH-Button?
     // TODO: TRIGGA search med hjälp av searchTerm - fetchJobs(searchTerm)?
-    // setSearchTerm(searchTerm)  //TODO: checka denna
-/*     const searchedJobs = fetchJobs(searchTerm)
-    setJobs(searchedJobs);
- */ /*    !searchedJobs.length && setFeedback('Sorry, no jobs matched your search text.') */ 
-  }
-
-  /* function handleSearch(e){
-    e.preventDefault();
-    setFeedback('')
-    const searchedJobs = allJobs.filter(job => {
+    setSearchTerm(searchTerm)  //TODO: checka denna
+    const searchedJobs: Job[] = allJobs.filter(job => {
       return searchNestedObject(job, searchTerm)
     })
     setJobs(searchedJobs);
-    !searchedJobs.length && setFeedback('Sorry, no jobs matched your search text.') 
+    !searchedJobs.length && setFeedback('Sorry, no jobs matched your search text.')  
   }
- */
+
+
 
   function handleClear(e: React.MouseEvent<HTMLButtonElement, MouseEvent>){
     e.preventDefault();
     setFeedback('')
-    /* setJobs('') */
+    // setJobs([])
     setSearchTerm('')
   }
 
-  /* function handleClear(e){
-    e.preventDefault();
-    setFeedback('')
-    setJobs(allJobs)
-    setSearchTerm('')
-  } */
+ 
 
-  /* function searchNestedObject(obj: [], searchString: string) {
+  function searchNestedObject(obj: any, searchString: string) {
     return searchRecursive(obj);
-    function searchRecursive(obj: []) {
+    function searchRecursive(obj: any) {
       for (let key in obj) {
         const value = obj[key];
 
@@ -146,7 +135,7 @@ function App(): JSX.Element {
       }
       return false; // Return false if no match found anywhere in object
     }
-  } */
+  }
 
 
   return (
@@ -187,6 +176,26 @@ If you intend to use the URL of that asset, use /jsons/jobs.json?url.
 
 
 // RESERV-KOD  - FETCH från JOBS.JSON
+
+
+  /* function handleSearch(e){
+    e.preventDefault();
+    setFeedback('')
+    const searchedJobs = allJobs.filter(job => {
+      return searchNestedObject(job, searchTerm)
+    })
+    setJobs(searchedJobs);
+    !searchedJobs.length && setFeedback('Sorry, no jobs matched your search text.') 
+  }
+ */
+
+   /* function handleClear(e){
+    e.preventDefault();
+    setFeedback('')
+    setJobs(allJobs)
+    setSearchTerm('')
+  } */
+
 
 /* 
   useEffect(() => {
