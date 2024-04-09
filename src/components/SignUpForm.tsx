@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler, SubmitErrorHandler } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import  {createUserWithEmailAndPassword} from "firebase/auth";
 import { auth } from '../../firebase.config'
@@ -6,8 +6,14 @@ import { auth } from '../../firebase.config'
 
 export default SignUpForm;
 
+type SignUpFormData = {
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
 
-function SignUpForm() {
+
+function SignUpForm(): JSX.Element {
 
   const navigate = useNavigate()
 
@@ -17,16 +23,17 @@ function SignUpForm() {
     handleSubmit,
     watch,
     formState: { errors }
-  } = useForm();
+  } = useForm<SignUpFormData>();
 
 
-  const formSubmit = (data) => {
+  const formSubmit: SubmitHandler<SignUpFormData>  = (data) => {
     console.log("Form Submitted: ", data);
     const {email, password} = data
     createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
+    .then(() => {
       // Signed up 
-      const user = userCredential.user;
+      // .then((userCredential) => {
+      //const user = userCredential.user;
       // Redirect to a new page after successful form submission
       navigate("/signin")
     })
@@ -35,11 +42,14 @@ function SignUpForm() {
       const errorMessage = error.message; */
       console.error("Error creating user:", error);
     });
-    
+  };
+
+  const formError: SubmitErrorHandler<SignUpFormData> = (errors, e) => {
+    console.error('Form Error:', errors, e);
   };
 
   return (
-    <form onSubmit={handleSubmit(formSubmit)} className="max-w-sm mx-auto">
+    <form onSubmit={handleSubmit(formSubmit, formError)} className="max-w-sm mx-auto">
       <div className="mb-4">
         <label htmlFor="email" className="block mb-2">Email:</label>
         <input
@@ -95,6 +105,8 @@ function SignUpForm() {
       <Link to="/signin" className="block mt-4 text-sm text-blue-500 hover:text-blue-700">Already have an account? Sign In</Link>
     </form>
   );
+
+  
 
   /* 
 
