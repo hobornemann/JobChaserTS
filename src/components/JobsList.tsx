@@ -1,6 +1,6 @@
 import styles from './JobsList.module.css'
 import JobCard from './JobCard'
-import {Job} from '../types/Job'
+import Job from '../types/Job'
 
 type JobsListProps =  {
     jobs: Job[];

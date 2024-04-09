@@ -13,7 +13,7 @@ import { auth } from "../firebase.config";
 import './App.css'
 
 import Header from './components/Header';
-import {Job} from './types/Job'
+import Job from './types/Job'
 
 
 

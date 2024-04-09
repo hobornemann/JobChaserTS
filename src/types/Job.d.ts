@@ -1,7 +1,4 @@
-
-
-
-export type Job = {
+type Job = {
     id: string;
     logo_url: string;
     headline: string;
@@ -32,3 +29,5 @@ export type Job = {
         text: string;
     };
 }
+
+export default Job

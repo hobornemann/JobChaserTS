@@ -1,6 +1,6 @@
 import Main from '../components/Main'
 import Footer from '../components/Footer'
-import {Job} from '../types/Job'
+import Job from '../types/Job'
 
 type HomePageProps = {
   jobs: Job[];

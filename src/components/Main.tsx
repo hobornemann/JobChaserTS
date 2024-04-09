@@ -1,6 +1,6 @@
 import JobsList from './JobsList'
 import Feedback from './Feedback'
-import {Job} from '../types/Job'
+import Job from '../types/Job'
 
 export default Main 
 
