@@ -1,1 +1,1 @@
-/// <reference types='./' />
+/// <reference types='./Job' />
