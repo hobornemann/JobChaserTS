@@ -2,7 +2,7 @@ import JobsList from './JobsList'
 import Feedback from './Feedback'
 import Job from '../types/Job'
 
-export default Main 
+ 
 
 
 type MainProps = {
@@ -10,7 +10,7 @@ type MainProps = {
     feedback: string;
   }
 
-function Main ({jobs, feedback}: MainProps){
+function MainContainer ({jobs, feedback}: MainProps){
 
     return(
         <>
@@ -24,3 +24,5 @@ function Main ({jobs, feedback}: MainProps){
         </>
     )
 }
+
+export default MainContainer

@@ -1,4 +1,4 @@
-import Main from '../components/Main'
+import MainContainer from '../components/MainContainer'
 import Footer from '../components/Footer'
 import Job from '../types/Job'
 
@@ -12,7 +12,7 @@ function HomePage({jobs, feedback}: HomePageProps) {
 
   return (
     <>
-      <Main
+      <MainContainer
         jobs={jobs}
         feedback={feedback}
       />
