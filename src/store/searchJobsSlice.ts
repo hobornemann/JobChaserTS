@@ -2,9 +2,9 @@
 //TODO:
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit' // För att typa action.payload i reducer-funktioner
-//import type FetchAndFilterJobsState from '../types/FetchAndFilterJobsState'
+//import type SearchJobsState from '../types/SearchJobsState'
 
-export type FetchAndFilterJobsState = {
+export type SearchJobsState = {
   isLoading: boolean
   messageToUser: string
   error: string 
@@ -19,7 +19,7 @@ export type FetchAndFilterJobsState = {
 
 
 // Initial state
-const initialState: FetchAndFilterJobsState = {
+const initialState: SearchJobsState = {
   isLoading: false,
   messageToUser: 'Loading data...',
   error: "", 
@@ -36,24 +36,24 @@ const initialState: FetchAndFilterJobsState = {
 //TODO:  Tips: använd filter-every, när samtliga ska vara uppfyllda, dvs att samtliga toggle-knappar är valda
 
 // X-Slice med reducer-funktioner
-export const fetchAndFilterJobsSlice = createSlice({
-  name: 'fetchAndFilterJobs',
+export const searchJobsSlice = createSlice({
+  name: 'searchJobs',
   initialState,  
   reducers: {
 
-    addLocationFilter: (state, action: PayloadAction<string>) => {
+    addLocationFilters: (state, action: PayloadAction<string>) => {
       
     },
-    removeLocationFilter: (state, action: PayloadAction<string>) => {
+    removeLocationFilters: (state, action: PayloadAction<string>) => {
       
     },
-    addSkillsFilter: (state, action: PayloadAction<string>) => {
+    addSkillsFilters: (state, action: PayloadAction<string>) => {
       
     },
-    removeSkillsFilter: (state, action: PayloadAction<string>) => {
+    removeSkillsFilters: (state, action: PayloadAction<string>) => {
       
     },
-    updateSkillsOperand: (state, action: PayloadAction<FetchAndFilterJobsState['skillsOperand']>)  => {
+    updateSkillsOperand: (state, action: PayloadAction<SearchJobsState['skillsOperand']>)  => {
 
     },
     clearAllFilters: (state, action: PayloadAction<string>) => {
@@ -95,7 +95,7 @@ export const searchJobs = createAsyncThunk(
     
     if (allSkillsFiltersContainCurrentSkillsFilters && allLocationFiltersContainCurrentLocationFilters) {
       // filter allJobs object 
-      const currentJobs = allJobs //.filter
+      const currentJobs = ["aaa"] //.filter  TODO:
       return currentJobs
       
       
@@ -118,7 +118,7 @@ export const searchJobs = createAsyncThunk(
 
 
 // Exporterar alla actionfunktioner 
-export const { addLocationFilters, removeLocationFilters, addSkillsFilters, removeSkillsFilters, updateSkillsOperand, clearAllFilters } = fetchAndFilterJobsSlice.actions
+export const { addLocationFilters, removeLocationFilters, addSkillsFilters, removeSkillsFilters, updateSkillsOperand, clearAllFilters } = searchJobsSlice.actions
 // Exporterar reducern
-export default fetchAndFilterJobsSlice.reducer
+export default searchJobsSlice.reducer
 

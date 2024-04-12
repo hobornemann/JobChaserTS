@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import fetchAndFilterJobsSliceReducer from './fetchAndFilterJobsSlice'; 
+import searchJobsSliceReducer from './searchJobsSlice'; 
 
 
 export const store: any = configureStore({
   reducer: {
-    fetchAndFilterJobs: fetchAndFilterJobsSliceReducer,
+    searchJobs: searchJobsSliceReducer,
   },
 });
 

@@ -1,2 +1,2 @@
 /// <reference types='./Job' />
-/// <reference types='./FetchAndFilterJobsState' />
+/// <reference types='./SearchJobsState' />

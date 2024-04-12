@@ -1,7 +1,7 @@
 // TODO:  var kommer denna ifrån? 
-// import { fetchAndFilterJobsSlice } from "../store/fetchAndFilterSlice"
+// import { searchJobsSlice } from "../store/searchJobsSlice"
 
- type FetchAndFilterJobsState = {
+ type searchJobsState = {
     isLoading: boolean
     messageToUser: string
     error: string 
@@ -14,5 +14,5 @@
     allJobs: []
   }
 
-  export default fetchAndFilterJobsState
+  export default searchJobsState
 
