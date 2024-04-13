@@ -53,7 +53,7 @@ export const searchJobsSlice = createSlice({
     removeSkillsFilters: (state, action: PayloadAction<string>) => {
       
     },
-    updateSkillsOperand: (state, action: PayloadAction<SearchJobsState['skillsOperand']>)  => {
+    updateSkillsOperand: (state, action: PayloadAction<JobsState['skillsOperand']>)  => {
 
     },
     clearAllFilters: (state, action: PayloadAction<string>) => {
@@ -66,23 +66,23 @@ export const searchJobsSlice = createSlice({
   // med addCase kan vi fånga upp olika action från den asynkrona hämtningen (pending, fulfilled, rejected)
   // https://redux-toolkit.js.org/api/createAsyncThunk
   extraReducers: (builder) => {
-    builder.addCase(searchJobs.pending, (state) => {
+    builder.addCase(filterJobs.pending, (state) => {
       state.isLoading = true;
     });
-    builder.addCase(searchJobs.fulfilled, (state, action: PayloadAction<string>) => {
+    builder.addCase(filterJobs.fulfilled, (state, action: PayloadAction<string>) => {
       /* state.balance += action.payload; */
       // action.
       state.isLoading = false; 
     });
-    builder.addCase(searchJobs.rejected, (state) => {
+    builder.addCase(filterJobs.rejected, (state) => {
       state.isLoading = false;
     });
   },
 })
 
 // createAsyncThunk tar två argument, ett namn och en funktion som returnerar en promise
-export const searchJobs = createAsyncThunk(
-  'fetchAndFilterJobs/searchJobs',
+export const filterJobs = createAsyncThunk(
+  'searchJobs/filterJobs',
   async ({ currentLocationFilters, allLocationFilters, currentSkillsFilters, allSkillsFilters }: { currentLocationFilters: string[]; allLocationFilters: string[]; currentSkillsFilters: string[]; allSkillsFilters: string[] }) => {
     
     function doesMainArrayContainAllElementsOfSubArray(mainArray: string[], subArray: string[]) {
