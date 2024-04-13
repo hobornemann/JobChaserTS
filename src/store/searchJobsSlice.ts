@@ -53,7 +53,7 @@ export const searchJobsSlice = createSlice({
     removeSkillsFilters: (state, action: PayloadAction<string>) => {
       
     },
-    updateSkillsOperand: (state, action: PayloadAction<JobsState['skillsOperand']>)  => {
+    updateSkillsOperand: (state, action: PayloadAction<SearchJobsState['skillsOperand']>)  => {
 
     },
     clearAllFilters: (state, action: PayloadAction<string>) => {
