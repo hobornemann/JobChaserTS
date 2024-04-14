@@ -9,9 +9,9 @@
     allLocationFilters: string[]
     currentSkillsFilters: string[]
     allSkillsFilters: string[]
-    skillsOperand: "AND" | "OR"
-    currentJobs: []
-    allJobs: []
+    currentSkillsOperand: "AND" | "OR"
+    currentJobs: Job[]
+    allJobs: Job[]
   }
 
   export default searchJobsState
