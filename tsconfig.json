@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "xOld - ignore/FetchAndFilterJobsOps.tsx"],
+  "include": ["src", "xOld - ignore/FetchAndFilterJobsOps.tsx", "xOld - ignore/ToggleButton.tsx", "xOld - ignore/App copy.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

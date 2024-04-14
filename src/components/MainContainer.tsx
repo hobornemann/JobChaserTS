@@ -1,26 +1,21 @@
 import JobsList from './JobsList'
 import Feedback from './Feedback'
-import Job from '../types/Job'
 
- 
+import { useSelector } from "react-redux"; 
+import type { RootState } from "../store/store"; // Importera types från store.ts
+const {currentJobs, feedbackToUser } = useSelector((state: RootState) => state.searchJobs.value)  // TODO: counter ? 
 
 
-type MainProps = {
-    jobs: Job[];
-    feedback: string;
-  }
-
-function MainContainer ({jobs, feedback}: MainProps){
+function MainContainer (){
 
     return(
         <>
-            {(jobs.length>0) && 
+            {(currentJobs.length>0) && 
                 <JobsList 
                     key="1"
-                    jobs={jobs}
                 />  
             }  
-            {feedback && <Feedback feedback={feedback} />}
+            {feedbackToUser && <Feedback feedback={feedbackToUser} />}
         </>
     )
 }

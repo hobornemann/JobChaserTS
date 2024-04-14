@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+/* import React, { useState } from 'react';
 
 function ToggleButton() {
   const [isToggled, setIsToggled] = useState(false);
 
   const handleToggle = () => {
     setIsToggled(!isToggled);
-    
   };
 
   return (
@@ -15,4 +14,4 @@ function ToggleButton() {
   );
 }
 
-export default ToggleButton;
+export default ToggleButton; */

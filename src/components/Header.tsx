@@ -1,21 +1,21 @@
 import { Link } from 'react-router-dom'
-import Search from './SearchJobs'
+import SearchJobs from './SearchJobs'
 import styles from './Header.module.css'
 
 
 
-type HeaderProps = {
+/* type HeaderProps = {
   searchTerm: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSearch: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void; 
   onClear: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void; 
   onSignOut: () => void;
-};
+}; */
 
 
 
 
-function Header({searchTerm, onSearch, onClear, onChange, onSignOut}:HeaderProps): JSX.Element {
+function Header(onSignOut:void): JSX.Element {
 
   return (
     <header className={styles.header}>
@@ -35,16 +35,16 @@ function Header({searchTerm, onSearch, onClear, onChange, onSignOut}:HeaderProps
                   <Link to="/signin">Sign in</Link>
               </li>
               <li>
-                  <button className={styles.signOutButton} onClick={onSignOut}>Sign out</button>
+                  <button className={styles.signOutButton} onClick={onSignOut!}>Sign out</button>
               </li>
             </div>
           </ul>
       </nav>
-      <Search 
-        searchTerm={searchTerm}
+      <SearchJobs 
+/*         searchTerm={searchTerm}
         onChange={onChange}
         onSearch={onSearch}
-        onClear={onClear}
+        onClear={onClear} */
       />
     </header>
   );
