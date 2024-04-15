@@ -20,6 +20,7 @@ import { AuthContext } from '../contexts/AuthContext'
 
 type JobCardProps = {
     key: string;
+    passedKey: string;
     logoUrl: string;
     headline: string;
     occupation: string;
@@ -34,14 +35,13 @@ type JobCardProps = {
     description: string;
 }
 
-function JobCard({key, logoUrl, headline, occupation, employer, employmentType, duration, 
+function JobCard({passedKey, logoUrl, headline, occupation, employer, employmentType, duration, 
     workingHoursType, workplaceAddressCity, workplaceAddressStreet, 
     applicationDeadline, applicationEmailAddress, description}: JobCardProps){
         
     const [saved, setSaved] = useState<boolean>(false);    
     const authContext = useContext(AuthContext);
     const isAuthenticated = authContext && authContext.user !== null;
-    /* return isAuthenticated ? <Outlet /> : <Navigate to="/signin" replace />; */
 
     
     const handleSaveToggle = () => {
@@ -50,7 +50,7 @@ function JobCard({key, logoUrl, headline, occupation, employer, employmentType, 
             localStorage.removeItem('savedJobs');
         } else {
             // Save to local storage
-            localStorage.setItem('savedJobs', JSON.stringify({ key }));
+            localStorage.setItem('savedJobs', JSON.stringify({ passedKey }));
         }
         setSaved(!saved);
     };
@@ -71,13 +71,13 @@ function JobCard({key, logoUrl, headline, occupation, employer, employmentType, 
                         {applicationEmailAddress && <p className={styles.jobCardInfo}><b>Email:&nbsp;</b> {applicationEmailAddress}</p>}
                     </div>
                 </div>
-                <div>
+                <div className={styles.logoAndFavouriteButton}>
+                    {logoUrl && <img src={logoUrl} alt="" className="imgRound" />}
                     {isAuthenticated && (
                         <button onClick={handleSaveToggle}>
-                            {saved ? 'Saved' : 'Save'}
+                            {saved ? 'Favourite' : 'Save'}
                         </button>
                     )}
-                    {logoUrl && <img src={logoUrl} alt="" className="imgRound" />}
                 </div>
             </div>
             <div className={styles.jobDescription}>

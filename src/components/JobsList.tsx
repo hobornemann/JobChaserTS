@@ -17,6 +17,7 @@ function JobsList(): JSX.Element {
                         return (
                             <JobCard
                                 key={job.id!}
+                                passedKey={job.id!}
                                 logoUrl={job.logo_url!}
                                 headline={job.headline!}
                                 occupation={job.occupation.label!}

@@ -6,7 +6,7 @@ import { AuthContext } from './contexts/AuthContext';
 import HomePage from './pages/HomePage'; 
 import SignInPage from './pages/SignInPage';
 import SignUpPage from './pages/SignUpPage';
-import Dashboard from './pages/Dashboard'
+import FavouritesPage from './pages/FavouritesPage'
 
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase.config";
@@ -43,33 +43,6 @@ function App(): JSX.Element {
       });
   };
 
-    /* const dispatch = useDispatch(); */
-
-    /* useEffect(() => {
-      const fetchData = () => {
-        try {
-          dispatch(fetchJobs('https://jobsearch.api.jobtechdev.se/search?q=?limit=20'));
-          
-          // Handle the dispatched action
-          if (fetchJobs.fulfilled.match(action)) {
-            // The fetchJobs async thunk has been fulfilled
-            const newAllJobs = action.payload; // Extract the payload
-            dispatch(updateAllJobs(newAllJobs));
-          } else if (fetchJobs.rejected.match(action)) {
-            // The fetchJobs async thunk has been rejected
-            const error = action.error; // Extract the error
-            console.error('Error fetching data:', error);
-          }
-        } catch (error) {
-          console.error('Error dispatching action:', error);
-        }
-      };
-  
-      // Call the fetchData function when the component mounts
-      fetchData();
-    // Specify an empty dependency array to ensure the effect only runs once when the component mounts
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
- */
 
   return (
     <BrowserRouter>
@@ -81,8 +54,8 @@ function App(): JSX.Element {
           <Route path="/*" element={<Navigate to="/" replace />} />
           <Route path="/signup" element={<SignUpPage/>}/>
           <Route path="/signin" element={<SignInPage/>}/>
-          <Route path="/dashboard" element={<ProtectedRoute/>}>
-              <Route path="/dashboard" element={<Dashboard/>}/> 
+          <Route path="/favourites" element={<ProtectedRoute/>}>
+              <Route path="/favourites" element={<FavouritesPage/>}/> 
           </Route>
       </Routes>
     </BrowserRouter>

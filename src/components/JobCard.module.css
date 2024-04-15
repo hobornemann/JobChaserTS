@@ -87,3 +87,9 @@
     
 }
 
+.logoAndFavouriteButton{
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    justify-content: center;
+}

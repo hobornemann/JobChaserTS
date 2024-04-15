@@ -2,7 +2,13 @@ import { Link } from 'react-router-dom'
 import SearchJobs from './SearchJobs'
 import styles from './Header.module.css'
 
+import { useContext } from 'react';
+import { AuthContext } from '../contexts/AuthContext'
 
+
+
+const authContext = useContext(AuthContext);
+const isAuthenticated = authContext && authContext.user !== null;
 
 /* type HeaderProps = {
   searchTerm: string;
@@ -29,6 +35,9 @@ const Header: React.FC<HeaderProps> = ({ onSignOut }) => {
                 <img src="./images/jobChaser-logo.svg" alt="" className={styles.jobChaserLogo}/>
             </Link>
             <div className={styles.normalLinks}>
+            {isAuthenticated && (<li className={styles.li}>
+                  <Link to="/favourites">Favourites</Link>
+              </li>)}
               <li className={styles.li}>
                   <Link to="/">Home</Link>
               </li>
