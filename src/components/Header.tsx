@@ -7,8 +7,7 @@ import { AuthContext } from '../contexts/AuthContext'
 
 
 
-const authContext = useContext(AuthContext);
-const isAuthenticated = authContext && authContext.user !== null;
+
 
 /* type HeaderProps = {
   searchTerm: string;
@@ -26,6 +25,9 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ onSignOut }) => {
+
+  const authContext = useContext(AuthContext);
+  const isAuthenticated = authContext && authContext.user !== null;
 
   return (
     <header className={styles.header}>
