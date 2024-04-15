@@ -3,11 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit' // För att typa action.payload i reducer-funktioner
 import type SearchJobsState from '../types/SearchJobsState'
 import Job from '../types/Job'
-import type { RootState, AppDispatch } from "../store/store"; // Importera types från store.ts
-import { useSelector, useDispatch } from "react-redux"; // Redux hooks för att använda globala state och dispatcha actions
 
-  // Redux - dispatch för att dispatcha actions
-  //const dispatch = useDispatch<AppDispatch>();
 
 // Initial state
 const initialState: SearchJobsState = {

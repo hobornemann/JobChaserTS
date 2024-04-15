@@ -1,9 +1,25 @@
-
-//import Tag from './Tag'
+import { useState } from 'react';
+import 'firebase/auth';
 import styles from './JobCard.module.css';
 import Accordion from './Accordion';
 
+
+
+
+import { useContext } from 'react';
+//import {User} from 'firebase/auth'
+import { AuthContext } from '../contexts/AuthContext'
+
+
+
+
+
+
+
+
+
 type JobCardProps = {
+    key: string;
     logoUrl: string;
     headline: string;
     occupation: string;
@@ -18,14 +34,26 @@ type JobCardProps = {
     description: string;
 }
 
-function JobCard({logoUrl, headline, occupation, employer, employmentType, duration, 
+function JobCard({key, logoUrl, headline, occupation, employer, employmentType, duration, 
     workingHoursType, workplaceAddressCity, workplaceAddressStreet, 
     applicationDeadline, applicationEmailAddress, description}: JobCardProps){
         
-    /* let languagesConcat = languages.join(", ")
-    let toolsConcat = tools.join(", ")
- */
+    const [saved, setSaved] = useState<boolean>(false);    
+    const authContext = useContext(AuthContext);
+    const isAuthenticated = authContext && authContext.user !== null;
+    /* return isAuthenticated ? <Outlet /> : <Navigate to="/signin" replace />; */
 
+    
+    const handleSaveToggle = () => {
+        if (saved) {
+            // Remove from local storage
+            localStorage.removeItem('savedJobs');
+        } else {
+            // Save to local storage
+            localStorage.setItem('savedJobs', JSON.stringify({ key }));
+        }
+        setSaved(!saved);
+    };
 
     return(
         <li className={styles.jobCard}>
@@ -44,6 +72,11 @@ function JobCard({logoUrl, headline, occupation, employer, employmentType, durat
                     </div>
                 </div>
                 <div>
+                    {isAuthenticated && (
+                        <button onClick={handleSaveToggle}>
+                            {saved ? 'Saved' : 'Save'}
+                        </button>
+                    )}
                     {logoUrl && <img src={logoUrl} alt="" className="imgRound" />}
                 </div>
             </div>

@@ -6,7 +6,6 @@ import { useSelector } from "react-redux";
 import type { RootState } from "../store/store"; // Importera types från store.ts
 
 
-
 function JobsList(): JSX.Element {
     const {currentJobs } = useSelector((state: RootState) => state.searchJobs)  
     
@@ -17,7 +16,7 @@ function JobsList(): JSX.Element {
                     currentJobs.map((job: Job) => {
                         return (
                             <JobCard
-                                key={job.id}
+                                key={job.id!}
                                 logoUrl={job.logo_url!}
                                 headline={job.headline!}
                                 occupation={job.occupation.label!}

@@ -23,7 +23,7 @@ function SearchJobs() {
 
     // Redux - hämta från globala state
    // const { currentLocationFilters, allLocationFilters, currentSkillsFilters, allSkillsFilters, currentSkillsOperand, allJobs }  = useSelector((state: RootState) => state.counter.value)  // TODO: counter eller searchJobs?
-    const { currentLocationFilters, allLocationFilters, currentSkillsFilters, allSkillsFilters, currentSkillsOperand, currentJobs, allJobs } : {currentLocationFilters: string[], allLocationFilters: string[], currentSkillsFilters: string[], allSkillsFilters: string[], currentSkillsOperand: string, currentJobs: Job[], allJobs: Job[]} = useSelector((state: RootState) => state.searchJobs)  // TODO: counter eller searchJobs?
+    const { currentLocationFilters, allLocationFilters, currentSkillsFilters, allSkillsFilters, currentSkillsOperand, allJobs } : {currentLocationFilters: string[], allLocationFilters: string[], currentSkillsFilters: string[], allSkillsFilters: string[], currentSkillsOperand: string, allJobs: Job[]} = useSelector((state: RootState) => state.searchJobs)  // TODO: counter eller searchJobs?
 
     // Redux - dispatch för att dispatcha actions
     const dispatch = useDispatch<AppDispatch>();
@@ -106,8 +106,9 @@ function SearchJobs() {
         } 
     }
 
-    function convertSpaceSeparatedStringIntoStringArray (spaceSeparatedString: string): string[] {
-        const stringArray: string[] = spaceSeparatedString.split(' ');
+    function convertSpaceSeparatedStringIntoStringArray (commaOrSpaceSeparatedString: string): string[] {
+        const stringWithoutCommas = commaOrSpaceSeparatedString.replace(/,/g, '');
+        const stringArray: string[] = stringWithoutCommas.split(' ');
         return stringArray
     }
 
@@ -118,11 +119,6 @@ function SearchJobs() {
         console.log("currentSkillsInputString in Search:",currentSkillsInputString)
         console.log("currentLocationsInputString in Search:",currentLocationsInputString);
         
-            
-          
-     
-
-
         // Set the currentLocationsInputString, convert it into an array and update CurrentLocationFilters
         setCurrentLocationsInputString(currentLocationsInputString)
         const newCurrentLocationFilters: string[] = convertSpaceSeparatedStringIntoStringArray(currentLocationsInputString)

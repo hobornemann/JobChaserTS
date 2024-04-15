@@ -11,11 +11,7 @@ import Dashboard from './pages/Dashboard'
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase.config";
 import './App.css'
-import { useSelector, useDispatch } from "react-redux"; // Redux hooks för att använda globala state och dispatcha actions
-import { useEffect } from 'react';
-import { updateMessageToUser, updateAllJobs, updateCurrentJobs, fetchJobs, updateCurrentLocationFilters, updateCurrentSkillsFilters, updateCurrentSkillsOperand} from "./store/searchJobsSlice"; // Importera actions från accountSlice.ts
-import Job from './types/Job';
-import type { PayloadAction } from '@reduxjs/toolkit' 
+
 import Header from './components/Header';
 
 
