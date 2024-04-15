@@ -5,10 +5,11 @@ import Job from '../types/Job'
 import { useSelector } from "react-redux"; 
 import type { RootState } from "../store/store"; // Importera types från store.ts
 
-const {currentJobs } = useSelector((state: RootState) => state.searchJobs.value)  // TODO: counter ? 
 
 
 function JobsList(): JSX.Element {
+    const {currentJobs } = useSelector((state: RootState) => state.searchJobs)  
+    
     return (
         <section className='jobsListContainer'> 
             <ul className={styles.jobsList}>

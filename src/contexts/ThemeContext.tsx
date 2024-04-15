@@ -1,4 +1,4 @@
-// Observer
+/* // Observer
 import React, { createContext, useEffect, useState } from "react";
 import { auth } from "../../firebase.config"; 
 import { onAuthStateChanged, User } from "firebase/auth";
@@ -26,6 +26,27 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         return () => unsubscribe();
     }, []);
 
+
+
+
+
+
+
+
+
+return (
+    <AuthContext.Provider value={user}>
+        {children}
+    </AuthContext.Provider>
+)
+}
+
+ */
+
+    // ------------------------------------
+
+
+    
 /*     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -36,16 +57,5 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             console.log("user: ", user);
         });
     }, []); */
-
-
-return (
-    <AuthContext.Provider value={user}>
-        {children}
-    </AuthContext.Provider>
-)
-}
-
-
-
 
 

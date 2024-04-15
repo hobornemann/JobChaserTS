@@ -3,11 +3,14 @@ import Feedback from './Feedback'
 
 import { useSelector } from "react-redux"; 
 import type { RootState } from "../store/store"; // Importera types från store.ts
-const {currentJobs, feedbackToUser } = useSelector((state: RootState) => state.searchJobs.value)  // TODO: counter ? 
-
+import Job from '../types/Job';
 
 function MainContainer (){
 
+    const {currentJobs, messageToUser } : {currentJobs: Job[], messageToUser: string } = useSelector((state: RootState) =>  state.searchJobs)  // 
+    
+    //console.log("currentJobs in MainContainer: ",currentJobs);
+    
     return(
         <>
             {(currentJobs.length>0) && 
@@ -15,7 +18,7 @@ function MainContainer (){
                     key="1"
                 />  
             }  
-            {feedbackToUser && <Feedback feedback={feedbackToUser} />}
+            {messageToUser && <Feedback feedback={messageToUser} />}
         </>
     )
 }

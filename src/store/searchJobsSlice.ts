@@ -1,24 +1,13 @@
 
-//TODO:
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit' // För att typa action.payload i reducer-funktioner
 import type SearchJobsState from '../types/SearchJobsState'
 import Job from '../types/Job'
+import type { RootState, AppDispatch } from "../store/store"; // Importera types från store.ts
+import { useSelector, useDispatch } from "react-redux"; // Redux hooks för att använda globala state och dispatcha actions
 
-
-/* export type SearchJobsState = {
-  isLoading: boolean
-  messageToUser: string
-  error: string 
-  currentLocationFilters: string[]
-  allLocationFilters: string[]
-  currentSkillsFilters: string[]
-  allSkillsFilters: string[]
-  skillsOperand: "AND" | "OR"
-  currentJobs: []
-  allJobs: []
-}
- */
+  // Redux - dispatch för att dispatcha actions
+  //const dispatch = useDispatch<AppDispatch>();
 
 // Initial state
 const initialState: SearchJobsState = {
@@ -34,11 +23,7 @@ const initialState: SearchJobsState = {
   allJobs: [],
 }
 
-/* const dispatch = useDispatch<AppDispatch>();
-const {messageToUser} : {messageToUser: string} = useSelector((state: RootState) => state.searchJobs.value)  // TODO: counter ?
- */
 
-//TODO:  Tips: använd filter-every, när samtliga ska vara uppfyllda, dvs att samtliga toggle-knappar är valda
 
 // X-Slice med reducer-funktioner
 export const searchJobsSlice = createSlice({
@@ -47,6 +32,7 @@ export const searchJobsSlice = createSlice({
   reducers: {
 
     updateAllJobs: (state, action: PayloadAction<Job[]>) => {
+      //console.log("action.payload in updateAllJobs in slice",action.payload);
       state.allJobs = action.payload
     },
     updateCurrentJobs: (state, action: PayloadAction<Job[]>) =>{
@@ -57,9 +43,11 @@ export const searchJobsSlice = createSlice({
     },
     updateCurrentSkillsFilters: (state, action: PayloadAction<string[]>) => {
       state.currentSkillsFilters = action.payload
+      console.log("currentSkillsFilters in searchJobsSlice:", state.currentSkillsFilters);
     },
     updateCurrentSkillsOperand: (state, action: PayloadAction<SearchJobsState['currentSkillsOperand']>)  => {
       state.currentSkillsOperand = action.payload
+      console.log("currentSkillsOperand in searchJobsSlice:", state.currentSkillsOperand);
     },
     updateMessageToUser: (state, action: PayloadAction<string>) => {
       state.messageToUser = action.payload
@@ -81,6 +69,12 @@ export const searchJobsSlice = createSlice({
       state.messageToUser = "Loading jobs data..."
     });
     builder.addCase(fetchJobs.fulfilled, (state, action: PayloadAction<Job[]>) => {
+      console.log("action.payload in fetchJobs.fulfilled:", action.payload);
+      
+      console.log("state.allJobs in fetchJobs.fulfilled ex ante... ",state.allJobs);
+      console.log("typeof state.allJobs:",typeof state.allJobs)
+      console.log("typeof action.payload:",typeof action.payload);
+      
       state.allJobs = action.payload 
       state.isLoading = false; 
       if(state.allJobs.length === 0){
@@ -88,6 +82,10 @@ export const searchJobsSlice = createSlice({
       } else {
         state.messageToUser = ""
       }
+      console.log("state.allJobs after update:", state.allJobs); 
+      state.currentJobs = state.allJobs
+      console.log("state.currentJobs after update:", state.currentJobs);
+      
     });
     builder.addCase(fetchJobs.rejected, (state) => {
       state.isLoading = false;
@@ -97,45 +95,23 @@ export const searchJobsSlice = createSlice({
   },
 })
 
+
 // createAsyncThunk tar två argument, ett namn och en funktion som returnerar en promise
 export const fetchJobs = createAsyncThunk(
-  'searchJobs/filterJobs',
-  async ({urlEndpoint}:{urlEndpoint: string}) => {
+  'searchJobs/fetchJobs',
+  async (urlEndpoint: string) => {
+    // async ({urlEndpoint}:{urlEndpoint: string}) => {
     const response: Response = await fetch(urlEndpoint);
     if (!response.ok) {
       throw new Error('Failed to fetch');
     } else {
       const data = await response.json();
-      const newAllJobs : Job[] = data.hits
-      return newAllJobs        
+      console.log("data.hits in fetchJobs function:",data.hits);
+      const fetchedJobs: Job[] = data.hits
+      return fetchedJobs
     }
   }
 )
-
-/* export const filterJobs = createAsyncThunk(
-  'searchJobs/filterJobs',
-  async ({}:{}) => {
-
-    const newCurrentJobs : Job[] = 
-    return newCurrentJobs
-  }
-) */
-    /* } */
-
-    //if (allSkillsFiltersContainCurrentSkillsFilters && allLocationFiltersContainCurrentLocationFilters) {
-      // Case 1:  No need to fetch new data from server => search in the current allJobs object
-      
-      // filter the allJobs object directly
-          
-
-      // https://jobsearch.api.jobtechdev.se/search?q=React%20JavaScript%20Vue%20Stockholm%20Uppsala
-      // => sökningen verkar ge "OR"-logik mellan söktermerna inom respektive kategori (Skill respektive Location) och "AND"-logik mellan kategorierna. Toppen!
-      
- 
-
-
-
-
 
 
 
@@ -146,28 +122,3 @@ export default searchJobsSlice.reducer
 
 
 
-
-  //  async ({ currentLocationFilters, allLocationFilters, currentSkillsFilters, allSkillsFilters, currentSkillsOperand, currentJobs, allJobs }: { currentLocationFilters: string[]; allLocationFilters: string[]; currentSkillsFilters: string[]; allSkillsFilters: string[]; currentSkillsOperand: string; currentJobs: Job[]; allJobs: Job[] }) => {
-    
-    /* function doesMainArrayContainAllElementsOfSubArray(mainArray: string[], subArray: string[]) {
-      return subArray.every(item => mainArray.includes(item));
-    }
-    
-    const allSkillsFiltersContainCurrentSkillsFilters = doesMainArrayContainAllElementsOfSubArray(allSkillsFilters, currentSkillsFilters)
-    const allLocationFiltersContainCurrentLocationFilters = doesMainArrayContainAllElementsOfSubArray(allLocationFilters, currentLocationFilters)
-    
-    if (allSkillsFiltersContainCurrentSkillsFilters && allLocationFiltersContainCurrentLocationFilters) {
-      return allJobs  // Case 1:  No need to fetch new data 
-    } else {
-      // Case 2:  Need to fetch new data (and update the allJobs object) 
-      let urlEndpoint = 'https://jobsearch.api.jobtechdev.se/search?q='
-      
-      if(currentSkillsOperand === "OR"){
-        currentSkillsFilters.map(skillsFilter => {
-          urlEndpoint += `${skillsFilter}%20`
-        })
-        currentLocationFilters.map(locationFilter => {
-          urlEndpoint += `${locationFilter}%20`
-        })
-        urlEndpoint  = urlEndpoint.slice(0, -3);  // excluding the last '%20' from the urlEndpoint
-        // fetch data */
