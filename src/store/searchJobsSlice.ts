@@ -34,6 +34,9 @@ const initialState: SearchJobsState = {
   allJobs: [],
 }
 
+/* const dispatch = useDispatch<AppDispatch>();
+const {messageToUser} : {messageToUser: string} = useSelector((state: RootState) => state.searchJobs.value)  // TODO: counter ?
+ */
 
 //TODO:  Tips: använd filter-every, när samtliga ska vara uppfyllda, dvs att samtliga toggle-knappar är valda
 
@@ -58,6 +61,9 @@ export const searchJobsSlice = createSlice({
     updateCurrentSkillsOperand: (state, action: PayloadAction<SearchJobsState['currentSkillsOperand']>)  => {
       state.currentSkillsOperand = action.payload
     },
+    updateMessageToUser: (state, action: PayloadAction<string>) => {
+      state.messageToUser = action.payload
+    },
     clearAllCurrentFilters: (state) => {
       state.currentLocationFilters = []
       state.currentSkillsFilters = []
@@ -72,24 +78,22 @@ export const searchJobsSlice = createSlice({
   extraReducers: (builder) => {
     builder.addCase(fetchJobs.pending, (state) => {
       state.isLoading = true;
+      state.messageToUser = "Loading jobs data..."
     });
     builder.addCase(fetchJobs.fulfilled, (state, action: PayloadAction<Job[]>) => {
       state.allJobs = action.payload 
       state.isLoading = false; 
+      if(state.allJobs.length === 0){
+        state.messageToUser = "Sorry, there are no such jobs available."
+      } else {
+        state.messageToUser = ""
+      }
     });
     builder.addCase(fetchJobs.rejected, (state) => {
       state.isLoading = false;
+      state.messageToUser = "The jobs list cannot be loaded. Please try again later."
+      console.error('Error fetching jobs');
     });
-   /*  builder.addCase(filterJobs.pending, (state) => {
-      state.isLoading = true;
-    });
-    builder.addCase(filterJobs.fulfilled, (state, action: PayloadAction<Job[]>) => {
-      state.allJobs = action.payload 
-      state.isLoading = false; 
-    });
-    builder.addCase(filterJobs.rejected, (state) => {
-      state.isLoading = false;
-    }); */
   },
 })
 
@@ -98,9 +102,13 @@ export const fetchJobs = createAsyncThunk(
   'searchJobs/filterJobs',
   async ({urlEndpoint}:{urlEndpoint: string}) => {
     const response: Response = await fetch(urlEndpoint);
-    const data = await response.json();
-    const newAllJobs : Job[] = data.hits
-    return newAllJobs        
+    if (!response.ok) {
+      throw new Error('Failed to fetch');
+    } else {
+      const data = await response.json();
+      const newAllJobs : Job[] = data.hits
+      return newAllJobs        
+    }
   }
 )
 
@@ -132,7 +140,7 @@ export const fetchJobs = createAsyncThunk(
 
 
 // Exporterar alla actionfunktioner 
-export const { updateAllJobs, updateCurrentJobs, updateCurrentLocationFilters, updateCurrentSkillsFilters, updateCurrentSkillsOperand } = searchJobsSlice.actions
+export const { updateMessageToUser, updateAllJobs, updateCurrentJobs, updateCurrentLocationFilters, updateCurrentSkillsFilters, updateCurrentSkillsOperand } = searchJobsSlice.actions
 // Exporterar reducern
 export default searchJobsSlice.reducer
 

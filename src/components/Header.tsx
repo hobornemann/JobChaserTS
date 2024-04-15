@@ -15,7 +15,11 @@ import styles from './Header.module.css'
 
 
 
-function Header(onSignOut:void): JSX.Element {
+interface HeaderProps {
+  onSignOut: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onSignOut }) => {
 
   return (
     <header className={styles.header}>

@@ -4,7 +4,7 @@ import styles from './Search.module.css'
 import { useState } from "react";
 import type { RootState, AppDispatch } from "../store/store"; // Importera types från store.ts
 import { useSelector, useDispatch } from "react-redux"; // Redux hooks för att använda globala state och dispatcha actions
-import { updateAllJobs, updateCurrentJobs, fetchJobs, updateCurrentLocationFilters, updateCurrentSkillsFilters, updateCurrentSkillsOperand} from "../store/searchJobsSlice"; // Importera actions från accountSlice.ts
+import { updateMessageToUser, updateAllJobs, updateCurrentJobs, fetchJobs, updateCurrentLocationFilters, updateCurrentSkillsFilters, updateCurrentSkillsOperand} from "../store/searchJobsSlice"; // Importera actions från accountSlice.ts
 //import { openAccount, closeAccount, deposit, withdraw, requestLoan, payLoan } from "../store/fetchAndFilterSlice"; // Importera actions från accountSlice.ts
 import Job from '../types/Job'
 
@@ -29,18 +29,14 @@ function SearchJobs() {
 
 
 
-    //Local states
-    /* const [newCurrentSkillsFilters, setNewCurrentSkillsFilters] = useState<string[]>([])
-    const [newCurrentSkillsOperand, setNewCurrentSkillsOperand] = useState<string>("OR") 
-    const [newCurrentLocationFilters, setNewCurrentLocationFilters] = useState<string[]>([]) */
-    
+    // Local states    
     const [currentSkillsInputString, setCurrentSkillsInputString] = useState<string>('')
     const [currentSkillsOperandInputString, setCurrentSkillsOperandInputString] = useState<"AND"|"OR">("OR")
     const [currentLocationsInputString, setCurrentLocationsInputString] = useState<string>('')
     const [isCurrentSkillsOperandToggled, setIsCurrentSkillsOperandToggled] = useState<boolean>(false)
 
     // Redux - hämta från globala state
-    const {currentLocationFilters, allLocationFilters, currentSkillsFilters, allSkillsFilters, currentSkillsOperand, allJobs } : {currentLocationFilters: string[], allLocationFilters: string[] , currentSkillsFilters: string[], allSkillsFilters: string[], currentSkillsOperand: string, currentJobs: Job[], allJobs: Job[] } = useSelector((state: RootState) => state.searchJobs.value)  // TODO: counter ?
+    const { currentLocationFilters, allLocationFilters, currentSkillsFilters, allSkillsFilters, currentSkillsOperand, allJobs } : {currentLocationFilters: string[], allLocationFilters: string[] , currentSkillsFilters: string[], allSkillsFilters: string[], currentSkillsOperand: string, currentJobs: Job[], allJobs: Job[]} = useSelector((state: RootState) => state.searchJobs.value)  // TODO: counter ?
 
     // Redux - dispatch för att dispatcha actions
     const dispatch = useDispatch<AppDispatch>();
@@ -59,6 +55,7 @@ function SearchJobs() {
         newUrlEndpoint += `${locationFilter}%20`
         })
         newUrlEndpoint  = newUrlEndpoint.slice(0, -3);  // excluding the last '%20' from the urlEndpoint
+        newUrlEndpoint += '&limit=100'  // TODO:
         return newUrlEndpoint     
    }
 
@@ -134,9 +131,33 @@ function SearchJobs() {
     };
 
     
-    const handleClearAllFilters = () => {
-        // TODO:
+    const handleClearAllFilters = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        e.preventDefault();
+        setCurrentSkillsInputString('')
+        setCurrentSkillsOperandInputString("OR")
+        setCurrentLocationsInputString('')
+        setIsCurrentSkillsOperandToggled(false)
+        dispatch(updateCurrentSkillsFilters([]))
+        dispatch(updateCurrentSkillsOperand("OR"))
+        dispatch(updateCurrentLocationFilters([]))
+        dispatch(updateMessageToUser(""))
+        dispatch(updateCurrentJobs([]))
+        
+        // TODO: Använda en default urlEndpoint och fetcha data? 
     }
+
+
+    function handleChangeSkillsInput(e: React.ChangeEvent<HTMLInputElement>) {
+        e.preventDefault();
+        setCurrentSkillsInputString(e.target.value)
+    }
+
+
+    function handleChangeLocationsInput(e: React.ChangeEvent<HTMLInputElement>) {
+        e.preventDefault();
+        setCurrentLocationsInputString(e.target.value)
+    }
+    
 
 
     return (
@@ -150,7 +171,7 @@ function SearchJobs() {
                     className={styles.searchInput}
                     placeholder={"Ex: Javascript React Vue"}
                     value={currentSkillsInputString}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCurrentSkillsInputString(e.target.value)}
+                    onChange={handleChangeSkillsInput}
                     //onKeyDown={handleKeyDownSkillsString}
                 />
             </label>
@@ -171,7 +192,7 @@ function SearchJobs() {
                     className={styles.searchInput}
                     placeholder={"Ex:  Stockholm Uppsala"}
                     value={currentLocationsInputString}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCurrentLocationsInputString(e.target.value)}
+                    onChange={handleChangeLocationsInput}
                     //onKeyDown={handleKeyDownLocationsString}
                 />
             </label>

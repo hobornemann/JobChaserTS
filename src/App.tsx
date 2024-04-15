@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom'
 //import {User} from 'firebase/auth'
 import { AuthContext } from './contexts/AuthContext';
@@ -13,7 +13,6 @@ import { auth } from "../firebase.config";
 import './App.css'
 
 import Header from './components/Header';
-import Job from './types/Job'
 
 
 
@@ -25,7 +24,6 @@ function ProtectedRoute() {
 }
 
 
-
 function App(): JSX.Element {
 
   const authContext = useContext(AuthContext);
@@ -34,7 +32,7 @@ function App(): JSX.Element {
   console.log("isAuthenticated", isAuthenticated)
 
 
-  const handleSignOut = () => {
+  function handleSignOut():void {
     signOut(auth)
       .then(() => {
         console.log("User signed out successfully");
@@ -46,20 +44,51 @@ function App(): JSX.Element {
   };
 
 
-  const [allJobs, setAllJobs] = useState<Job[]>([])
+  return (
+    <BrowserRouter>
+      <Header
+        onSignOut={handleSignOut}
+      /> 
+      <Routes>
+          <Route path="/" element={<HomePage />}/>  
+          <Route path="/*" element={<Navigate to="/" replace />} />
+          <Route path="/signup" element={<SignUpPage/>}/>
+          <Route path="/signin" element={<SignInPage/>}/>
+          <Route path="/dashboard" element={<ProtectedRoute/>}>
+              <Route path="/dashboard" element={<Dashboard/>}/> 
+          </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+
+export default App
+
+
+
+
+ /* function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    e.preventDefault();
+    setSearchTerm(e.target.value)  //TODO: Om inte en ny fetch ska triggas vid varje bokstav som skrivs, så måste man skapa en tempSearchTerm-variabel som uppdateras av handleChange, medan handleSearch uppdaterar setSearchTerm med tempSearchTerm-värdet. 
+  } */
+
+
+  /* const [allJobs, setAllJobs] = useState<Job[]>([])
   const [jobs, setJobs] = useState<Job[]>([]) 
   const [feedback, setFeedback] = useState<string>('Loading data...')
   const [searchTerm, setSearchTerm] = useState<string>('')
+ */
 
 
-  useEffect(() => {
+ /*  useEffect(() => {
     // Denna kod kommer köras efter mount (initiala renderingen)
     const fetchJobs = async (searchTerm: string) => {
       try {
           //const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-          // TODO: limit=100
-          /* const httpUrl = `${'https://jobsearch.api.jobtechdev.se/search?q='}${searchTerm}&limit=100`;
-          console.log("httpUrl: ",httpUrl); */
+          // limit=100
+          // const httpUrl = `${'https://jobsearch.api.jobtechdev.se/search?q='}${searchTerm}&limit=100`;
+          // console.log("httpUrl: ",httpUrl); 
           
           const response = await fetch(`${'https://jobsearch.api.jobtechdev.se/search?q='}${searchTerm}&limit=100`);  // 'https://jobsearch.api.jobtechdev.se/search?q=react'
           console.log('response: ',response)
@@ -82,40 +111,9 @@ function App(): JSX.Element {
     };
     fetchJobs(searchTerm);
   }, [searchTerm]);   // dependency-array inkluderas så att funtionen bara körs vid mount 
+ */
 
-
-
-  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    e.preventDefault();
-    setSearchTerm(e.target.value)  //TODO: Om inte en ny fetch ska triggas vid varje bokstav som skrivs, så måste man skapa en tempSearchTerm-variabel som uppdateras av handleChange, medan handleSearch uppdaterar setSearchTerm med tempSearchTerm-värdet. 
-  }
-
-
-  function handleSearch(e: React.MouseEvent<HTMLButtonElement, MouseEvent>){
-    e.preventDefault();
-    setFeedback('')
-    // setSearchTerm(e.target.value) 
-    // TODO:  Q: NÄR SKA SEARCH TRIGGAS? DIREKT NÄR MAN SKRIVER I SEARCH-INPUT eller först när man trycker på SEARCH-Button?
-    // TODO: TRIGGA search med hjälp av searchTerm - fetchJobs(searchTerm)?
-    setSearchTerm(searchTerm)  //TODO: checka denna
-    const searchedJobs: Job[] = allJobs.filter(job => {
-      return searchNestedObject(job, searchTerm)
-    })
-    setJobs(searchedJobs);
-    !searchedJobs.length && setFeedback('Sorry, no jobs matched your search text.')  
-  }
-
-
-
-  function handleClear(e: React.MouseEvent<HTMLButtonElement, MouseEvent>){
-    e.preventDefault();
-    setFeedback('')
-    // setJobs([])
-    setSearchTerm('')
-  }
-
- 
-
+/* 
   function searchNestedObject(obj: any, searchString: string):boolean {
     return searchRecursive(obj);
     function searchRecursive(obj: any): boolean {
@@ -139,34 +137,32 @@ function App(): JSX.Element {
       return false; // Return false if no match found anywhere in object
     }
   }
+ */
 
 
-  return (
-    <BrowserRouter>
-      <Header
-        searchTerm={searchTerm}
-        onChange={handleChange}
-        onSearch={handleSearch}
-        onClear={handleClear}
-        onSignOut={handleSignOut}
-        /* jobs={jobs}
-        feedback={feedback} */
-      /> 
-      <Routes>
-          <Route path="/" element={<HomePage jobs={jobs} feedback={feedback}/>}/>  
-          <Route path="/*" element={<Navigate to="/" replace />} />
-          <Route path="/signup" element={<SignUpPage/>}/>
-          <Route path="/signin" element={<SignInPage/>}/>
-          <Route path="/dashboard" element={<ProtectedRoute/>}>
-              <Route path="/dashboard" element={<Dashboard/>}/> 
-          </Route>
-      </Routes>
-    </BrowserRouter>
-  );
-}
+
+/*   function handleSearch(e: React.MouseEvent<HTMLButtonElement, MouseEvent>){
+    e.preventDefault();
+    setFeedback('')
+    // setSearchTerm(e.target.value) 
+    // TODO:  Q: NÄR SKA SEARCH TRIGGAS? DIREKT NÄR MAN SKRIVER I SEARCH-INPUT eller först när man trycker på SEARCH-Button?
+    // TODO: TRIGGA search med hjälp av searchTerm - fetchJobs(searchTerm)?
+    setSearchTerm(searchTerm)  //TODO: checka denna
+    const searchedJobs: Job[] = allJobs.filter(job => {
+      return searchNestedObject(job, searchTerm)
+    })
+    setJobs(searchedJobs);
+    !searchedJobs.length && setFeedback('Sorry, no jobs matched your search text.')  
+  } */
 
 
-export default App
+
+ /*  function handleClear(e: React.MouseEvent<HTMLButtonElement, MouseEvent>){
+    e.preventDefault();
+    setFeedback('')
+    // setJobs([])
+    setSearchTerm('')
+  } */
 
 
 /* 
