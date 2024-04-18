@@ -1,8 +1,12 @@
 .search{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
+    background: linear-gradient(rgba(48, 50, 113, 0.2), rgba(48, 50, 113, 0.2));
+    padding: 2vh 2vh 2vh 2vh;
+
+
 }
 
 .searchIconAndInput{

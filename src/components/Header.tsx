@@ -55,12 +55,7 @@ const Header: React.FC<HeaderProps> = ({ onSignOut }) => {
             </div>
           </ul>
       </nav>
-      <SearchJobs 
-/*         searchTerm={searchTerm}
-        onChange={onChange}
-        onSearch={onSearch}
-        onClear={onClear} */
-      />
+      <SearchJobs />
     </header>
   );
 }
