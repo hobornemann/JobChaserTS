@@ -132,8 +132,7 @@ function SearchJobs() {
 
         if (needToFetch) {
             const newUrlEndpoint = getNewUrlEndpoint()
-            const newAllJobs: Job[] = dispatch(fetchJobs(newUrlEndpoint));  
-            dispatch(updateAllJobs(newAllJobs))
+            dispatch(fetchJobs(newUrlEndpoint));  
         } 
 
         // Filter allJobs array and update currentJobs
