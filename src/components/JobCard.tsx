@@ -72,9 +72,9 @@ function JobCard({passedKey, logoUrl, headline, occupation, employer, employment
                     </div>
                 </div>
                 <div className={styles.logoAndFavouriteButton}>
-                    {logoUrl && <img src={logoUrl} alt="" className="imgRound" />}
+                    {logoUrl && <img src={logoUrl} alt="" className={styles.imgLogo} />}
                     {isAuthenticated && (
-                        <button onClick={handleSaveToggle}>
+                        <button onClick={handleSaveToggle} className={styles.favouriteButton}>
                             {saved ? 'Favourite' : 'Save'}
                         </button>
                     )}

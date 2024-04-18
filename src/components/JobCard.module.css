@@ -12,7 +12,7 @@
 }
 
 .jobCard:first-of-type{
-    margin-top: 18vh;
+    margin-top: 30vh;
 }
 
 
@@ -65,9 +65,15 @@
 }
 
 
-.imgRound{
-    height: 20vh;
-    width: 20vh;
+.imgLogo{
+    display: block;
+    max-height: 10vh;
+    width: auto;
+    /* display: block; */
+}
+
+.favouriteButton{
+    width: 10vw;
 }
 
 .tags{
@@ -90,6 +96,9 @@
 .logoAndFavouriteButton{
     display: flex;
     flex-direction: column;
-    gap: 2vw;
-    justify-content: center;
+    gap: 1.5vw;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1vh;
+    
 }
