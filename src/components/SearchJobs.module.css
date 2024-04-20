@@ -58,3 +58,24 @@ input::content{
 .searchInput{
     color: rgba(48, 50, 113, 1.0);
 }
+
+.radioButtonsForSearchLogic{
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.radioButtonLabel{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-right: 5px;
+    
+}
+
+.radioButtonLabel>input{
+    width: 20px;
+    margin-left: 0;
+}

@@ -28,8 +28,8 @@ export const searchJobsSlice = createSlice({
   reducers: {
 
     updateAllJobs: (state, action: PayloadAction<Job[]>) => {
-      /* console.log("action.payload in updateAllJobs in slice",action.payload);
-      state.allJobs = action.payload */
+      console.log("action.payload in updateAllJobs in slice",action.payload);
+      state.allJobs = action.payload
     },
     updateCurrentJobs: (state, action: PayloadAction<Job[]>) =>{
       state.currentJobs = action.payload

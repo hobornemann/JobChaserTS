@@ -37,12 +37,12 @@ const Header: React.FC<HeaderProps> = ({ onSignOut }) => {
                 <img src="./images/jobChaser-logo.svg" alt="" className={styles.jobChaserLogo}/>
             </Link>
             <div className={styles.normalLinks}>
-            {isAuthenticated && (<li className={styles.li}>
-                  <Link to="/favourites">Favourites</Link>
-              </li>)}
               <li className={styles.li}>
                   <Link to="/">Home</Link>
               </li>
+              {isAuthenticated && (<li className={styles.li}>
+                  <Link to="/favourites">Favourites</Link>
+              </li>)}
               <li className={styles.li}>
                   <Link to="/signup">Sign up</Link>
               </li>
