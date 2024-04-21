@@ -13,7 +13,7 @@ function SearchJobs() {
 
     const dispatch = useDispatch<AppDispatch>();
     // GLOBAL STATES
-    const { maxSearchResultsChosen, numberOfHits, currentLocationFilters, currentSkillsFilters, currentSkillsOperand } : {maxSearchResultsChosen: number, numberOfHits: number, currentLocationFilters: string[], allLocationFilters: string[], currentSkillsFilters: string[], allSkillsFilters: string[], currentSkillsOperand: string, allJobs: Job[]} = useSelector((state: RootState) => state.searchJobs)  // TODO: counter eller searchJobs?
+    const { maxSearchResultsChosen, numberOfHits, currentLocationFilters, currentSkillsFilters } : {maxSearchResultsChosen: number, numberOfHits: number, currentLocationFilters: string[], allLocationFilters: string[], currentSkillsFilters: string[], allSkillsFilters: string[], currentSkillsOperand: string, allJobs: Job[]} = useSelector((state: RootState) => state.searchJobs)  // TODO: counter eller searchJobs?
 
 
     // LOCAL STATES  

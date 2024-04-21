@@ -18,5 +18,5 @@ import LogicOperand from "./LogicOperand"
     numberOfHits: number
   }
 
-  export default searchJobsState
+  export default SearchJobsState
 

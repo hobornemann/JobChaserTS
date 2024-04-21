@@ -19,8 +19,6 @@ function FavouritesPage() {
     console.log(isAuthenticated);
     
 
-    //const favouriteJobs: Job[] = localStorage.getItem('savedJobs')
-
     const {favouriteJobs, messageToUser } : {favouriteJobs: Job[], messageToUser: string } = useSelector((state: RootState) =>  state.searchJobs)  // 
     
     return (

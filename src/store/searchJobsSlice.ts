@@ -135,10 +135,7 @@ export const searchJobsSlice = createSlice({
           const newCurrentJobs: Job[] = state.allJobs.filter((job: Job) => {
             return stateCurrentSkillsFilters.every(filterValue => job.description.text?.toLowerCase()!.includes(filterValue.toLowerCase())); 
           });
-          /* console.log("currentJobsFilteredBySkills in AND: ",currentJobsFilteredBySkills);
-          const newCurrentJobs: Job[] = currentJobsFilteredBySkills.filter(job => stateCurrentLocationFilters.includes(job.description.text!))
-          console.log("newCurrentJobs in AND: ",newCurrentJobs);
- */       state.currentJobs = newCurrentJobs 
+          state.currentJobs = newCurrentJobs 
           state.numberOfHits = newCurrentJobs.length
       } else {
           console.log("Error: CurrentSkillsOperand is not working");
@@ -160,7 +157,6 @@ export const searchJobsSlice = createSlice({
 export const fetchJobs = createAsyncThunk(
   'searchJobs/fetchJobs',
   async (urlEndpoint: string) => {
-    // async ({urlEndpoint}:{urlEndpoint: string}) => {
     const response: Response = await fetch(urlEndpoint);
     if (!response.ok) {
       throw new Error('Failed to fetch');
@@ -172,8 +168,6 @@ export const fetchJobs = createAsyncThunk(
     }
   }
 )
-
-
 
 
 

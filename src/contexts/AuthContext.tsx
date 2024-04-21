@@ -7,7 +7,7 @@ import { onAuthStateChanged, User } from "firebase/auth";
 type AuthContextValue = {
     user: User | null;
 }
-//export const AuthContext = React.createContext<firebase.User | null>(null);
+
 export const AuthContext = createContext<AuthContextValue>({user: null});
 
 console.log("AuthContext:",AuthContext)
@@ -39,7 +39,6 @@ export const AuthProvider:  React.FC<AuthProviderProps> = ({ children }) => {
             console.log("user: ", user);
         });
     }, []); */
-
 
     return (
         <AuthContext.Provider value={user}>
