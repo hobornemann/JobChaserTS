@@ -1,7 +1,8 @@
-// TODO:  var kommer denna ifrån? 
-// import { searchJobsSlice } from "../store/searchJobsSlice"
 
- type searchJobsState = {
+
+import LogicOperand from "./LogicOperand"
+
+ type SearchJobsState = {
     isLoading: boolean
     messageToUser: string
     error: string 
@@ -9,8 +10,9 @@
     allLocationFilters: string[]
     currentSkillsFilters: string[]
     allSkillsFilters: string[]
-    currentSkillsOperand: "AND" | "OR"
+    currentSkillsOperand: LogicOperand
     currentJobs: Job[]
+    favouriteJobs: Job[]
     allJobs: Job[]
     maxSearchResultsChosen: number
     numberOfHits: number

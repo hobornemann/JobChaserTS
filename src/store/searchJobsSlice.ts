@@ -1,24 +1,45 @@
-
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit' // För att typa action.payload i reducer-funktioner
 import type SearchJobsState from '../types/SearchJobsState'
 import Job from '../types/Job'
 
 
+if (!localStorage.getItem("favouriteJobs")) {
+  localStorage.setItem("favouriteJobs", JSON.stringify([]));
+}
+if (!localStorage.getItem("currentSkillsOperand")) {
+  localStorage.setItem("currentSkillsOperand", JSON.stringify("ELLER"));
+}
+if (!localStorage.getItem("currentSkillsFilters")) {
+  localStorage.setItem("currentSkillsFilters", JSON.stringify([]));
+}
+if (!localStorage.getItem("currentLocationFilters")) {
+  localStorage.setItem("currentLocationFilters", JSON.stringify([]));
+}
+if (!localStorage.getItem("maxSearchResultsChosen")) {
+  localStorage.setItem("maxSearchResultsChosen", JSON.stringify(10));
+}
+
+const favouriteJobsFromLocalStorage = JSON.parse(localStorage.getItem("favouriteJobs")!);
+const currentSkillsOperand = JSON.parse(localStorage.getItem("currentSkillsOperand")!);
+const currentSkillsFilters = JSON.parse(localStorage.getItem("currentSkillsFilters")!);
+const currentLocationFilters = JSON.parse(localStorage.getItem("currentLocationFilters")!);
+const maxSearchResultsChosen = Number(JSON.parse(localStorage.getItem("maxSearchResultsChosen")!))
 
 // Initial state
 const initialState: SearchJobsState = {
   isLoading: false,
   messageToUser: 'Loading data...',
   error: "", 
-  currentLocationFilters: [],
+  currentLocationFilters: currentLocationFilters,
   allLocationFilters: [],
-  currentSkillsFilters: [],
+  currentSkillsFilters: currentSkillsFilters,
   allSkillsFilters: [],
-  currentSkillsOperand: "OR",
+  currentSkillsOperand: currentSkillsOperand,
   currentJobs: [],
+  favouriteJobs: favouriteJobsFromLocalStorage,  
   allJobs: [],
-  maxSearchResultsChosen: 10,
+  maxSearchResultsChosen: maxSearchResultsChosen,
   numberOfHits: 0,
 }
 
@@ -38,19 +59,26 @@ export const searchJobsSlice = createSlice({
     updateCurrentJobs: (state, action: PayloadAction<Job[]>) =>{
       state.currentJobs = action.payload
     },
+    updateFavouriteJobs: (state, action: PayloadAction<Job[]>) =>{
+      state.favouriteJobs = action.payload
+      localStorage.setItem("favouriteJobs", JSON.stringify(action.payload))
+    },
     updateCurrentLocationFilters: (state, action: PayloadAction<string[]>) => {
       state.currentLocationFilters = action.payload
+      localStorage.setItem("currentLocationFilters", JSON.stringify(action.payload))
       console.log("currentLocationFilters action.payload in searchJobsSlice reducer:", action.payload);
       console.log("currentLocationFilters in searchJobsSlice reducer:", state.currentLocationFilters);
     },
     updateCurrentSkillsFilters: (state, action: PayloadAction<string[]>) => {
       console.log("state.currentSkillsFilters in reducer before updating", state.currentSkillsFilters);
       state.currentSkillsFilters = action.payload
+      localStorage.setItem("currentSkillsFilters", JSON.stringify(action.payload))
       console.log("currentSkillsFilters action.payload in searchJobsSlice reducer:", action.payload);
       console.log("currentSkillsFilters in searchJobsSlice reducer:", state.currentSkillsFilters);
     },
     updateCurrentSkillsOperand: (state, action: PayloadAction<SearchJobsState['currentSkillsOperand']>)  => {
       state.currentSkillsOperand = action.payload
+      localStorage.setItem("currentSkillsOperand", JSON.stringify(action.payload))
       console.log("action.payload in updateCurrentSkillsOperand in searchJobsSlice:", action.payload);
       console.log("currentSkillsOperand in updateCurrentSkillsOperand in searchJobsSlice:", state.currentSkillsOperand);
     },
@@ -60,7 +88,7 @@ export const searchJobsSlice = createSlice({
     clearAllCurrentFilters: (state) => {
       state.currentLocationFilters = []
       state.currentSkillsFilters = []
-      state.currentSkillsOperand = "OR"
+      state.currentSkillsOperand = "ELLER"
     },
     updateMaxSearchResultsChosen: (state, action: PayloadAction<number>) => {
       state.maxSearchResultsChosen = action.payload
@@ -73,6 +101,7 @@ export const searchJobsSlice = createSlice({
   // https://redux-toolkit.js.org/api/createAsyncThunk
   extraReducers: (builder) => {
     builder.addCase(fetchJobs.pending, (state) => {
+      state.currentJobs = []
       state.isLoading = true;
       state.messageToUser = "Loading jobs data..."
     });
@@ -97,13 +126,13 @@ export const searchJobsSlice = createSlice({
       console.log("stateCurrentLocationFilters in fetchJobs reducer:",stateCurrentLocationFilters)
       console.log("stateCurrentSkillsOperand in fetchJobs-reducer: ",stateCurrentSkillsOperand);
       
-      if((!stateCurrentSkillsFilters && !stateCurrentLocationFilters) || (stateCurrentSkillsOperand === "OR")){
+      if((!stateCurrentSkillsFilters && !stateCurrentLocationFilters) || (stateCurrentSkillsOperand === "ELLER")){
         state.currentJobs = state.allJobs
         state.numberOfHits = state.allJobs.length
-      } else if (stateCurrentSkillsOperand === "AND"){
+      } else if (stateCurrentSkillsOperand === "OCH"){
 
-          console.log("state.currentSkillsFilters in AND:",stateCurrentSkillsFilters);
-          const newCurrentJobs: Job[] = state.allJobs.filter(job => {
+          console.log("state.currentSkillsFilters in OCH:",stateCurrentSkillsFilters);
+          const newCurrentJobs: Job[] = state.allJobs.filter((job: Job) => {
             return stateCurrentSkillsFilters.every(filterValue => job.description.text?.toLowerCase()!.includes(filterValue.toLowerCase())); 
           });
           /* console.log("currentJobsFilteredBySkills in AND: ",currentJobsFilteredBySkills);
@@ -150,7 +179,7 @@ export const fetchJobs = createAsyncThunk(
 
 
 // Exporterar alla actionfunktioner 
-export const { updateMaxSearchResultsChosen, updateMessageToUser, updateAllJobs, updateCurrentJobs, updateCurrentLocationFilters, updateCurrentSkillsFilters, updateCurrentSkillsOperand } = searchJobsSlice.actions
+export const { updateFavouriteJobs, updateMaxSearchResultsChosen, updateMessageToUser, updateAllJobs, updateCurrentJobs, updateCurrentLocationFilters, updateCurrentSkillsFilters, updateCurrentSkillsOperand } = searchJobsSlice.actions
 // Exporterar reducern
 export default searchJobsSlice.reducer
 

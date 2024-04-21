@@ -122,6 +122,7 @@ type Job = {
     "removed_date": string | null,
     "source_type": string | null,
     "timestamp": number | null,
+    "isFavourite"?: boolean | undefined,
 }
 
 export default Job

@@ -12,28 +12,125 @@ import { useEffect } from 'react';
 
 function SearchJobs() {
 
-    // LOCAL STATES    
-    const [currentSkillsInputString, setCurrentSkillsInputString] = useState<string>('')
-    const [currentSkillsOperandChosen, setCurrentSkillsOperandChosen] = useState<LogicOperand>("OR")
-    const [currentLocationsInputString, setCurrentLocationsInputString] = useState<string>('')
-    const [maxSearchResultsArray, setMaxSearchResultsArray] = useState<number[]>([10, 20, 30, 40, 50, 100])
-    //const [maxSearchResultsChosen, setMaxSearchResultsChosen] = useState<number>(10)
-    
+    const dispatch = useDispatch<AppDispatch>();
     // GLOBAL STATES
-    const { maxSearchResultsChosen, numberOfHits, currentLocationFilters, allLocationFilters, currentSkillsFilters, allSkillsFilters } : {maxSearchResultsChosen: number, numberOfHits: number, currentLocationFilters: string[], allLocationFilters: string[], currentSkillsFilters: string[], allSkillsFilters: string[], currentSkillsOperand: string, allJobs: Job[]} = useSelector((state: RootState) => state.searchJobs)  // TODO: counter eller searchJobs?
+    const { maxSearchResultsChosen, numberOfHits, currentLocationFilters, currentSkillsFilters, currentSkillsOperand } : {maxSearchResultsChosen: number, numberOfHits: number, currentLocationFilters: string[], allLocationFilters: string[], currentSkillsFilters: string[], allSkillsFilters: string[], currentSkillsOperand: string, allJobs: Job[]} = useSelector((state: RootState) => state.searchJobs)  // TODO: counter eller searchJobs?
 
+
+    // SET INITIAL VALUES OF LOCAL STATE VARIABLES and GLOBAL STATE VARIABLES 
+
+
+    //console.log("currentSkillsFilters in SearchJobs:",currentSkillsFilters);
+    //console.log("currentLocationFilters in SearchJobs:",currentLocationFilters);
+
+/*     function initialiseWithValuesFromLocalStorage () {
+        const currentSkillsFiltersUnparsed = localStorage.getItem("currentSkillsFilters");
+        if (currentSkillsFiltersUnparsed !== null && currentSkillsFiltersUnparsed !== "undefined") {
+            try {
+                const currentSkillsFiltersFromLocalStorage = JSON.parse(currentSkillsFiltersUnparsed);
+                const currentSkillsInputStringFromLocalStorage = currentSkillsFiltersFromLocalStorage.join(' ');
+                setCurrentSkillsInputString(currentSkillsInputStringFromLocalStorage);
+            } catch (error) {
+                console.error("Error parsing JSON from localStorage:", error);
+            }
+        } */
+    
+
+       /*  if(currentLocationFilters.length === 0){
+            const currentLocationFiltersUnparsed = localStorage.getItem("currentLocationFilters");
+            if(currentLocationFiltersUnparsed){
+                currentLocationFiltersFromLocalStorage = JSON.parse(currentLocationFiltersUnparsed)
+                currentLocationInputStringFromLocalStorage = currentLocationFiltersFromLocalStorage.join(' ')
+                setCurrentLocationsInputString(currentLocationFiltersFromLocalStorage)
+            }        
+        }
+        
+        const currentSkillsOperandUnparsed = localStorage.getItem("currentSkillsOperand");
+        if(currentSkillsOperandUnparsed){
+            currentSkillsOperandFromLocalStorage = JSON.parse(currentSkillsOperandUnparsed)
+            setCurrentSkillsOperandChosen(currentSkillsOperandFromLocalStorage as LogicOperand)
+        } */
+   /*  } */
+    
+
+    // UPDATE GLOBAL STATE with VALUES FROM LOCAL STORAGE
+   /*  dispatch(updateCurrentSkillsFilters(currentSkillsFiltersFromLocalStorage))
+    dispatch(updateCurrentSkillsOperand(currentSkillsOperandFromLocalStorage as LogicOperand))
+    dispatch(updateCurrentLocationFilters(currentLocationFiltersFromLocalStorage)) */
+
+
+      // LOCAL STATES  
+    const [otherElementsHaveRendered, setOtherElementsHaveRendered] = useState<boolean>(false)
+    const [currentSkillsInputString, setCurrentSkillsInputString] = useState<string>('')
+    const [currentSkillsOperandChosen, setCurrentSkillsOperandChosen] = useState<LogicOperand>('ELLER')
+    const [currentLocationsInputString, setCurrentLocationsInputString] = useState<string>('')
+    const maxSearchResultsArray: number[] = [10, 20, 30, 40, 50]
+    
+   
     // OTHER
     const searchButton = useRef<HTMLButtonElement>(null);
-    const dispatch = useDispatch<AppDispatch>();
-    type LogicOperand = "AND" | "OR"; 
+    /* const skillsInput = useRef<HTMLInputElement>(null)
+    const locationsInput = useRef<HTMLInputElement>(null)
+    const radioButtonOr = useRef<HTMLInputElement>(null)
+    const radioButtonAnd = useRef<HTMLInputElement>(null) */
+   
+    type LogicOperand = "ELLER" | "OCH"; 
 
     // INITIALISATION 
     useEffect(() => {
-        // Trigger the button click event when the component mounts
-        if (searchButton.current) {
-            searchButton.current.click();
+     
+        const currentSkillsFiltersUnparsed = localStorage.getItem("currentSkillsFilters");
+        if (currentSkillsFiltersUnparsed) {
+            try {
+                const currentSkillsFiltersFromLocalStorage = JSON.parse(currentSkillsFiltersUnparsed);
+                const currentSkillsInputStringFromLocalStorage = currentSkillsFiltersFromLocalStorage.join(' ');
+                setCurrentSkillsInputString(currentSkillsInputStringFromLocalStorage);
+            } catch (error) {
+                console.error("Error parsing JSON from localStorage:", error);
+            }
+        } 
+        
+        const currentLocationFiltersUnparsed = localStorage.getItem("currentLocationFilters");
+        if(currentLocationFiltersUnparsed){
+            try{
+                const currentLocationFiltersFromLocalStorage = JSON.parse(currentLocationFiltersUnparsed)
+                const currentLocationInputStringFromLocalStorage = currentLocationFiltersFromLocalStorage.join(' ')
+                setCurrentLocationsInputString(currentLocationInputStringFromLocalStorage)
+            } catch (error) {
+                console.error("Error parsing JSON from localStorage:", error);
+            }
         }
-      }, []);
+        
+        const currentSkillsOperandUnparsed = localStorage.getItem("currentSkillsOperand");
+        if(currentSkillsOperandUnparsed){
+            try{
+                const currentSkillsOperandFromLocalStorage = JSON.parse(currentSkillsOperandUnparsed)
+                setCurrentSkillsOperandChosen(currentSkillsOperandFromLocalStorage as LogicOperand)
+            } catch (error) {
+                console.error("Error parsing JSON from localStorage:", error);
+            }
+        } 
+
+        setOtherElementsHaveRendered(true)
+
+    }, [])
+
+
+/*     useEffect(() => {
+        if(skillsInput.current && locationsInput.current && radioButtonOr.current && radioButtonAnd.current){
+            initialiseWithValuesFromLocalStorage()
+            setOtherElementsHaveRendered(true)
+        }
+    }, []) */
+
+      useEffect(() => {
+        // Trigger the button click event when the component mounts
+        if(otherElementsHaveRendered){
+            if (searchButton.current) {
+                searchButton.current.click();
+            }
+        }
+    }, [otherElementsHaveRendered]); 
 
 
     //  HELPER FUNCTIONS
@@ -99,52 +196,39 @@ function SearchJobs() {
     function handleSkillsInputChange(e: React.ChangeEvent<HTMLInputElement>) {
         e.preventDefault();
         setCurrentSkillsInputString(e.target.value)
-        
+        const currentSkillsFiltersChosen = convertSpaceSeparatedStringIntoStringArray(e.target.value)
+        dispatch(updateCurrentSkillsFilters(currentSkillsFiltersChosen))
+        console.log("currentSkillsFiltersChosen:",currentSkillsFiltersChosen)
     }
     
-        
-    function handleBlurSkillsInput(e: React.FocusEvent<HTMLInputElement>){
-        e.preventDefault();
-        const currenSkillsFiltersChosen: string[] = convertSpaceSeparatedStringIntoStringArray(currentSkillsInputString)
-        //setNewCurrentSkillsFilters(currenSkillsFiltersChosen)
-        dispatch(updateCurrentSkillsFilters(currenSkillsFiltersChosen))
-        console.log("currentSkillsInputString in Search/handleChangeSkillsInput::",currentSkillsInputString);
-        // Set the currentSkillsInputString, convert it into an array and update CurrentSkillsFilters 
-/*         setCurrentSkillsInputString(currentSkillsInputString)
-        const newCurrentSkillsFilters: string[] = convertSpaceSeparatedStringIntoStringArray(currentSkillsInputString)
-        console.log("newCurrentSkillsFilters i handleKeyDownSkillsInput:",newCurrentSkillsFilters);
-        dispatch(updateCurrentSkillsFilters(newCurrentSkillsFilters))
-        console.log("currentSkillsFilters (state) in Search:",currentSkillsFilters); */
-    }
-    
-    
-    const handleSkillsOperandChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const value = event.target.value as LogicOperand
-        console.log("skillsOperand in handleSkillsOperandChange: ", value);
-        setCurrentSkillsOperandChosen(value)
-        dispatch(updateCurrentSkillsOperand(value))
-    }
-
-
     function handleLocationsInputChange(e: React.ChangeEvent<HTMLInputElement>) {
         e.preventDefault();
-        setCurrentLocationsInputString(e.target.value)
-        console.log("e.target.value in handleLocatiosInputChange",e.target.value);
-        
+        setCurrentLocationsInputString(e.target.value)      
         const currentLocationFiltersChosen = convertSpaceSeparatedStringIntoStringArray(e.target.value)
-        //setNewCurrentLocationFilters(currentLocationFiltersChosen)
         dispatch(updateCurrentLocationFilters(currentLocationFiltersChosen))
         console.log("currentLocationFiltersChosen:",currentLocationFiltersChosen)
     }
-    
 
-function handleBlurLocationsInput(e: React.FocusEvent<HTMLInputElement>){
+    const handleSkillsOperandChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const value = event.target.value as LogicOperand
+        setCurrentSkillsOperandChosen(value)
+        dispatch(updateCurrentSkillsOperand(value))
+        console.log("skillsOperand in handleSkillsOperandChange: ", value);
+    }
+
+
+    function handleBlurSkillsInput(e: React.FocusEvent<HTMLInputElement>){
         e.preventDefault();
-        setCurrentLocationsInputString(e.target.value)
+        const currenSkillsFiltersChosen: string[] = convertSpaceSeparatedStringIntoStringArray(currentSkillsInputString)
+        dispatch(updateCurrentSkillsFilters(currenSkillsFiltersChosen))       
+    }
+    
+    function handleBlurLocationsInput(e: React.FocusEvent<HTMLInputElement>){
+        e.preventDefault();
         const currentLocationFiltersChosen = convertSpaceSeparatedStringIntoStringArray(currentLocationsInputString)
-        //setNewCurrentLocationFilters(currentLocationFiltersChosen)
         dispatch(updateCurrentLocationFilters(currentLocationFiltersChosen))
     } 
+
 
     const handleMaxSearchResultsChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         e.preventDefault()
@@ -158,12 +242,13 @@ function handleBlurLocationsInput(e: React.FocusEvent<HTMLInputElement>){
         // Fetch data from external serve (if needed)
         const needToFetch: boolean = needToFetchNewJobsData()
 
+
+
         if (needToFetch) {
             const newUrlEndpoint = getNewUrlEndpoint()
             console.log("newUrlEndpoint in dispatch(fetchJobs()): ",newUrlEndpoint);
+            //dispatch(updateCurrentJobs([]))
             dispatch(fetchJobs(newUrlEndpoint));  
-
-
         } 
 
     }
@@ -172,10 +257,10 @@ function handleBlurLocationsInput(e: React.FocusEvent<HTMLInputElement>){
     const handleClearAllFilters = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         e.preventDefault();
         setCurrentSkillsInputString('')
-        setCurrentSkillsOperandChosen("OR")
+        setCurrentSkillsOperandChosen("ELLER")
         setCurrentLocationsInputString('')
         dispatch(updateCurrentSkillsFilters([]))
-        dispatch(updateCurrentSkillsOperand("OR"))
+        dispatch(updateCurrentSkillsOperand("ELLER"))
         dispatch(updateCurrentLocationFilters([]))
         dispatch(updateMessageToUser(""))
         dispatch(updateCurrentJobs([]))
@@ -192,6 +277,7 @@ function handleBlurLocationsInput(e: React.FocusEvent<HTMLInputElement>){
                 <span>Sökord: </span>
                 <input 
                     id="skillsInput"
+                    //ref={skillsInput}
                     type="text" 
                     className={styles.searchInput}
                     placeholder={"Ex: Javascript React Vue"}
@@ -205,6 +291,7 @@ function handleBlurLocationsInput(e: React.FocusEvent<HTMLInputElement>){
                     {/* <img src="./images/search-icon.svg" alt="" className={styles.searchIcon} /> */}
                     <input 
                         id="locationsInput"
+                        //ref={locationsInput}
                         type="text" 
                         className={styles.searchInput}
                         placeholder={"Ex:  Stockholm Uppsala"}
@@ -215,30 +302,45 @@ function handleBlurLocationsInput(e: React.FocusEvent<HTMLInputElement>){
                 </label>
             </div>
             
-            <div className={styles.radioButtonsForSearchLogic}>
+            <div className="searchLogic">
+                <select onChange={handleSkillsOperandChange}
+                    value={currentSkillsOperandChosen}>
+                    {["ELLER","OCH"].map((item, index) => (
+                        <option key={index} value={item}>
+                            {item}
+                        </option>
+                    ))}
+                </select>
+            </div> 
+
+           {/*  <div className={styles.radioButtonsForSearchLogic}>
                 <label className={styles.radioButtonLabel}>
                     <input
-                    type="radio"
-                    value="OR"
-                    checked={currentSkillsOperandChosen === 'OR'}
-                    onChange={handleSkillsOperandChange}
+                        type="radio"
+                        //ref={radioButtonOr}
+                        value="OR"
+                        checked={currentSkillsOperandChosen === 'OR'}
+                        onChange={handleSkillsOperandChange}
                     />
                     Minst 1 sökord
                 </label>
 
                 <label className={styles.radioButtonLabel}>
                     <input
-                    type="radio"
-                    value="AND"
-                    checked={currentSkillsOperandChosen === 'AND'}
-                    onChange={handleSkillsOperandChange}
+                        type="radio"
+                        //ref={radioButtonAnd}
+                        value="AND"
+                        checked={currentSkillsOperandChosen === 'AND'}
+                        onChange={handleSkillsOperandChange}
                     />
                     Alla sökord
                 </label>
-            </div>
+            </div> */}
+
+
             <div className="maxSearchResultsAndHits">
-                <select onChange={handleMaxSearchResultsChange}>
-                    <option value={maxSearchResultsChosen}>Välj max-antal:</option>
+                <select onChange={handleMaxSearchResultsChange}
+                    value={maxSearchResultsChosen}>
                     {maxSearchResultsArray.map((number, index) => (
                         <option key={index} value={number}>
                             {number}
