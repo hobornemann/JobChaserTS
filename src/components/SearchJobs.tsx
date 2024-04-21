@@ -5,7 +5,6 @@ import { useState } from "react";
 import type { RootState, AppDispatch } from "../store/store"; // Importera types från store.ts
 import { useSelector, useDispatch } from "react-redux"; // Redux hooks för att använda globala state och dispatcha actions
 import { updateMaxSearchResultsChosen, updateMessageToUser, updateCurrentJobs, fetchJobs, updateCurrentLocationFilters, updateCurrentSkillsFilters, updateCurrentSkillsOperand} from "../store/searchJobsSlice"; // Importera actions från accountSlice.ts
-//import { openAccount, closeAccount, deposit, withdraw, requestLoan, payLoan } from "../store/fetchAndFilterSlice"; // Importera actions från accountSlice.ts
 import Job from '../types/Job'
 import { useEffect } from 'react';
 
@@ -17,49 +16,7 @@ function SearchJobs() {
     const { maxSearchResultsChosen, numberOfHits, currentLocationFilters, currentSkillsFilters, currentSkillsOperand } : {maxSearchResultsChosen: number, numberOfHits: number, currentLocationFilters: string[], allLocationFilters: string[], currentSkillsFilters: string[], allSkillsFilters: string[], currentSkillsOperand: string, allJobs: Job[]} = useSelector((state: RootState) => state.searchJobs)  // TODO: counter eller searchJobs?
 
 
-    // SET INITIAL VALUES OF LOCAL STATE VARIABLES and GLOBAL STATE VARIABLES 
-
-
-    //console.log("currentSkillsFilters in SearchJobs:",currentSkillsFilters);
-    //console.log("currentLocationFilters in SearchJobs:",currentLocationFilters);
-
-/*     function initialiseWithValuesFromLocalStorage () {
-        const currentSkillsFiltersUnparsed = localStorage.getItem("currentSkillsFilters");
-        if (currentSkillsFiltersUnparsed !== null && currentSkillsFiltersUnparsed !== "undefined") {
-            try {
-                const currentSkillsFiltersFromLocalStorage = JSON.parse(currentSkillsFiltersUnparsed);
-                const currentSkillsInputStringFromLocalStorage = currentSkillsFiltersFromLocalStorage.join(' ');
-                setCurrentSkillsInputString(currentSkillsInputStringFromLocalStorage);
-            } catch (error) {
-                console.error("Error parsing JSON from localStorage:", error);
-            }
-        } */
-    
-
-       /*  if(currentLocationFilters.length === 0){
-            const currentLocationFiltersUnparsed = localStorage.getItem("currentLocationFilters");
-            if(currentLocationFiltersUnparsed){
-                currentLocationFiltersFromLocalStorage = JSON.parse(currentLocationFiltersUnparsed)
-                currentLocationInputStringFromLocalStorage = currentLocationFiltersFromLocalStorage.join(' ')
-                setCurrentLocationsInputString(currentLocationFiltersFromLocalStorage)
-            }        
-        }
-        
-        const currentSkillsOperandUnparsed = localStorage.getItem("currentSkillsOperand");
-        if(currentSkillsOperandUnparsed){
-            currentSkillsOperandFromLocalStorage = JSON.parse(currentSkillsOperandUnparsed)
-            setCurrentSkillsOperandChosen(currentSkillsOperandFromLocalStorage as LogicOperand)
-        } */
-   /*  } */
-    
-
-    // UPDATE GLOBAL STATE with VALUES FROM LOCAL STORAGE
-   /*  dispatch(updateCurrentSkillsFilters(currentSkillsFiltersFromLocalStorage))
-    dispatch(updateCurrentSkillsOperand(currentSkillsOperandFromLocalStorage as LogicOperand))
-    dispatch(updateCurrentLocationFilters(currentLocationFiltersFromLocalStorage)) */
-
-
-      // LOCAL STATES  
+    // LOCAL STATES  
     const [otherElementsHaveRendered, setOtherElementsHaveRendered] = useState<boolean>(false)
     const [currentSkillsInputString, setCurrentSkillsInputString] = useState<string>('')
     const [currentSkillsOperandChosen, setCurrentSkillsOperandChosen] = useState<LogicOperand>('ELLER')
@@ -69,10 +26,6 @@ function SearchJobs() {
    
     // OTHER
     const searchButton = useRef<HTMLButtonElement>(null);
-    /* const skillsInput = useRef<HTMLInputElement>(null)
-    const locationsInput = useRef<HTMLInputElement>(null)
-    const radioButtonOr = useRef<HTMLInputElement>(null)
-    const radioButtonAnd = useRef<HTMLInputElement>(null) */
    
     type LogicOperand = "ELLER" | "OCH"; 
 
@@ -116,14 +69,7 @@ function SearchJobs() {
     }, [])
 
 
-/*     useEffect(() => {
-        if(skillsInput.current && locationsInput.current && radioButtonOr.current && radioButtonAnd.current){
-            initialiseWithValuesFromLocalStorage()
-            setOtherElementsHaveRendered(true)
-        }
-    }, []) */
-
-      useEffect(() => {
+    useEffect(() => {
         // Trigger the button click event when the component mounts
         if(otherElementsHaveRendered){
             if (searchButton.current) {
@@ -165,23 +111,7 @@ function SearchJobs() {
 
     const needToFetchNewJobsData = (): boolean => {
         return true  // TODO:
-        //let needToFetch = false
-        /* if(!allLocationFilters ){
-            needToFetch = true
-            return needToFetch
-        } */
-        /* function doesMainArrayContainAllElementsOfSubArray(mainArray: string[], subArray: string[]) {
-            return subArray.every(item => mainArray.includes(item));
-        }
-        const allSkillsFiltersContainCurrentSkillsFilters = doesMainArrayContainAllElementsOfSubArray(allSkillsFilters, currentSkillsFilters)
-        const allLocationFiltersContainCurrentLocationFilters = doesMainArrayContainAllElementsOfSubArray(allLocationFilters, currentLocationFilters)
-        needToFetch = allSkillsFiltersContainCurrentSkillsFilters && allLocationFiltersContainCurrentLocationFilters ? false : true; 
-        console.log("needToFetch:",needToFetch);
-        return needToFetch */
     }
-
-
-   
 
 
     function convertSpaceSeparatedStringIntoStringArray (commaOrSpaceSeparatedString: string): string[] {
@@ -247,7 +177,6 @@ function SearchJobs() {
         if (needToFetch) {
             const newUrlEndpoint = getNewUrlEndpoint()
             console.log("newUrlEndpoint in dispatch(fetchJobs()): ",newUrlEndpoint);
-            //dispatch(updateCurrentJobs([]))
             dispatch(fetchJobs(newUrlEndpoint));  
         } 
 
@@ -264,7 +193,6 @@ function SearchJobs() {
         dispatch(updateCurrentLocationFilters([]))
         dispatch(updateMessageToUser(""))
         dispatch(updateCurrentJobs([]))
-        // TODO: Använda en default urlEndpoint och fetcha data? 
     }
     
 
@@ -273,11 +201,9 @@ function SearchJobs() {
         <div className={styles.search}>
             <div className={styles.labelInputCombos}>
             <label className={styles.labelAndInput}>
-                {/* <img src="./images/search-icon.svg" alt="" className={styles.searchIcon} /> */}
                 <span>Sökord: </span>
                 <input 
                     id="skillsInput"
-                    //ref={skillsInput}
                     type="text" 
                     className={styles.searchInput}
                     placeholder={"Ex: Javascript React Vue"}
@@ -288,10 +214,8 @@ function SearchJobs() {
             </label>
                 <label className={styles.labelAndInput}>
                     <span>Orter:</span>
-                    {/* <img src="./images/search-icon.svg" alt="" className={styles.searchIcon} /> */}
                     <input 
                         id="locationsInput"
-                        //ref={locationsInput}
                         type="text" 
                         className={styles.searchInput}
                         placeholder={"Ex:  Stockholm Uppsala"}
@@ -312,31 +236,6 @@ function SearchJobs() {
                     ))}
                 </select>
             </div> 
-
-           {/*  <div className={styles.radioButtonsForSearchLogic}>
-                <label className={styles.radioButtonLabel}>
-                    <input
-                        type="radio"
-                        //ref={radioButtonOr}
-                        value="OR"
-                        checked={currentSkillsOperandChosen === 'OR'}
-                        onChange={handleSkillsOperandChange}
-                    />
-                    Minst 1 sökord
-                </label>
-
-                <label className={styles.radioButtonLabel}>
-                    <input
-                        type="radio"
-                        //ref={radioButtonAnd}
-                        value="AND"
-                        checked={currentSkillsOperandChosen === 'AND'}
-                        onChange={handleSkillsOperandChange}
-                    />
-                    Alla sökord
-                </label>
-            </div> */}
-
 
             <div className="maxSearchResultsAndHits">
                 <select onChange={handleMaxSearchResultsChange}
@@ -360,34 +259,4 @@ function SearchJobs() {
 
 export default SearchJobs;
 
- /* const getNewCurrentJobs = (): Job[] => {
-        console.log("currentSkillsOperand in getNewCurrentJobs: ",currentSkillsOperand);
-        console.log("allJobs in getNewCurrentJobs:",allJobs);
-        
-        if(currentSkillsOperand === "OR"){
-            console.log("currentSkillsOperand in getNewCurrentJobs OR: ", currentSkillsOperand);
-            //const currentJobsFilteredBySkills: Job[] = allJobs.filter(job => currentSkillsFilters.includes(job.description.text!))
-            const currentJobsFilteredBySkills: Job[] = allJobs.filter(job => {
-                return currentSkillsFilters.some(filterValue => job.description.text?.toLowerCase()!.includes(filterValue.toLowerCase()));
-            });
-            console.log("currentJobsFilteredBySkills in in getNewCurrentJobs OR:",currentJobsFilteredBySkills);
-            const newCurrentJobs: Job[] = currentJobsFilteredBySkills.filter(job => {
-                return currentLocationFilters.some(filterValue => job.description.text?.toLowerCase()!.includes(filterValue.toLowerCase()));
-            });
-            console.log("newCurrentJobs in OR: ",newCurrentJobs);
-            return newCurrentJobs
-        
-        } else if (currentSkillsOperand === "AND"){
-            console.log("currentSkillsOperand in SearchJobs has the value AND: ", currentSkillsOperand);
-            const currentJobsFilteredBySkills: Job[] = allJobs.filter(job => {
-              return currentSkillsFilters.every(filterValue => job.description.text?.toLowerCase()!.includes(filterValue.toLowerCase())); 
-            });
-            console.log("currentJobsFilteredBySkills in AND: ",currentJobsFilteredBySkills);
-            const newCurrentJobs: Job[] = currentJobsFilteredBySkills.filter(job => currentLocationFilters.includes(job.description.text!))
-            console.log("newCurrentJobs in AND: ",newCurrentJobs);
-            return newCurrentJobs 
-        } else {
-            console.log("Error: CurrentSkillsOperand is not working");
-            throw new Error
-        } 
-    } */
+ 

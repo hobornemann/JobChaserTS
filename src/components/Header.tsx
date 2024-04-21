@@ -10,17 +10,6 @@ import { useLocation } from 'react-router-dom';
 
 
 
-/* type HeaderProps = {
-  searchTerm: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onSearch: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void; 
-  onClear: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void; 
-  onSignOut: () => void;
-}; */
-
-
-
-
 interface HeaderProps {
   onSignOut: () => void;
 }

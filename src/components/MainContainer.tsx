@@ -9,8 +9,6 @@ function MainContainer (){
 
     const {currentJobs, messageToUser } : {currentJobs: Job[], messageToUser: string } = useSelector((state: RootState) =>  state.searchJobs)  // 
     
-    //console.log("currentJobs in MainContainer: ",currentJobs);
-    
     return(
         <>
             {messageToUser && <Feedback feedback={messageToUser} />}
