@@ -5,6 +5,7 @@ import type SearchJobsState from '../types/SearchJobsState'
 import Job from '../types/Job'
 
 
+
 // Initial state
 const initialState: SearchJobsState = {
   isLoading: false,
@@ -18,6 +19,7 @@ const initialState: SearchJobsState = {
   currentJobs: [],
   allJobs: [],
 }
+
 
 
 
@@ -36,14 +38,19 @@ export const searchJobsSlice = createSlice({
     },
     updateCurrentLocationFilters: (state, action: PayloadAction<string[]>) => {
       state.currentLocationFilters = action.payload
+      console.log("currentLocationFilters action.payload in searchJobsSlice reducer:", action.payload);
+      console.log("currentLocationFilters in searchJobsSlice reducer:", state.currentLocationFilters);
     },
     updateCurrentSkillsFilters: (state, action: PayloadAction<string[]>) => {
+      console.log("state.currentSkillsFilters in reducer before updating", state.currentSkillsFilters);
       state.currentSkillsFilters = action.payload
-      console.log("currentSkillsFilters in searchJobsSlice:", state.currentSkillsFilters);
+      console.log("currentSkillsFilters action.payload in searchJobsSlice reducer:", action.payload);
+      console.log("currentSkillsFilters in searchJobsSlice reducer:", state.currentSkillsFilters);
     },
     updateCurrentSkillsOperand: (state, action: PayloadAction<SearchJobsState['currentSkillsOperand']>)  => {
       state.currentSkillsOperand = action.payload
-      console.log("currentSkillsOperand in searchJobsSlice:", state.currentSkillsOperand);
+      console.log("action.payload in updateCurrentSkillsOperand in searchJobsSlice:", action.payload);
+      console.log("currentSkillsOperand in updateCurrentSkillsOperand in searchJobsSlice:", state.currentSkillsOperand);
     },
     updateMessageToUser: (state, action: PayloadAction<string>) => {
       state.messageToUser = action.payload
@@ -66,10 +73,7 @@ export const searchJobsSlice = createSlice({
     });
     builder.addCase(fetchJobs.fulfilled, (state, action: PayloadAction<Job[]>) => {
       console.log("action.payload in fetchJobs.fulfilled:", action.payload);
-      
       console.log("state.allJobs in fetchJobs.fulfilled ex ante... ",state.allJobs);
-      console.log("typeof state.allJobs:",typeof state.allJobs)
-      console.log("typeof action.payload:",typeof action.payload);
       
       state.allJobs = action.payload 
       state.isLoading = false; 
@@ -79,7 +83,31 @@ export const searchJobsSlice = createSlice({
         state.messageToUser = ""
       }
       console.log("state.allJobs after update:", state.allJobs); 
-      state.currentJobs = state.allJobs
+      
+      // If all filters are empty, set currentJobs to allJobs
+      const stateCurrentSkillsFilters = [...state.currentSkillsFilters]  
+      const stateCurrentLocationFilters = [...state.currentLocationFilters] 
+      const stateCurrentSkillsOperand = state.currentSkillsOperand  // no shallow copy needed 
+      console.log("stateCurrentSkillsFilters in fetchJobs reducer:",stateCurrentSkillsFilters);
+      console.log("stateCurrentLocationFilters in fetchJobs reducer:",stateCurrentLocationFilters)
+      console.log("stateCurrentSkillsOperand in fetchJobs-reducer: ",stateCurrentSkillsOperand);
+      
+      if((!stateCurrentSkillsFilters && !stateCurrentLocationFilters) || (stateCurrentSkillsOperand === "OR")){
+        state.currentJobs = state.allJobs
+      } else if (stateCurrentSkillsOperand === "AND"){
+
+          console.log("state.currentSkillsFilters in AND:",stateCurrentSkillsFilters);
+          const newCurrentJobs: Job[] = state.allJobs.filter(job => {
+            return stateCurrentSkillsFilters.every(filterValue => job.description.text?.toLowerCase()!.includes(filterValue.toLowerCase())); 
+          });
+          /* console.log("currentJobsFilteredBySkills in AND: ",currentJobsFilteredBySkills);
+          const newCurrentJobs: Job[] = currentJobsFilteredBySkills.filter(job => stateCurrentLocationFilters.includes(job.description.text!))
+          console.log("newCurrentJobs in AND: ",newCurrentJobs);
+ */          state.currentJobs = newCurrentJobs 
+      } else {
+            console.log("Error: CurrentSkillsOperand is not working");
+            throw new Error
+      } 
       console.log("state.currentJobs after update:", state.currentJobs);
       
     });
@@ -108,6 +136,9 @@ export const fetchJobs = createAsyncThunk(
     }
   }
 )
+
+
+
 
 
 

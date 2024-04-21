@@ -4,18 +4,16 @@
     justify-content: center;
     align-items: center;
     background: linear-gradient(rgba(48, 50, 113, 0.2), rgba(48, 50, 113, 0.2));
-    padding: 2vh 2vh 2vh 2vh;
-
-
+    padding: 1vh;
 }
 
-.searchIconAndInput{
+.labelAndInput{
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    height: 6vh;
-    margin: 0 2vh 0 1vh;
+    height: clamp(14px 4vh 16px);
+    margin: 0 1vh;
 }
 
 .searchIcon{
@@ -23,41 +21,39 @@
     margin: 0 0.4vh;
 }
 
-input{
+.searchInput{
     height: 3vh;
     border-radius: 2vh;
     width: 20vw;
-    /* font-size: clamp(11px 70vh  24px); */
     border-color: rgba(48, 50, 113, 1.0);
-    
+    padding: 0 1vh;
+    color: rgba(48, 50, 113, 1.0);    
 }
 
-input::placeholder{
+.searchInput::placeholder{
 
     color: rgba(48, 50, 113, 1.0);
     padding-left: 10px;
 }
 
-input::content{
+.searchInput::content{
     padding-left: 10px;
 }
+
 
 .buttons{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     gap: 2vw;
-    
 }
 
 .searchButton{
     color: white;
     background-color: rgba(48, 50, 113, 0.8 );
+    margin: 0 1vh;
 }
 
-.searchInput{
-    color: rgba(48, 50, 113, 1.0);
-}
 
 .radioButtonsForSearchLogic{
     display: flex;
@@ -65,6 +61,7 @@ input::content{
     font-size: 13px;
     justify-content: center;
     align-items: flex-start;
+    margin: 0 1vh;
 }
 
 .radioButtonLabel{
@@ -72,10 +69,17 @@ input::content{
     flex-direction: row;
     justify-content: flex-start;
     margin-right: 5px;
-    
+    align-items: center;
 }
 
 .radioButtonLabel>input{
     width: 20px;
     margin-left: 0;
+
+}
+
+.labelInputCombos{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

@@ -75,7 +75,7 @@ function JobCard({passedKey, logoUrl, headline, occupation, employer, employment
                     {logoUrl && <img src={logoUrl} alt="" className={styles.imgLogo} />}
                     {isAuthenticated && (
                         <button onClick={handleSaveToggle} className={styles.favouriteButton}>
-                            {saved ? 'Favourite' : 'Save'}
+                            {saved ? 'Favorit' : 'Spara'}
                         </button>
                     )}
                 </div>

@@ -16,9 +16,11 @@ function SearchJobs() {
     const [currentSkillsInputString, setCurrentSkillsInputString] = useState<string>('')
     const [currentSkillsOperandChosen, setCurrentSkillsOperandChosen] = useState<LogicOperand>("OR")
     const [currentLocationsInputString, setCurrentLocationsInputString] = useState<string>('')
+    const [newCurrentSkillsFilters, setNewCurrentSkillsFilters] = useState<string[]>([])
+    const [newCurrentLocationFilters, setNewCurrentLocationFilters] = useState<string[]>([])
     
     // GLOBAL STATES
-    const { currentLocationFilters, allLocationFilters, currentSkillsFilters, allSkillsFilters, currentSkillsOperand, allJobs } : {currentLocationFilters: string[], allLocationFilters: string[], currentSkillsFilters: string[], allSkillsFilters: string[], currentSkillsOperand: string, allJobs: Job[]} = useSelector((state: RootState) => state.searchJobs)  // TODO: counter eller searchJobs?
+    const { currentLocationFilters, allLocationFilters, currentSkillsFilters, allSkillsFilters } : {currentLocationFilters: string[], allLocationFilters: string[], currentSkillsFilters: string[], allSkillsFilters: string[], currentSkillsOperand: string, allJobs: Job[]} = useSelector((state: RootState) => state.searchJobs)  // TODO: counter eller searchJobs?
 
     // OTHER
     const searchButton = useRef<HTMLButtonElement>(null);
@@ -39,15 +41,15 @@ function SearchJobs() {
             let newUrlEndpoint = 'https://jobsearch.api.jobtechdev.se/search?q='
             console.log("newUrlEndpoint första omgången:",newUrlEndpoint);
             // https://jobsearch.api.jobtechdev.se/search?q=?limit=50
-            console.log("currentSkillsFilters:",currentSkillsFilters);
-            console.log("currentLocationFilters:",currentLocationFilters);
+            console.log("newCurrentSkillsFilters:",currentSkillsFilters);
+            console.log("newCurrentLocationFilters:",currentLocationFilters);
             
             if((currentSkillsFilters.length > 0) || (currentLocationFilters.length > 0)){
-                currentSkillsFilters.map(skillsFilter => {
-                newUrlEndpoint += `${skillsFilter}%20`
+                currentSkillsFilters.map(newSkillsFilter => {
+                newUrlEndpoint += `${newSkillsFilter}%20`
                 })
-                currentLocationFilters.map(locationFilter => {
-                newUrlEndpoint += `${locationFilter}%20`
+                currentLocationFilters.map(newLocationFilter => {
+                newUrlEndpoint += `${newLocationFilter}%20`
                 })
                 if(newUrlEndpoint.slice(-3) ==="%20"){
                     newUrlEndpoint  = newUrlEndpoint.slice(0, -3);  // excluding the last '%20' from the urlEndpoint
@@ -62,26 +64,53 @@ function SearchJobs() {
             return newUrlEndpoint     
     }
 
+/*     const getNewUrlEndpoint = (): string => {
+        let newUrlEndpoint = 'https://jobsearch.api.jobtechdev.se/search?q='
+        console.log("newUrlEndpoint första omgången:",newUrlEndpoint);
+        // https://jobsearch.api.jobtechdev.se/search?q=?limit=50
+        console.log("newCurrentSkillsFilters:",newCurrentSkillsFilters);
+        console.log("newCurrentLocationFilters:",newCurrentLocationFilters);
+        
+        if((newCurrentSkillsFilters.length > 0) || (newCurrentLocationFilters.length > 0)){
+            newCurrentSkillsFilters.map(newSkillsFilter => {
+            newUrlEndpoint += `${newSkillsFilter}%20`
+            })
+            newCurrentLocationFilters.map(newLocationFilter => {
+            newUrlEndpoint += `${newLocationFilter}%20`
+            })
+            if(newUrlEndpoint.slice(-3) ==="%20"){
+                newUrlEndpoint  = newUrlEndpoint.slice(0, -3);  // excluding the last '%20' from the urlEndpoint
+            }
+        } else {
+            newUrlEndpoint += '?'
+        }
+        console.log("newUrlEndpoint efter ? i getNewUrlEndpoint:",newUrlEndpoint);
+        
+        newUrlEndpoint += '&limit=50'  // TODO: Gör max-antalet valbart för användaren?
+        console.log("newUrlEndpoint i slutet av getNewUrlEndpoint:",newUrlEndpoint);
+        return newUrlEndpoint     
+} */
+
 
     const needToFetchNewJobsData = (): boolean => {
         return true  // TODO:
-        let needToFetch = false
-/*         if(!allLocationFilters ){
+        //let needToFetch = false
+        /* if(!allLocationFilters ){
             needToFetch = true
             return needToFetch
         } */
-        function doesMainArrayContainAllElementsOfSubArray(mainArray: string[], subArray: string[]) {
+        /* function doesMainArrayContainAllElementsOfSubArray(mainArray: string[], subArray: string[]) {
             return subArray.every(item => mainArray.includes(item));
         }
         const allSkillsFiltersContainCurrentSkillsFilters = doesMainArrayContainAllElementsOfSubArray(allSkillsFilters, currentSkillsFilters)
         const allLocationFiltersContainCurrentLocationFilters = doesMainArrayContainAllElementsOfSubArray(allLocationFilters, currentLocationFilters)
         needToFetch = allSkillsFiltersContainCurrentSkillsFilters && allLocationFiltersContainCurrentLocationFilters ? false : true; 
         console.log("needToFetch:",needToFetch);
-        return needToFetch
+        return needToFetch */
     }
 
 
-    const getNewCurrentJobs = (): Job[] => {
+    /* const getNewCurrentJobs = (): Job[] => {
         console.log("currentSkillsOperand in getNewCurrentJobs: ",currentSkillsOperand);
         console.log("allJobs in getNewCurrentJobs:",allJobs);
         
@@ -111,7 +140,7 @@ function SearchJobs() {
             console.log("Error: CurrentSkillsOperand is not working");
             throw new Error
         } 
-    }
+    } */
 
 
     function convertSpaceSeparatedStringIntoStringArray (commaOrSpaceSeparatedString: string): string[] {
@@ -126,76 +155,89 @@ function SearchJobs() {
     function handleSkillsInputChange(e: React.ChangeEvent<HTMLInputElement>) {
         e.preventDefault();
         setCurrentSkillsInputString(e.target.value)
-        console.log("currentSkillsInputString in Search/handleChangeSkillsInput::",currentSkillsInputString);
+        
     }
     
         
-   /*  function handleBlurSkillsInput(e: React.FocusEvent<HTMLInputElement>){
+    function handleBlurSkillsInput(e: React.FocusEvent<HTMLInputElement>){
         e.preventDefault();
+        const currenSkillsFiltersChosen: string[] = convertSpaceSeparatedStringIntoStringArray(currentSkillsInputString)
+        setNewCurrentSkillsFilters(currenSkillsFiltersChosen)
+        dispatch(updateCurrentSkillsFilters(currenSkillsFiltersChosen))
+        console.log("currentSkillsInputString in Search/handleChangeSkillsInput::",currentSkillsInputString);
         // Set the currentSkillsInputString, convert it into an array and update CurrentSkillsFilters 
-        setCurrentSkillsInputString(currentSkillsInputString)
+/*         setCurrentSkillsInputString(currentSkillsInputString)
         const newCurrentSkillsFilters: string[] = convertSpaceSeparatedStringIntoStringArray(currentSkillsInputString)
         console.log("newCurrentSkillsFilters i handleKeyDownSkillsInput:",newCurrentSkillsFilters);
         dispatch(updateCurrentSkillsFilters(newCurrentSkillsFilters))
-        console.log("currentSkillsFilters (state) in Search:",currentSkillsFilters);
-    } */
+        console.log("currentSkillsFilters (state) in Search:",currentSkillsFilters); */
+    }
     
     
     const handleSkillsOperandChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value as LogicOperand
+        console.log("skillsOperand in handleSkillsOperandChange: ", value);
         setCurrentSkillsOperandChosen(value)
-        dispatch(updateCurrentSkillsOperand(currentSkillsOperandChosen))
-        //dispatch(updateCurrentSkillsOperand(setCurrentSkillsOperandChosen(value)))
-
+        dispatch(updateCurrentSkillsOperand(value))
     }
 
 
     function handleLocationsInputChange(e: React.ChangeEvent<HTMLInputElement>) {
         e.preventDefault();
         setCurrentLocationsInputString(e.target.value)
-        console.log("currentLocationsInputString:",currentLocationsInputString)
+        console.log("e.target.value in handleLocatiosInputChange",e.target.value);
+        
+        const currentLocationFiltersChosen = convertSpaceSeparatedStringIntoStringArray(e.target.value)
+        setNewCurrentLocationFilters(currentLocationFiltersChosen)
+        dispatch(updateCurrentLocationFilters(currentLocationFiltersChosen))
+        console.log("currentLocationFiltersChosen:",currentLocationFiltersChosen)
     }
     
 
-/*     function handleBlurLocationsInput(e: React.FocusEvent<HTMLInputElement>){
+function handleBlurLocationsInput(e: React.FocusEvent<HTMLInputElement>){
         e.preventDefault();
+        setCurrentLocationsInputString(e.target.value)
+        const currentLocationFiltersChosen = convertSpaceSeparatedStringIntoStringArray(currentLocationsInputString)
+        setNewCurrentLocationFilters(currentLocationFiltersChosen)
+        dispatch(updateCurrentLocationFilters(currentLocationFiltersChosen))
         // Set the currentLocationsInputString, convert it into an array and update CurrentLocationFilters 
-        setCurrentLocationsInputString(currentLocationsInputString)
+       /*  setCurrentLocationsInputString(currentLocationsInputString)
         const newCurrentLocationFilters: string[] = convertSpaceSeparatedStringIntoStringArray(currentLocationsInputString)
         console.log("newCurrentLocationFilters i handleBlurLocationsInput:",newCurrentLocationFilters);
         dispatch(updateCurrentLocationFilters(newCurrentLocationFilters))
-        console.log("currentLocationFilters (state) in Search:",currentLocationFilters); 
-    } */
+        console.log("currentLocationFilters (state) in Search:",currentLocationFilters);  */
+    } 
 
 
     const handleSearchJobs = () => {
 
-        console.log("currentSkillsInputString in Search:",currentSkillsInputString)
-        console.log("currentLocationsInputString in Search:",currentLocationsInputString);
+        //console.log("currentSkillsInputString in Search:",currentSkillsInputString)
+        //console.log("currentLocationsInputString in Search:",currentLocationsInputString);
         
         // Update CurrentSkillsFilters
-        setCurrentSkillsInputString(currentSkillsInputString)
-        const newCurrentSkillsFilters: string[] = convertSpaceSeparatedStringIntoStringArray(currentSkillsInputString)
-        dispatch(updateCurrentSkillsFilters(newCurrentSkillsFilters))
-        console.log("currentSkillsFilters (state) in Search:",currentSkillsFilters);
+        /* setCurrentSkillsInputString(currentSkillsInputString)
+        setNewCurrentSkillsFilters(convertSpaceSeparatedStringIntoStringArray(currentSkillsInputString))
+        dispatch(updateCurrentSkillsFilters(newCurrentSkillsFilters)) 
+        console.log("newCurrentSkillsFilters in handleSearch:",newCurrentSkillsFilters); */
         
         // Update Current Location Filters 
-        setCurrentLocationsInputString(currentLocationsInputString)
-        const newCurrentLocationFilters: string[] = convertSpaceSeparatedStringIntoStringArray(currentLocationsInputString)
-        dispatch(updateCurrentLocationFilters(newCurrentLocationFilters)) 
-        console.log("currentLocationFilters (state) in Search:",currentLocationFilters);
+       /*  setCurrentLocationsInputString(currentLocationsInputString)
+        setNewCurrentLocationFilters(convertSpaceSeparatedStringIntoStringArray(currentLocationsInputString))
+        dispatch(updateCurrentLocationFilters(newCurrentLocationFilters))  
+        console.log("newCurrentLocationFilters in handleSearch:",newCurrentLocationFilters); */
 
         // Fetch data from external serve (if needed)
         const needToFetch: boolean = needToFetchNewJobsData()
         if (needToFetch) {
             const newUrlEndpoint = getNewUrlEndpoint()
+            console.log("newUrlEndpoint in dispatch(fetchJobs()): ",newUrlEndpoint);
             dispatch(fetchJobs(newUrlEndpoint));  
         } 
 
-        // Filter allJobs array and update currentJobs
-        const newCurrentJobs: Job[] = getNewCurrentJobs()
+        // Filter allJobs array and update currentJobs  - DONE IN fetchJobs now
+        /* const newCurrentJobs: Job[] = getNewCurrentJobs()
         console.log("newCurrentJobs in handleSearchJobs:",newCurrentJobs);
-        dispatch(updateCurrentJobs(newCurrentJobs))
+        dispatch(updateCurrentJobs(newCurrentJobs)) */
     }
 
     
@@ -216,9 +258,10 @@ function SearchJobs() {
 
     return (
         <div className={styles.search}>
-            <label className={styles.searchIconAndInput}>
+            <div className={styles.labelInputCombos}>
+            <label className={styles.labelAndInput}>
                 {/* <img src="./images/search-icon.svg" alt="" className={styles.searchIcon} /> */}
-                Sökord:
+                <span>Sökord: </span>
                 <input 
                     id="skillsInput"
                     type="text" 
@@ -226,9 +269,24 @@ function SearchJobs() {
                     placeholder={"Ex: Javascript React Vue"}
                     value={currentSkillsInputString}
                     onChange={handleSkillsInputChange}
-                    //onBlur={handleBlurSkillsInput}
+                    onBlur={handleBlurSkillsInput}
                 />
             </label>
+                <label className={styles.labelAndInput}>
+                    <span>Orter:</span>
+                    {/* <img src="./images/search-icon.svg" alt="" className={styles.searchIcon} /> */}
+                    <input 
+                        id="locationsInput"
+                        type="text" 
+                        className={styles.searchInput}
+                        placeholder={"Ex:  Stockholm Uppsala"}
+                        value={currentLocationsInputString}
+                        onChange={handleLocationsInputChange}
+                        onBlur={handleBlurLocationsInput}
+                    />
+                </label>
+            </div>
+            
             <div className={styles.radioButtonsForSearchLogic}>
                 <label className={styles.radioButtonLabel}>
                     <input
@@ -249,7 +307,7 @@ function SearchJobs() {
                     />
                     Alla sökord
                 </label>
-{/*               <p>Logisk operand: {currentSkillsOperand}</p> */}
+{              <p>Logisk operand: {currentSkillsOperandChosen}</p>}
                 </div>
 
            {/*  <button 
@@ -259,19 +317,7 @@ function SearchJobs() {
                 {isCurrentSkillsOperandToggled ? 'Alla sökord' : 'Minst 1 sökord'}
             </button> */}
 
-            <label className={styles.searchIconAndInput}>
-                Orter:
-                {/* <img src="./images/search-icon.svg" alt="" className={styles.searchIcon} /> */}
-                <input 
-                    id="locationsInput"
-                    type="text" 
-                    className={styles.searchInput}
-                    placeholder={"Ex:  Stockholm Uppsala"}
-                    value={currentLocationsInputString}
-                    onChange={handleLocationsInputChange}
-                    //onBlur={handleBlurLocationsInput}
-                />
-            </label>
+           
             <div className={styles.buttons}>
                 <button ref={searchButton} className={styles.searchButton} onClick={handleSearchJobs}>Sök</button>
                 <button className={styles.searchButton} onClick={handleClearAllFilters}>Nollställ</button>

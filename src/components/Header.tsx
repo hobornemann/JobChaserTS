@@ -4,6 +4,7 @@ import styles from './Header.module.css'
 
 import { useContext } from 'react';
 import { AuthContext } from '../contexts/AuthContext'
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -26,8 +27,15 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onSignOut }) => {
 
+  const location = useLocation();
   const authContext = useContext(AuthContext);
   const isAuthenticated = authContext && authContext.user !== null;
+
+  const showSearch =
+    location.pathname !== '/signup' &&
+    location.pathname !== '/signin' &&
+    location.pathname !== '/favourites';
+
 
   return (
     <header className={styles.header}>
@@ -38,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ onSignOut }) => {
             </Link>
             <div className={styles.normalLinks}>
               <li className={styles.li}>
-                  <Link to="/">Home</Link>
+                  <Link to="/">Search</Link>
               </li>
               {isAuthenticated && (<li className={styles.li}>
                   <Link to="/favourites">Favourites</Link>
@@ -55,7 +63,7 @@ const Header: React.FC<HeaderProps> = ({ onSignOut }) => {
             </div>
           </ul>
       </nav>
-      <SearchJobs />
+      {showSearch && <SearchJobs />}
     </header>
   );
 }
