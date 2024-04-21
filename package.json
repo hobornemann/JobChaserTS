@@ -1,6 +1,6 @@
-{ "homepage": "https://hobornemann.github.io/jobchaser-ts/",
+{ "homepage": "https://hobornemann.github.io/JobChaser_TS/",
   "name": "jobchaser-ts",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
