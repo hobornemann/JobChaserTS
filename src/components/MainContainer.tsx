@@ -13,12 +13,13 @@ function MainContainer (){
     
     return(
         <>
+            {messageToUser && <Feedback feedback={messageToUser} />}
             {(currentJobs.length>0) && 
                 <JobsList 
                     key="1"
+                    jobs = {currentJobs}
                 />  
             }  
-            {messageToUser && <Feedback feedback={messageToUser} />}
         </>
     )
 }

@@ -1,88 +1,70 @@
-import { useState } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import 'firebase/auth';
 import styles from './JobCard.module.css';
 import Accordion from './Accordion';
+import Job from '../types/Job'
 
-
-
-
-import { useContext } from 'react';
+import type { RootState, AppDispatch } from "../store/store"; 
+import { useDispatch, useSelector } from "react-redux";
 //import {User} from 'firebase/auth'
 import { AuthContext } from '../contexts/AuthContext'
-
-
-
-
-
-
-
+import { updateFavouriteJobs } from '../store/searchJobsSlice';
 
 
 type JobCardProps = {
     key: string;
-    passedKey: string;
-    logoUrl: string;
-    headline: string;
-    occupation: string;
-    employer: string;
-    employmentType: string;
-    duration: string;
-    workingHoursType: string;
-    workplaceAddressCity: string;
-    workplaceAddressStreet: string;
-    applicationDeadline: string;
-    applicationEmailAddress: string;
-    description: string;
+    job: Job;
 }
 
-function JobCard({passedKey, logoUrl, headline, occupation, employer, employmentType, duration, 
-    workingHoursType, workplaceAddressCity, workplaceAddressStreet, 
-    applicationDeadline, applicationEmailAddress, description}: JobCardProps){
+function JobCard({job}: JobCardProps){
         
-    const [saved, setSaved] = useState<boolean>(false);    
+    const [isFavouriteJob, setIsFavouriteJob] = useState<boolean>(false);    
     const authContext = useContext(AuthContext);
     const isAuthenticated = authContext && authContext.user !== null;
+    const dispatch = useDispatch<AppDispatch>();
+    const favouriteJobs: Job[] = useSelector((state: RootState) => state.searchJobs.favouriteJobs);
 
-    
-    const handleSaveToggle = () => {
-        if (saved) {
-            // Remove from local storage
-            localStorage.removeItem('savedJobs');
-        } else {
-            // Save to local storage
-            localStorage.setItem('savedJobs', JSON.stringify({ passedKey }));
-        }
-        setSaved(!saved);
+    useEffect(() => {
+        // Check if the job is in the list of favorite jobs
+        setIsFavouriteJob(favouriteJobs.some(favouriteJob => favouriteJob.id === job.id));
+      }, [favouriteJobs, job.id]);
+
+
+    const handleSaveFavouriteToggle = () => {
+        const updatedFavouriteJobs = isFavouriteJob ? favouriteJobs.filter(favouriteJob => favouriteJob.id !== job.id)
+        : [...favouriteJobs, job];
+        dispatch(updateFavouriteJobs(updatedFavouriteJobs));
+        setIsFavouriteJob(!isFavouriteJob);
     };
 
     return(
         <li className={styles.jobCard}>
             <div className={styles.jobCardExclJobDescription}>
                 <div className={styles.jobAdvertisement}>
-                    <h2 className={styles.jobAdvertisementHeading}>{headline}</h2>
+                    <h2 className={styles.jobAdvertisementHeading}>{job.headline!}</h2>
                     <div className={styles.jobAdvertisementItems}>
-                        {employer && <p className={styles.jobCardInfo}><b>Företag:&nbsp;</b> {employer}</p>}
-                        {occupation && <p className={styles.jobCardInfo}> <b>Position:&nbsp;</b> {occupation}</p>}
-                        {employmentType && <p className={styles.jobCardInfo}><b>Anställningstyp:&nbsp;</b> {employmentType}</p>}
-                        {duration && <p className={styles.jobCardInfo}><b>Anställningsform:&nbsp;</b> {duration}</p>}
-                        {workingHoursType && <p className={styles.jobCardInfo}><b>Arbetstid:&nbsp;</b> {workingHoursType}</p>}
-                        {workplaceAddressCity && <p className={styles.jobCardInfo}><b>Plats:&nbsp;</b> {workplaceAddressStreet}{', '}{workplaceAddressCity}</p>}
-                        {applicationDeadline && <p className={styles.jobCardInfo}><b>Sista ansökningsdag:&nbsp;</b> {applicationDeadline}</p>}
-                        {applicationEmailAddress && <p className={styles.jobCardInfo}><b>Email:&nbsp;</b> {applicationEmailAddress}</p>}
+                        {job.employer.name! && <p className={styles.jobCardInfo}><b>Företag:&nbsp;</b> {job.employer.name!}</p>}
+                        {job.occupation.label! && <p className={styles.jobCardInfo}> <b>Position:&nbsp;</b> {job.occupation.label!}</p>}
+                        {job.employment_type.label! && <p className={styles.jobCardInfo}><b>Anställningstyp:&nbsp;</b> {job.employment_type.label!}</p>}
+                        {job.duration.label! && <p className={styles.jobCardInfo}><b>Anställningsform:&nbsp;</b> {job.duration.label!}</p>}
+                        {job.working_hours_type.label! && <p className={styles.jobCardInfo}><b>Arbetstid:&nbsp;</b> {job.working_hours_type.label!}</p>}
+                        {job.workplace_address.city! && <p className={styles.jobCardInfo}><b>Plats:&nbsp;</b> {job.workplace_address.street_address!}{', '}{job.workplace_address.city!}</p>}
+                        {job.application_deadline! && <p className={styles.jobCardInfo}><b>Sista ansökningsdag:&nbsp;</b> {job.application_deadline!}</p>}
+                        {job.application_details.email! && <p className={styles.jobCardInfo}><b>Email:&nbsp;</b> {job.application_details.email!}</p>}
                     </div>
                 </div>
                 <div className={styles.logoAndFavouriteButton}>
-                    {logoUrl && <img src={logoUrl} alt="" className={styles.imgLogo} />}
+                    {job.logo_url! && <img src={job.logo_url!} alt="" className={styles.imgLogo} />}
                     {isAuthenticated && (
-                        <button onClick={handleSaveToggle} className={styles.favouriteButton}>
-                            {saved ? 'Favorit' : 'Spara'}
+                        <button onClick={handleSaveFavouriteToggle} className={styles.favouriteButton}>
+                            {isFavouriteJob ? 'Favorit' : 'Spara som favorit'}
                         </button>
                     )}
                 </div>
             </div>
             <div className={styles.jobDescription}>
                 <Accordion>
-                    {description.split('\n').map((line, id) => (
+                    {job.description.text!.split('\n').map((line, id) => (
                         <p key={id}>{line}</p>
                     ))}
                 </Accordion>

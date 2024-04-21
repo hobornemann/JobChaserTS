@@ -16,10 +16,7 @@ function HomePage() {
 
   return (
     <>
-      <MainContainer
-/*         currentJobs={currentJobs}
-        feedbackToUserv={feedbackToUser} */
-      />
+      <MainContainer/>
       <Footer/>
     </>
   );
