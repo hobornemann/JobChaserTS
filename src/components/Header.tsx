@@ -35,19 +35,19 @@ const Header: React.FC<HeaderProps> = ({ onSignOut }) => {
             </Link>
             <div className={styles.normalLinks}>
               <li className={styles.li}>
-                  <Link to="/">Search</Link>
+                  <Link to="/">Sök jobb</Link>
               </li>
               {isAuthenticated && (<li className={styles.li}>
-                  <Link to="/favourites">Favourites</Link>
+                  <Link to="/favourites">Favoriter</Link>
               </li>)}
               <li className={styles.li}>
-                  <Link to="/signup">Sign up</Link>
+                  <Link to="/signup">Registrera</Link>
               </li>
               <li className={styles.li}>
-                  <Link to="/signin">Sign in</Link>
+                  <Link to="/signin">Logga in</Link>
               </li>
               <li>
-                  <button className={styles.signOutButton} onClick={onSignOut!}>Sign out</button>
+                  <button className={styles.signOutButton} onClick={onSignOut!}>Logga ut</button>
               </li>
             </div>
           </ul>
