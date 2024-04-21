@@ -8,7 +8,10 @@ if (!localStorage.getItem("favouriteJobs")) {
   localStorage.setItem("favouriteJobs", JSON.stringify([]));
 }
 if (!localStorage.getItem("currentSkillsOperand")) {
-  localStorage.setItem("currentSkillsOperand", JSON.stringify("ELLER"));
+  localStorage.setItem("currentSkillsOperand", JSON.stringify("OCH"));
+}
+if (!localStorage.getItem("currentWorkingHoursTypeLabel")) {
+  localStorage.setItem("currentWorkingHoursTypeLabel", JSON.stringify("Heltid"));
 }
 if (!localStorage.getItem("currentSkillsFilters")) {
   localStorage.setItem("currentSkillsFilters", JSON.stringify([]));
@@ -22,6 +25,8 @@ if (!localStorage.getItem("maxSearchResultsChosen")) {
 
 const favouriteJobsFromLocalStorage = JSON.parse(localStorage.getItem("favouriteJobs")!);
 const currentSkillsOperand = JSON.parse(localStorage.getItem("currentSkillsOperand")!);
+const currentWorkingHoursTypeLabel = JSON.parse(localStorage.getItem("currentWorkingHoursTypeLabel")!);
+
 const currentSkillsFilters = JSON.parse(localStorage.getItem("currentSkillsFilters")!);
 const currentLocationFilters = JSON.parse(localStorage.getItem("currentLocationFilters")!);
 const maxSearchResultsChosen = Number(JSON.parse(localStorage.getItem("maxSearchResultsChosen")!))
@@ -36,6 +41,7 @@ const initialState: SearchJobsState = {
   currentSkillsFilters: currentSkillsFilters,
   allSkillsFilters: [],
   currentSkillsOperand: currentSkillsOperand,
+  currentWorkingHoursTypeLabel: currentWorkingHoursTypeLabel,
   currentJobs: [],
   favouriteJobs: favouriteJobsFromLocalStorage,  
   allJobs: [],
@@ -81,6 +87,12 @@ export const searchJobsSlice = createSlice({
       localStorage.setItem("currentSkillsOperand", JSON.stringify(action.payload))
       console.log("action.payload in updateCurrentSkillsOperand in searchJobsSlice:", action.payload);
       console.log("currentSkillsOperand in updateCurrentSkillsOperand in searchJobsSlice:", state.currentSkillsOperand);
+    },
+    updateCurrentWorkingHoursTypeLabel: (state, action: PayloadAction<string>)  => {
+      state.currentWorkingHoursTypeLabel= action.payload
+      localStorage.setItem("currentWorkingHoursTypeLabel", JSON.stringify(action.payload))
+      console.log("action.payload in updateCurrentWorkingHoursTypeLabel in searchJobsSlice:", action.payload);
+      console.log("currentWorkingHoursTypeLabel in updateCurrentWorkingHoursTypeLabel in searchJobsSlice:", state.currentWorkingHoursTypeLabel);
     },
     updateMessageToUser: (state, action: PayloadAction<string>) => {
       state.messageToUser = action.payload
@@ -173,7 +185,7 @@ export const fetchJobs = createAsyncThunk(
 
 
 // Exporterar alla actionfunktioner 
-export const { updateFavouriteJobs, updateMaxSearchResultsChosen, updateMessageToUser, updateAllJobs, updateCurrentJobs, updateCurrentLocationFilters, updateCurrentSkillsFilters, updateCurrentSkillsOperand } = searchJobsSlice.actions
+export const { updateCurrentWorkingHoursTypeLabel, updateFavouriteJobs, updateMaxSearchResultsChosen, updateMessageToUser, updateAllJobs, updateCurrentJobs, updateCurrentLocationFilters, updateCurrentSkillsFilters, updateCurrentSkillsOperand } = searchJobsSlice.actions
 // Exporterar reducern
 export default searchJobsSlice.reducer
 

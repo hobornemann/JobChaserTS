@@ -4,7 +4,7 @@ import styles from './SearchJobs.module.css'
 import { useState } from "react";
 import type { RootState, AppDispatch } from "../store/store"; // Importera types från store.ts
 import { useSelector, useDispatch } from "react-redux"; // Redux hooks för att använda globala state och dispatcha actions
-import { updateMaxSearchResultsChosen, updateMessageToUser, updateCurrentJobs, fetchJobs, updateCurrentLocationFilters, updateCurrentSkillsFilters, updateCurrentSkillsOperand} from "../store/searchJobsSlice"; // Importera actions från accountSlice.ts
+import { updateCurrentWorkingHoursTypeLabel, updateMaxSearchResultsChosen, updateMessageToUser, updateCurrentJobs, fetchJobs, updateCurrentLocationFilters, updateCurrentSkillsFilters, updateCurrentSkillsOperand} from "../store/searchJobsSlice"; // Importera actions från accountSlice.ts
 import Job from '../types/Job'
 import { useEffect } from 'react';
 
@@ -13,13 +13,14 @@ function SearchJobs() {
 
     const dispatch = useDispatch<AppDispatch>();
     // GLOBAL STATES
-    const { maxSearchResultsChosen, numberOfHits, currentLocationFilters, currentSkillsFilters } : {maxSearchResultsChosen: number, numberOfHits: number, currentLocationFilters: string[], allLocationFilters: string[], currentSkillsFilters: string[], allSkillsFilters: string[], currentSkillsOperand: string, allJobs: Job[]} = useSelector((state: RootState) => state.searchJobs)  // TODO: counter eller searchJobs?
+    const { currentWorkingHoursTypeLabel,  maxSearchResultsChosen, numberOfHits, currentLocationFilters, currentSkillsFilters } : {currentWorkingHoursTypeLabel: string,  maxSearchResultsChosen: number, numberOfHits: number, currentLocationFilters: string[], allLocationFilters: string[], currentSkillsFilters: string[], allSkillsFilters: string[], currentSkillsOperand: string, allJobs: Job[]} = useSelector((state: RootState) => state.searchJobs)  // TODO: counter eller searchJobs?
 
 
     // LOCAL STATES  
     const [otherElementsHaveRendered, setOtherElementsHaveRendered] = useState<boolean>(false)
     const [currentSkillsInputString, setCurrentSkillsInputString] = useState<string>('')
-    const [currentSkillsOperandChosen, setCurrentSkillsOperandChosen] = useState<LogicOperand>('ELLER')
+    const [currentSkillsOperandChosen, setCurrentSkillsOperandChosen] = useState<LogicOperand>('OCH')
+    const [currentWorkingHoursTypeLabelChosen, setCurrentWorkingHoursTypeLabelChosen] =useState<string>('Heltid')
     const [currentLocationsInputString, setCurrentLocationsInputString] = useState<string>('')
     const maxSearchResultsArray: number[] = [10, 20, 30, 40, 50]
     
@@ -27,7 +28,7 @@ function SearchJobs() {
     // OTHER
     const searchButton = useRef<HTMLButtonElement>(null);
    
-    type LogicOperand = "ELLER" | "OCH"; 
+    type LogicOperand = "OCH"| "ELLER"; 
 
     // INITIALISATION 
     useEffect(() => {
@@ -64,6 +65,16 @@ function SearchJobs() {
             }
         } 
 
+        const currentWorkingHoursTypeLabelUnparsed = localStorage.getItem("currentWorkingHoursTypeLabel");
+        if(currentWorkingHoursTypeLabelUnparsed){
+            try{
+                const currentWorkingHoursTypeLabelFromLocalStorage = JSON.parse(currentWorkingHoursTypeLabelUnparsed)
+                setCurrentWorkingHoursTypeLabelChosen(currentWorkingHoursTypeLabelFromLocalStorage)
+            } catch (error) {
+                console.error("Error parsing JSON from localStorage:", error);
+            }
+        } 
+
         setOtherElementsHaveRendered(true)
 
     }, [])
@@ -89,11 +100,13 @@ function SearchJobs() {
             
             if((currentSkillsFilters.length > 0) || (currentLocationFilters.length > 0)){
                 currentSkillsFilters.map(newSkillsFilter => {
-                newUrlEndpoint += `${newSkillsFilter}%20`
+                    newUrlEndpoint += `${newSkillsFilter}%20`
                 })
                 currentLocationFilters.map(newLocationFilter => {
-                newUrlEndpoint += `${newLocationFilter}%20`
+                    newUrlEndpoint += `${newLocationFilter}%20`
                 })
+                newUrlEndpoint += `${currentWorkingHoursTypeLabel}%20`
+                
                 if(newUrlEndpoint.slice(-3) ==="%20"){
                     newUrlEndpoint  = newUrlEndpoint.slice(0, -3);  // excluding the last '%20' from the urlEndpoint
                 }
@@ -144,6 +157,13 @@ function SearchJobs() {
         setCurrentSkillsOperandChosen(value)
         dispatch(updateCurrentSkillsOperand(value))
         console.log("skillsOperand in handleSkillsOperandChange: ", value);
+    }
+
+    const handleWorkingHoursTypeLabelChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        const value = event.target.value
+        setCurrentWorkingHoursTypeLabelChosen(value)
+        dispatch(updateCurrentWorkingHoursTypeLabel(value))
+        
     }
 
 
@@ -200,18 +220,18 @@ function SearchJobs() {
     return (
         <div className={styles.search}>
             <div className={styles.labelInputCombos}>
-            <label className={styles.labelAndInput}>
-                <span>Sökord: </span>
-                <input 
-                    id="skillsInput"
-                    type="text" 
-                    className={styles.searchInput}
-                    placeholder={"Ex: Javascript React Vue"}
-                    value={currentSkillsInputString}
-                    onChange={handleSkillsInputChange}
-                    onBlur={handleBlurSkillsInput}
-                />
-            </label>
+                <label className={styles.labelAndInput}>
+                    <span>Sökord: </span>
+                    <input 
+                        id="skillsInput"
+                        type="text" 
+                        className={styles.searchInput}
+                        placeholder={"Ex: Javascript React Vue"}
+                        value={currentSkillsInputString}
+                        onChange={handleSkillsInputChange}
+                        onBlur={handleBlurSkillsInput}
+                    />
+                </label>
                 <label className={styles.labelAndInput}>
                     <span>Orter:</span>
                     <input 
@@ -225,28 +245,55 @@ function SearchJobs() {
                     />
                 </label>
             </div>
-            
-            <div className="searchLogic">
-                <select onChange={handleSkillsOperandChange}
-                    value={currentSkillsOperandChosen}>
-                    {["ELLER","OCH"].map((item, index) => (
-                        <option key={index} value={item}>
-                            {item}
-                        </option>
-                    ))}
-                </select>
+            {/* job.working_hours_type.label */}
+            <div className={styles.labelInputCombos}>
+                <div className={styles.searchLogic}>
+                    <label className={styles.searchLogicSelector} htmlFor="searchLogicSelector">Söklogik:</label>
+                    <select 
+                        id="searchLogicSelector"
+                        className={styles.searchSelect}
+                        onChange={handleSkillsOperandChange}
+                        value={currentSkillsOperandChosen}>
+                        {["ELLER","OCH"].map((item, index) => (
+                            <option key={index} value={item}>
+                                {item}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <div className={styles.workingHoursLabelAndType}>
+                    <label className={styles.workingHoursLabel} htmlFor="workingHoursType">Arbetstid:</label>
+                    <select 
+                        id="workingHoursType"
+                        className={styles.searchSelect}
+                        onChange={handleWorkingHoursTypeLabelChange}
+                        value={currentWorkingHoursTypeLabelChosen}>
+                        {["Heltid","Deltid"].map((item, index) => (
+                            <option key={index} value={item}>
+                                {item}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+
             </div> 
 
-            <div className="maxSearchResultsAndHits">
-                <select onChange={handleMaxSearchResultsChange}
-                    value={maxSearchResultsChosen}>
-                    {maxSearchResultsArray.map((number, index) => (
-                        <option key={index} value={number}>
-                            {number}
-                        </option>
-                    ))}
-                </select>
-                <p className="hits">Antal träffar: {numberOfHits}</p>
+            <div className={styles.labelInputCombos}>
+                <div className={styles.maxSearchResultsAndHits}>
+                    <label htmlFor="maxSearchResultsSelector">Max: </label>
+                    <select 
+                        id="maxSearchResultsSelector"
+                        className={styles.maxSearchResults }
+                        onChange={handleMaxSearchResultsChange}
+                        value={maxSearchResultsChosen}>
+                        {maxSearchResultsArray.map((number, index) => (
+                            <option key={index} value={number}>
+                                {number}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <p className="hits">Träffar: {numberOfHits}</p>
             </div> 
 
             <div className={styles.buttons}>

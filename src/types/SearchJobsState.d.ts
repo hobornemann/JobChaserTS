@@ -11,6 +11,7 @@ import LogicOperand from "./LogicOperand"
     currentSkillsFilters: string[]
     allSkillsFilters: string[]
     currentSkillsOperand: LogicOperand
+    currentWorkingHoursTypeLabel: string
     currentJobs: Job[]
     favouriteJobs: Job[]
     allJobs: Job[]

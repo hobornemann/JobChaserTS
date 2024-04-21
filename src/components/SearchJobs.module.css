@@ -1,3 +1,7 @@
+p{
+    margin: 0;
+}
+
 .search{
     display: flex;
     flex-direction: row;
@@ -12,32 +16,33 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: clamp(14px 4vh 16px);
-    margin: 0 1vh;
 }
 
-.searchIcon{
-    height: 3vh;
-    margin: 0 0.4vh;
-}
-
-.searchInput{
-    height: 3vh;
-    border-radius: 2vh;
+.searchInput, .searchSelect, .maxSearchResults{
+    height: 26px;
+    border-radius: 13px;
     width: 20vw;
     border-color: rgba(48, 50, 113, 1.0);
-    padding: 0 1vh;
-    color: rgba(48, 50, 113, 1.0);    
+    padding: 0 5px;
+    color: rgba(48, 50, 113, 1.0);  
+}
+
+.searchSelect{
+    width: 10vw;
+}
+
+.maxSearchResults{
+    width: 7vw;
 }
 
 .searchInput::placeholder{
 
     color: rgba(48, 50, 113, 1.0);
-    padding-left: 10px;
+    padding-left: 5px;
 }
 
 .searchInput::content{
-    padding-left: 10px;
+    padding-left: 5px;
 }
 
 
@@ -49,9 +54,10 @@
 }
 
 .searchButton{
-    color: white;
-    background-color: rgba(48, 50, 113, 0.8 );
-    margin: 0 1vh;
+    color: rgba(48, 50, 113, 1.0);
+    font-weight: 600;
+    background-color: rgb(213, 216, 219);
+    margin: 0 10px;
 }
 
 
@@ -61,7 +67,7 @@
     font-size: 13px;
     justify-content: center;
     align-items: flex-start;
-    margin: 0 1vh;
+    margin: 0 10px;
 }
 
 .radioButtonLabel{
@@ -72,14 +78,21 @@
     align-items: center;
 }
 
-.radioButtonLabel>input{
-    width: 20px;
-    margin-left: 0;
-
-}
 
 .labelInputCombos{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+    margin: 0 10px;
 }
+
+.maxSearchResultsAndHits{
+    align-items: flex-start;
+}
+
+.searchLogicSelector{
+    
+}
+
+
+
