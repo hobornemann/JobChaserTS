@@ -12,6 +12,8 @@
     currentSkillsOperand: "AND" | "OR"
     currentJobs: Job[]
     allJobs: Job[]
+    maxSearchResultsChosen: number
+    numberOfHits: number
   }
 
   export default searchJobsState

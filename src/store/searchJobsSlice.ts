@@ -18,6 +18,8 @@ const initialState: SearchJobsState = {
   currentSkillsOperand: "OR",
   currentJobs: [],
   allJobs: [],
+  maxSearchResultsChosen: 10,
+  numberOfHits: 0,
 }
 
 
@@ -60,6 +62,9 @@ export const searchJobsSlice = createSlice({
       state.currentSkillsFilters = []
       state.currentSkillsOperand = "OR"
     },
+    updateMaxSearchResultsChosen: (state, action: PayloadAction<number>) => {
+      state.maxSearchResultsChosen = action.payload
+    },
   },
 
   //  extraReducers är en reducer som kan hantera actions från andra slices eller från createAsyncThunk
@@ -94,6 +99,7 @@ export const searchJobsSlice = createSlice({
       
       if((!stateCurrentSkillsFilters && !stateCurrentLocationFilters) || (stateCurrentSkillsOperand === "OR")){
         state.currentJobs = state.allJobs
+        state.numberOfHits = state.allJobs.length
       } else if (stateCurrentSkillsOperand === "AND"){
 
           console.log("state.currentSkillsFilters in AND:",stateCurrentSkillsFilters);
@@ -103,10 +109,11 @@ export const searchJobsSlice = createSlice({
           /* console.log("currentJobsFilteredBySkills in AND: ",currentJobsFilteredBySkills);
           const newCurrentJobs: Job[] = currentJobsFilteredBySkills.filter(job => stateCurrentLocationFilters.includes(job.description.text!))
           console.log("newCurrentJobs in AND: ",newCurrentJobs);
- */          state.currentJobs = newCurrentJobs 
+ */       state.currentJobs = newCurrentJobs 
+          state.numberOfHits = newCurrentJobs.length
       } else {
-            console.log("Error: CurrentSkillsOperand is not working");
-            throw new Error
+          console.log("Error: CurrentSkillsOperand is not working");
+          throw new Error
       } 
       console.log("state.currentJobs after update:", state.currentJobs);
       
@@ -143,7 +150,7 @@ export const fetchJobs = createAsyncThunk(
 
 
 // Exporterar alla actionfunktioner 
-export const { updateMessageToUser, updateAllJobs, updateCurrentJobs, updateCurrentLocationFilters, updateCurrentSkillsFilters, updateCurrentSkillsOperand } = searchJobsSlice.actions
+export const { updateMaxSearchResultsChosen, updateMessageToUser, updateAllJobs, updateCurrentJobs, updateCurrentLocationFilters, updateCurrentSkillsFilters, updateCurrentSkillsOperand } = searchJobsSlice.actions
 // Exporterar reducern
 export default searchJobsSlice.reducer
 
