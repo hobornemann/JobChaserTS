@@ -1,60 +1,55 @@
-# VECKANS FRÅGOR
+# STYRKOR OCH BRISTER I KODEN
 
-## Vad är Redux Toolkit? 
+## Styrkor
 
-Redux Toolkit bygger på Redux och är ett paket som gör det enkelt skapa centralt belägna states (de bor i en store, som utvecklaren delar upp i sammanhörande bitar, så kallade slices). Dessutom möjliggör Redux Toolkit att man uppdaterar dessa states via funktioner, så kallade reducers, som ligger samlade i samma slice-objekt som det tillhörande state:t.
++ UseContext har använts för globala variabler som inte ändras så mycket, tex för autentisering.
 
-Genom att använda sig av immer-biblioteket kan utvecklaren skriva muterbar kod, men som sedan blir immutable. För att kunna genomföra asynkrona fetchar, behöver man använda sig av Async Thunks. Redux DevTools är ett hjälpverktyg för utvecklare att felsöka sin kod. Fördelen med Redux Toolkit jämfört med Redux är att man slipper en hel del boiler plate kod. 
++ Redux Toolkit har använts för globala variabler som ändras ofta
+
++ CreateAsyncThunk har använts för att fetcha extern data på ett asynkront sätt, så att även fetchnings-staten pending, fulfilled och rejected kunde användas och en mer detaljerad kommunikation med användaren kunde uppnås.
+
++ Autentisering sker via Firebase. 
+
++ Användarens registrerings- och inloggningsuppgifter valideras.
+
++ Användaren kan endast skapa- och avmarkera jobbfavoriter samt se listan av favoritmarkerade jobb i inloggat läge.
+
++ Användarens senast använda input-data för sökning sparas i localStorage och dyker upp i sökfälten när användaren startar JobChaser appen vid nästa tillfälle igen.
+
++ Användaren kan söka på sökbegreppen (inklusive anställningstiden) på två olika logiska operander:  'OCH' säkerställer att samtliga sökbegrepp uppfylls (dock ej Orten/-erna, då dessa gäller separat) 
+'ELLER' tar fram jobbannonser där åtminstone 1 sökbegrepp (inklusive anställningstid-variabeln) är uppfyllt.
+
++ Användaren kan själv bestämma hur många sökresultat som han/hon maximalt vill ha (valbara antal finns i en select-dropdown).
+
++ Användaren får reda på hur många sökresultat som hittades (träffar) för de sökbegrepp användaren angav.
+
++ Användaren kan ange komma-separerade söksträngar eller blankstegsseparerade söksträngar i fritext-sökfälten för sökbegrepp och för orter. Sökningen använder sig av lowercase för både sökbegreppen och texten som ska genomsökas.
+
++ Användaren får meddelanden om när fetchning pågår, när sökresultatet innehöll noll träffar, när Arbetsförmedlingens hemsida inte kan nås, när det inte finns några favorit-annonser sparade ännu etc.
+
++ När användaren klickar inför att titta på favoriter, så döljs sök-komponenten.
+
++ Applikationen är skriven i Typescript och har noll Typescript-fel.
+
++ Applikationen använder sig av ett riktigt API som Arbetsförmedlingen tillhandahåller.
 
 
-## När, i vilka situationer vill man använda Redux Toolkit?
+## Brister
 
-I medelstora och större projekt kan det vara lämpligt att använda sig av Redux Toolkit. Även i situationer där projektet innehåller komponenter som bygger i många nivåer. Om man inte använder sig av Redux Toolkit, så behöver man skicka props genom många nivåer av komponenter för att till slut komma fram där de ska användas (prop-drilling). Utöver att det tar tid att skriva kod för att skicka vidare props:en genom komponentträdet, så kan det bli bökigt / tidskrävande att genomföra förändringar och underhålla applikationen. Med Redux Toolkit importerar man helt enkelt de objekt/variabler man vill använda sig av och uppdaterar deras state genom att dispatcha den relevanta funktionen/reducern med den/de uppdaterade variablerna (action.payload).
+- Lyckades inte förstå i tid varför jag inte lyckades publicera projektet på GitHub pages. 
+
+- Det finns ingen service worker eller motsvarande funktionalitet som skulle ibland skulle kunna använda sig redan hämtade och cachade data istället för att fetcha externt vid varje sökning.
+
+- Applikationen är inte helt responsiv. Jag fokuserade på att använda verktygen vi lärt oss. 
+
+- Applikationen har ingen dark-mode.
+
+- Projektet lämnades inte in i tid. Jag upptäckte först nu på morgonen att uppgiften skulle redan ha lämnats in i går kväll söndag istället för idag måndag. Ber om ursäkt för den missen. Trodde att det var på en måndag som tidigare veckor. 
 
 
-## Beskriv typiska områden hur man använder Typescript i React? (ex props, event, useReducer,etc)
+## Sammanfattning
 
-Typscript i React: För att minimera risken att fel uppstår i applikationen, kräver Typescript att man typar alla variabler/objekt när man instantierar dem. Även om det tar lite extra tid att ange vilken typ det är, så sparar man in tid på felsökning och på så sätt att man får mer hjälp med VSCode's intellisense. Typen bestämmer vilka properties och metoder som typen har och VSCode kan därför kontrollera i realtid huruvida man gör något fel eller inte när man kodar.
-
-Exempel på event-typer: React.FocusEvent<HTMLInputElement>, React.ChangeEvent<HTMLInputElement>
-Exempel på typning av props: 
-
- type searchJobsState = {
-    isLoading: boolean
-    messageToUser: string
-    error: string 
-    currentLocationFilters: string[]
-    allLocationFilters: string[]
-    currentSkillsFilters: string[]
-    allSkillsFilters: string[]
-    currentSkillsOperand: "AND" | "OR"
-    currentJobs: Job[]
-    allJobs: Job[]
-  }
-
-Exempel för Typescript useReducer:
-
-import React, { useReducer } from 'react';
-
-type CounterState = {
-  count: number;
-};
-
-type Action = { type: 'increment' } | { type: 'decrement' } | { type: 'reset'; payload: number };
-
-const reducer = (state: CounterState, action: Action): CounterState => {
-  switch (action.type) {
-    case 'increment':
-      return { ...state, count: state.count + 1 };
-    case 'decrement':
-      return { ...state, count: state.count - 1 };
-    case 'reset':
-      return { ...state, count: action.payload };
-    default:
-      return state;
-  }
-};
-
+- JobChaser var ett lärorikt och intressant projekt som innehöll många nyttiga verktyg för att skapa verkliga websidor. 
 
 
 
