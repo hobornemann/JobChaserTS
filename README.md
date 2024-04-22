@@ -46,6 +46,8 @@
 
 - Projektet lämnades inte in i tid. Jag upptäckte först nu på morgonen att uppgiften skulle redan ha lämnats in i går kväll söndag istället för idag måndag. Ber om ursäkt för den missen. Trodde att det var på en måndag som tidigare veckor. 
 
+- Hann inte lägga till felhantering överallt i koden.
+
 
 ## Sammanfattning
 
